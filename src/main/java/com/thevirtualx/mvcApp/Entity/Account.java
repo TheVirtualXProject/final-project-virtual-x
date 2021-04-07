@@ -8,20 +8,20 @@ public class Account {
     private String password;
     private String realName;
     private int contributionPoints;
-    private Collection<String> friends;
     private Collection<Comment> comments;
     private String profilePicture;
     private boolean statusServerSide;
+    private Collection<Long> friends;
 
     public Account(String username, String password, String realName, int contributionPoints, String profilePicture, boolean statusServerSide) {
         this.username = username;
         this.password = password;
         this.realName = realName;
         this.contributionPoints = contributionPoints;
-        this.friends = new ArrayList<>();
         this.comments = new ArrayList<>();
         this.profilePicture = profilePicture;
         this.statusServerSide = statusServerSide;
+        this.friends = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -40,10 +40,6 @@ public class Account {
         return contributionPoints;
     }
 
-    public Collection<String> getFriends() {
-        return friends;
-    }
-
     public Collection<Comment> getComments() {
         return comments;
     }
@@ -56,6 +52,10 @@ public class Account {
         return statusServerSide;
     }
 
+    public Collection<Long> getFriends() {
+        return friends;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
@@ -63,10 +63,10 @@ public class Account {
                 ", password='" + password + '\'' +
                 ", realName='" + realName + '\'' +
                 ", contributionPoints=" + contributionPoints +
-                ", friends=" + friends +
                 ", comments=" + comments +
                 ", profilePicture='" + profilePicture + '\'' +
                 ", statusServerSide=" + statusServerSide +
+                ", friends=" + friends +
                 '}';
     }
 }
