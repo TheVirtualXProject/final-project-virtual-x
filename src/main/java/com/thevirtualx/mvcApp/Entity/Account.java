@@ -9,6 +9,7 @@ public class Account {
     private String realName;
     private int contributionPoints;
     private Collection<String> friends;
+    private Collection<Comment> comments;
     private String profilePicture;
     private boolean statusServerSide;
 
@@ -18,6 +19,7 @@ public class Account {
         this.realName = realName;
         this.contributionPoints = contributionPoints;
         this.friends = new ArrayList<>();
+        this.comments = new ArrayList<>();
         this.profilePicture = profilePicture;
         this.statusServerSide = statusServerSide;
     }
@@ -26,56 +28,32 @@ public class Account {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getRealName() {
         return realName;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
     public int getContributionPoints() {
         return contributionPoints;
-    }
-
-    public void setContributionPoints(int contributionPoints) {
-        this.contributionPoints = contributionPoints;
     }
 
     public Collection<String> getFriends() {
         return friends;
     }
 
-    public void setFriends(Collection<String> friends) {
-        this.friends = friends;
+    public Collection<Comment> getComments() {
+        return comments;
     }
 
     public String getProfilePicture() {
         return profilePicture;
     }
 
-    public void setProfilePicture(String profilePicture) {
-        this.profilePicture = profilePicture;
-    }
-
     public boolean isStatusServerSide() {
         return statusServerSide;
-    }
-
-    public void setStatusServerSide(boolean statusServerSide) {
-        this.statusServerSide = statusServerSide;
     }
 
     @Override
@@ -86,6 +64,7 @@ public class Account {
                 ", realName='" + realName + '\'' +
                 ", contributionPoints=" + contributionPoints +
                 ", friends=" + friends +
+                ", comments=" + comments +
                 ", profilePicture='" + profilePicture + '\'' +
                 ", statusServerSide=" + statusServerSide +
                 '}';
