@@ -47,7 +47,7 @@ body {
   ); */
   background-color: coral;
 }
-.container3 {
+/* .container3 {
   border: 1px solid black;
   height: 200px;
   width: 100%;
@@ -56,5 +56,5 @@ body {
     rgb(72, 208, 218),
     rgb(38, 156, 235),
     rgb(0, 119, 255)
-  );
+  ); */
 }
