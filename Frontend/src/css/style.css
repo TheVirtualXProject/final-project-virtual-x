@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lato:wght@100;300&family=Nanum+Gothic&family=New+Tegomin&family=Open+Sans+Condensed:wght@300&family=Poiret+One&family=Train+One&display=swap");
+
+/* ----------header style--------- */
+/* ----------header style--------- */
+/* ----------header style--------- */
+
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: var(--header-text);
+}
+li a.active {
+  background-color: var(--primary-color);
+}
+li.right {
+  float: right;
+}
+/* 
+font-family: 'Gugi', cursive;
+font-family: 'Limelight', cursive;
+font-family: 'Black Ops One', cursive;
+font-family: 'Saira Stencil One', cursive; */
+/* 
+font-family: 'Cute Font', cursive;
+ */
+.header-title {
+  text-align: center;
+  padding: 75px 0 0 0;
+  font-family: "Gugi", cursive;
+  font-weight: normal;
+  font-size: 4em;
+  color: var(--primary-color);
+}
+@media screen and (max-width: 600px) {
+  ul.navBar li.right,
+  ul.navBar li {
+    float: none;
+  }
+}
+
+/* ----------main style--------- */
+/* ----------main style--------- */
+/* ----------main style--------- */
+
+.open-challenges-list, .open-games-list, .open-chatrooms-list{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  padding:20px;
+  
+}
+._openChallenges h2, ._openGames h2, ._openChatrooms h2{
+  text-align: center;
+}
+li{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
+._footer {
+  text-align: center;
+  padding: 30px;
+}
