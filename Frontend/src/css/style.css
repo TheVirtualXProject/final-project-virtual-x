@@ -1,60 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lato:wght@100;300&family=Nanum+Gothic&family=New+Tegomin&family=Open+Sans+Condensed:wght@300&family=Poiret+One&family=Train+One&display=swap");
 
-* {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-}
-html,
-body {
+/* ----------header style--------- */
+/* ----------header style--------- */
+/* ----------header style--------- */
+._navBar {
+  background-color: darkkhaki;
+  width: 100%;
   height: 100%;
-  width: 100%;
-  /* font-family: "Lato", sans-serif; */
-  /* font-family: "Nanum Gothic", sans-serif; */
-  /* font-family: "New Tegomin", serif; */
-  font-family: "Open Sans Condensed", sans-serif;
-  /* font-family: "Poiret One", cursive; */
-  /* font-family: "Train One", cursive; */
-  /**/
-  background: linear-gradient(
-    to top right,
-    rgb(0, 255, 179),
-    rgb(75, 132, 179),
-    rgb(0, 255, 213)
-  );
+  text-align: center;
 }
-
-.container {
-  border: 1px solid black;
-  height: 200px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom left,
-    rgb(179, 167, 163),
-    rgb(116, 113, 109),
-    rgb(82, 82, 82)
-  );
-}
-.container2 {
-  border: 1px solid black;
-  height: 200px;
-  width: 100%;
-  /* background: linear-gradient(
-    to bottom left,
-    rgb(223, 137, 106),
-    rgb(235, 166, 38),
-    rgb(166, 255, 0)
-  ); */
-  background-color: coral;
-}
-/* .container3 {
-  border: 1px solid black;
-  height: 200px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom left,
-    rgb(72, 208, 218),
-    rgb(38, 156, 235),
-    rgb(0, 119, 255)
-  ); */
-}
+/* ----------main style--------- */
+/* ----------main style--------- */
+/* ----------main style--------- */

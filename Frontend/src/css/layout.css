@@ -1,0 +1,57 @@
+/* ----------------Site layout ------------------ */
+/* ----------------Site layout ------------------ */
+/* ----------------Site layout ------------------ */
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+._container {
+  background-color: brown;
+  height: 200%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+._header {
+  grid-row: 1 / 2;
+  background-color: rgb(165, 42, 149);
+  grid-column: 1 / 7;
+}
+._main {
+  background-color: darkcyan;
+  grid-row: 2 / 6;
+  grid-column: 1 / 7;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+._footer {
+  background-color: darkgray;
+  grid-row: 6 / 8;
+  grid-column: 1 / 7;
+}
+
+._openChallenge {
+  background-color: rgb(0, 10, 100);
+  border: 1px solid red;
+  height: 300px;
+  width: 300px;
+}
+._chatroom {
+  background-color: rgb(132, 138, 189);
+  border: 1px solid red;
+  height: 300px;
+  width: 300px;
+}
+._games {
+  background-color: rgb(0, 100, 22);
+  border: 1px solid red;
+  height: 300px;
+  width: 300px;
+}
