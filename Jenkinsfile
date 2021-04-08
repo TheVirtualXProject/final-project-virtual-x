@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'sudo gradle wrapper'
                 sh 'sudo ./gradlew assemble'
             }
         }
