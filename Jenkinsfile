@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker image') {
             steps {
-                sh 'sudo ./gradlew docker'
+                sh 'sudo gradle docker'
             }
         }
         stage('Push Docker image') {
@@ -20,12 +20,12 @@ pipeline {
             }
             steps {
                 sh 'sudo docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
-                sh 'sudo ./gradlew dockerPush'
+                sh 'sudo gradle dockerPush'
             }
         }
         stage('Run Docker Container') {
             steps {
-                sh 'sudo ./gradlew dockerRun'
+                sh 'sudo gradle dockerRun'
             }
         }
     }
