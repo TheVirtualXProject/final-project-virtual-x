@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'sudo gradle wrapper'
-                sh 'sudo gradlew assemble'
+                sh 'sudo ./gradlew assemble'
             }
         }
         stage('Build Docker image') {
