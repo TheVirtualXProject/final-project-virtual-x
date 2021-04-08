@@ -1,10 +1,23 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Comment {
+
+    @Id
+    @GeneratedValue
+    private Long id;
     private String text;
 
     public Comment(String text) {
         this.text = text;
+    }
+
+    public Comment() {
+
     }
 
     public String getText() {

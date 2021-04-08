@@ -18,7 +18,7 @@ public class Account {
     private String password;
     private String realName;
     private int contributionPoints;
-    private Collection<Comment> comments;
+    private Collection<Comment> comments; // add relationship
     private String profilePicture;
     private boolean statusServerSide;
     private Collection<Long> friends;

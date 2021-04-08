@@ -4,10 +4,11 @@ import com.thevirtualx.mvcApp.Entity.Account;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AccountStorage implements AccountRepository{
+public class AccountStorage{
     private AccountRepository accountRepo;
     public AccountStorage (AccountRepository accountRepo){
         this.accountRepo = accountRepo;
+
     }
 
     public void addAccount(Account accountToAdd) {

@@ -1,9 +1,18 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Entity
 public class Challenge {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
     private Account account;
     private int rating;
     private int popularity;
@@ -16,6 +25,10 @@ public class Challenge {
         this.popularity = popularity;
         this.comments = new ArrayList<>();
         this.challenges = challenges;
+    }
+
+    protected Challenge() {
+
     }
 
     public Account getAccount() {
