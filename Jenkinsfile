@@ -6,8 +6,7 @@ pipeline {
         stage('Stop Docker Container') {
             steps {
                 sh 'sudo docker stop -t 1 mvcApp'
-                sh 'sudo docker container prune'
-                sh 'y'
+                sh 'sudo docker container rm $(docker container ls -aq)'
             }
         }
         stage('Build') {
