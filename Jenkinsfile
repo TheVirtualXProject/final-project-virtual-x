@@ -5,13 +5,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo gradle wrapper'
-                sh 'sudo gradle assemble'
+                sh 'sudo gradle wrapper --gradle-version 6.8.3'
+                sh 'sudo ./gradlew assemble'
             }
         }
         stage('Build Docker image') {
             steps {
-                sh 'sudo gradle docker'
+                sh 'sudo ./gradlew docker'
             }
         }
         stage('Push Docker image') {
@@ -20,12 +20,12 @@ pipeline {
             }
             steps {
                 sh 'sudo docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
-                sh 'sudo gradle dockerPush'
+                sh 'sudo ./gradlew dockerPush'
             }
         }
         stage('Run Docker Container') {
             steps {
-                sh 'sudo gradle dockerRun'
+                sh 'sudo ./gradlew dockerRun'
             }
         }
     }
