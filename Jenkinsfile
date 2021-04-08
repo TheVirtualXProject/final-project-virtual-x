@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker image') {
             steps {
-                sh 'sudo ./gradlew docker'
+                sh 'sudo docker build -t lynxbob/virtualx'
             }
         }
         stage('Push Docker image') {
