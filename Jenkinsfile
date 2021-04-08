@@ -3,6 +3,13 @@ pipeline {
 
  
     stages {
+        stage('Stop Docker Container') {
+            steps {
+                sh 'sudo docker stop -t 1 mvcApp'
+                sh 'sudo docker container prune'
+                sh 'y'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'sudo gradle wrapper --gradle-version 6.8.3 --distribution-type all'
