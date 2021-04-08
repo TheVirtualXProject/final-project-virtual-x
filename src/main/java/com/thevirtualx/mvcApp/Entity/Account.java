@@ -1,9 +1,19 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Collection;
 
+
+@Entity
 public class Account {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
     private String username;
     private String password;
     private String realName;
@@ -12,6 +22,10 @@ public class Account {
     private String profilePicture;
     private boolean statusServerSide;
     private Collection<Long> friends;
+
+    protected Account(){
+
+    }
 
     public Account(String username, String password, String realName, int contributionPoints, String profilePicture, boolean statusServerSide) {
         this.username = username;
