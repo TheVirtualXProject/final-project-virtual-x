@@ -3,6 +3,11 @@ pipeline {
 
  
     stages {
+        stage('Stop mvcApp') {
+            steps {
+                sh 'sudo docker stop mvcApp'
+            }
+        }
     
         stage('Build') {
             steps {
