@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'sudo gradle wrapper'
-                sh 'sudo gradlew.bat assemble'
+                sh 'sudo gradle assemble'
             }
         }
         stage('Build Docker image') {
