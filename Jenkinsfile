@@ -16,10 +16,12 @@ pipeline {
         }
         stage('Push Docker image') {
             environment {
-                DOCKER_HUB_LOGIN = credentials('docker')
+                registry = "=lynxbob/virtualx" 
+                registryCredential = 'lynxbob' 
+                dockerImage = '' 
+
             }
             steps {
-                sh 'sudo docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
                 sh 'sudo ./gradlew dockerPush'
             }
         }
