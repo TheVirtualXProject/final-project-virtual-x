@@ -47,7 +47,7 @@ body {
   grid-column: 1 / 7;
 }
 ._main {
-  background-color: var(--tertiary-color) d;
+  background-color: var(--secondary-color);
   grid-row: 2 / 6;
   grid-column: 1 / 7;
   display: flex;
