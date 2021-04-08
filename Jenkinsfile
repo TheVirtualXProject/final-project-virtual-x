@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh 'sudo gradle wrapper'
                 sh 'ls'
-                sh 'sudo ./gradlew assemble'
+                sh 'sudo ./gradlew.bat assemble'
             }
         }
         stage('Build Docker image') {
