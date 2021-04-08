@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sudo sh './gradlew assemble'
+                sh './gradlew assemble'
             }
         }
         stage('Build Docker image') {
