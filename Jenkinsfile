@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo gradle wrapper --gradle-version 6.8.3'
+                sh 'sudo gradle wrapper --gradle-version 6.8.3 --distribution-type all'
                 sh 'sudo ./gradlew assemble'
             }
         }
