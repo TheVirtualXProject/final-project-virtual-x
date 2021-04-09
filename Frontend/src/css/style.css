@@ -13,11 +13,13 @@
   position: fixed;
   top: 0;
   width: 100%;
+  font-size: 1.2em;
 }
 
 li {
   float: left;
-  border-right: 1px solid #bbb;
+  margin: 10px;
+  /* border-right: 1px solid #bbb; */
 }
 
 li a {
@@ -59,26 +61,43 @@ font-family: 'Cute Font', cursive;
   }
 }
 
-/* ----------main style--------- */
-/* ----------main style--------- */
-/* ----------main style--------- */
+/* ----------home view style--------- */
+/* ----------home view style--------- */
+/* ----------home view style--------- */
 
-.open-challenges-list, .open-games-list, .open-chatrooms-list{
+.open-challenges-list,
+.open-games-list,
+.open-chatrooms-list {
   display: flex;
   flex-direction: column;
   border: 2px solid red;
-  padding:20px;
-  
+  padding: 20px;
 }
-._openChallenges h2, ._openGames h2, ._openChatrooms h2{
+._openChallenges h2,
+._openGames h2,
+._openChatrooms h2 {
   text-align: center;
 }
-li{
+li {
   list-style-type: none;
   text-decoration: none;
 }
 
+/* challenges view style */
+/* challenges view style */
+/* challenges view style */
+.popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  padding: 20px;
+}
 
+.add-challenge-button {
+  text-align: center;
+  cursor: pointer;
+}
 ._footer {
   text-align: center;
   padding: 30px;
