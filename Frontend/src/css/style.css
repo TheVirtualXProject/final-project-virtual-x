@@ -3,21 +3,20 @@
 /* ----------header style--------- */
 /* ----------header style--------- */
 /* ----------header style--------- */
-
 .navBar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-orange);
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: 1.2em;
 }
 
-li {
+.nav-list {
   float: left;
+  margin: 0;
 }
 
 li a {
@@ -36,22 +35,21 @@ li a.active {
 li.right {
   float: right;
 }
-/* 
-font-family: 'Gugi', cursive;
-font-family: 'Limelight', cursive;
-font-family: 'Black Ops One', cursive;
-font-family: 'Saira Stencil One', cursive; */
-/* 
-font-family: 'Cute Font', cursive;
- */
+
+/* rgb(30,213,202) 
+ rgb(1,24,128)
+ rgb(255,201,75) 
+ rgb(242,48,48)
+  rgb(87,37,203) */
 .header-title {
   text-align: center;
   padding: 75px 0 0 0;
-  font-family: "Gugi", cursive;
+  font-family: var(--header-font);
   font-weight: normal;
   font-size: 4em;
-  color: var(--primary-color);
+  color: rgb(30, 213, 202);
 }
+
 @media screen and (max-width: 600px) {
   ul.navBar li.right,
   ul.navBar li {
@@ -63,22 +61,13 @@ font-family: 'Cute Font', cursive;
 /* ----------home view style--------- */
 /* ----------home view style--------- */
 
-.open-challenges-list,
-.open-games-list,
-.open-chatrooms-list {
+.activity-card {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
-  padding: 20px;
+  margin: 25.5px;
 }
-._openChallenges h2,
-._openGames h2,
-._openChatrooms h2 {
+.activity-card h2 {
   text-align: center;
-}
-li {
-  list-style-type: none;
-  text-decoration: none;
 }
 
 /* challenges view style */
