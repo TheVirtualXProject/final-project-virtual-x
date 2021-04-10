@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Virtual-X</title>
@@ -7,6 +7,7 @@
 <body>
 <div class="container">
     <a href="/create-account">Create Account</a>
+    <div class="hold-thymeleaf" th:text="${error}"></div>
     <form class="form-signin" method="post" action="/login">
         <h2 class="form-signin-heading">Please sign in</h2>
         <p>

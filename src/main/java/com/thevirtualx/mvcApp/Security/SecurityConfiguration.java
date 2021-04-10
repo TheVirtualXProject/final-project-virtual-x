@@ -29,12 +29,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/login/error").permitAll()
                 .antMatchers("/create-account").permitAll()
                 .antMatchers(HttpMethod.POST,"/create-account").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login");
+                .loginPage("/login")
+                .failureUrl("/login/error");
+
 
 
     }

@@ -2,7 +2,10 @@ package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Service.AccountStorage;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -15,9 +18,20 @@ public class SecurityController {
         this.accountStorage = accountStorage;
     }
 
+    @GetMapping("/login/error")
+    public String showLoginWithError(Model model) {
+        if(checkForLogin())
+            return "redirect:/";
+        String error = "Incorrect username or password";
+        model.addAttribute("error", error);
+        return "loginPage";
+    }
 
     @GetMapping("/login")
-    public String showLoginPage() {
+    public String showLoginPage(Model model) {
+        if(checkForLogin())
+            return "redirect:/";
+        model.addAttribute("error", "");
         return "loginPage";
     }
 
@@ -31,6 +45,15 @@ public class SecurityController {
         Account account = new Account(username, password, realName, 0, null, true, "USER");
         accountStorage.saveAccount(account);
         //TODO eventually have this return a success page
-        return "loginPage";
+        return "redirect:/login";
+    }
+
+
+    public boolean checkForLogin() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            return true;
+        }
+        return false;
     }
 }
