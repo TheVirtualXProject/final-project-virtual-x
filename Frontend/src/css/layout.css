@@ -29,12 +29,12 @@ body {
   width: 100%;
 }
 ._container {
-  background-color:var(--background);
+  background-color: var(--background);
   font-family: var(--body-text-font);
 }
 ._header {
   grid-row: 1 / 2;
-  background-color:var(--background);;
+  background-color: var(--background);
   grid-column: 1 / 7;
 }
 ._main {
@@ -54,7 +54,7 @@ body {
   justify-content: center;
 }
 ._footer {
-  background-color:var(--background);;
+  background-color: var(--background);
   grid-row: 6 / 8;
   grid-column: 1 / 7;
 }
@@ -67,14 +67,14 @@ body {
   width: 300px;
 }
 .light-blue {
-  background-color:var(--primary-color-lightBlue);
+  background-color: var(--primary-color-lightBlue);
 }
 .dark-blue {
-  background-color:var(--primary-color-darkBlue);
+  background-color: var(--primary-color-darkBlue);
   color: white;
 }
 .yellow {
-  background-color:var(--primary-color-yellow);
+  background-color: var(--primary-color-yellow);
 }
 .img-deco-square {
   width: 300px;
@@ -85,10 +85,10 @@ body {
   height: 300px;
 }
 .red {
-  background-color:var(--primary-color-red);
+  background-color: var(--primary-color-red);
 }
 .purple {
-  background-color:var(--primary-color-purple);
+  background-color: var(--primary-color-purple);
   color: white;
 }
 
@@ -99,4 +99,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 100px;
+}
+
+/*single challenge page */
+._singleChallengeMain {
+  width: 800px;
+  display: flex;
 }

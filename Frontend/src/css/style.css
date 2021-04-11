@@ -106,6 +106,18 @@ li.right {
   width: 150px;
   cursor: pointer;
 }
+
+/* single challenge page style*/
+.single-challenge-info{
+  text-align: left;
+  margin-left: 30px;
+}
+
+._singleChallengeComment h2{
+  margin-top:50px;
+  margin-bottom: 20px;
+
+}
 ._footer {
   text-align: center;
   padding: 30px;
