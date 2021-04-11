@@ -1,7 +1,6 @@
 /* ----------------Site layout ------------------ */
 /* ----------------Site layout ------------------ */
 /* ----------------Site layout ------------------ */
-
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
 /* font-family: 'Gugi', cursive;
 font-family: 'Lato', sans-serif; */
@@ -30,12 +29,12 @@ body {
   width: 100%;
 }
 ._container {
-  background-color: whitesmoke;
+  background-color:var(--background);
   font-family: var(--body-text-font);
 }
 ._header {
   grid-row: 1 / 2;
-  background-color: whitesmoke;
+  background-color:var(--background);;
   grid-column: 1 / 7;
 }
 ._main {
@@ -55,7 +54,7 @@ body {
   justify-content: center;
 }
 ._footer {
-  background-color: whitesmoke;
+  background-color:var(--background);;
   grid-row: 6 / 8;
   grid-column: 1 / 7;
 }
@@ -68,14 +67,14 @@ body {
   width: 300px;
 }
 .light-blue {
-  background-color: rgb(30, 213, 202);
+  background-color:var(--primary-color-lightBlue);
 }
 .dark-blue {
-  background-color: rgb(1, 24, 128);
+  background-color:var(--primary-color-darkBlue);
   color: white;
 }
 .yellow {
-  background-color: rgb(255, 201, 75);
+  background-color:var(--primary-color-yellow);
 }
 .img-deco-square {
   width: 300px;
@@ -86,18 +85,18 @@ body {
   height: 300px;
 }
 .red {
-  background-color: rgb(242, 48, 48);
+  background-color:var(--primary-color-red);
 }
 .purple {
-  background-color: rgb(87, 37, 203);
+  background-color:var(--primary-color-purple);
   color: white;
 }
 
 /* style challenge page */
 /* style challenge page */
 .challenge-main {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   grid-gap: 100px;
 }
