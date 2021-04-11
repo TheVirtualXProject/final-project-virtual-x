@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Lato:wght@100;300&family=Nanum+Gothic&family=New+Tegomin&family=Open+Sans+Condensed:wght@300&family=Poiret+One&family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+/* font-family: 'Gugi', cursive;
+font-family: 'Lato', sans-serif; */
 
 /* ----------header style--------- */
 /* ----------header style--------- */
@@ -19,7 +21,7 @@
   margin: 0;
 }
 
-li a {
+li.nav-list a {
   display: block;
   color: white;
   text-align: center;
@@ -27,27 +29,22 @@ li a {
   text-decoration: none;
 }
 li a:hover:not(.active) {
-  background-color: var(--header-text);
+  background-color: var(--primary-color-darkBlue);
 }
 li a.active {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-lightBlue);
 }
 li.right {
   float: right;
 }
 
-/* rgb(30,213,202) 
- rgb(1,24,128)
- rgb(255,201,75) 
- rgb(242,48,48)
-  rgb(87,37,203) */
 .header-title {
   text-align: center;
-  padding: 75px 0 0 0;
+  padding: 80px;
   font-family: var(--header-font);
   font-weight: normal;
   font-size: 4em;
-  color: rgb(30, 213, 202);
+  color: var(--primary-color-lightBlue);
 }
 
 @media screen and (max-width: 600px) {
@@ -66,6 +63,7 @@ li.right {
   flex-direction: column;
   margin: 25.5px;
 }
+
 .activity-card h2 {
   text-align: center;
 }
@@ -77,12 +75,35 @@ li.right {
 .current-challenges-list {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  text-align: left;
+  /* border: 2px solid red; */
+  padding: 0 0 50px 50px;
+}
+.popular-challenges-list li,
+.current-challenges-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.popular-challenges {
+  background-color: var(--primary-color-darkBlue);
+  opacity: 0.8;
+  color: white;
+}
+.popular-challenges h2 {
+  background-color: var(--primary-color-lightBlue);
+  height: 3em;
   padding: 20px;
 }
-
+.current-challenges h2 {
+  padding: 20px;
+}
+.current-challenges {
+  background-color: var(--primary-color-lightBlue);
+  opacity: 0.8;
+  /* background-image: url(https://images.unsplash.com/photo-1525378792388-21b8f28ee57d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80); */
+}
 .add-challenge-button {
-  text-align: center;
+  width: 150px;
   cursor: pointer;
 }
 ._footer {
