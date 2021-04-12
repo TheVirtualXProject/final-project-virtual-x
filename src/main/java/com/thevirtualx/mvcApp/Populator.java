@@ -4,10 +4,11 @@ import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Challenge;
 import com.thevirtualx.mvcApp.Entity.Comment;
 import com.thevirtualx.mvcApp.Storage.*;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Populator {
+public class Populator implements CommandLineRunner {
 
     private AccountStorage accountStorage;
     private ChallengeStorage challengeStorage;
@@ -38,8 +39,9 @@ public class Populator {
                 "Eating is overrated, be a plant and soak up some sunshine!",
                 "https://www.thestatesman.com/wp-content/uploads/2017/12/WALKING00.jpg", 4, 10,
                 "Walk one mile every day this week.", "7 days", "everyone", true);
-
+        challengeStorage.addChallenge(mileWalk);
         Comment mileCom1 = new Comment("I don't walk, I lift weights.");
+
 //        how do comments know where to go and who they belong to at the same time
     }
 
