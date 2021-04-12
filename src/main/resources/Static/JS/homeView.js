@@ -16,6 +16,7 @@ let lastLargePicture = "";
 let colorCounter = 0;
 let pictureCounter = 0;
 
+
 function createChallengeCard(challenge) {
     let challengeDiv = document.createElement("div");
     challengeDiv.classList.add("activity-card");
@@ -121,31 +122,32 @@ let something = {
 
 };
 
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
-createChallengeCard(something);
+async function checkForChallenges() {
+    let challengeJson = await fetch("http://localhost:8080/api/challenges",{
+        method: "GET",
+    });
+    console.log(challengeJson);
+
+    return challengeJson;
+}
+
+async function processJsonValues() {
+    let challengeJson =  await checkForChallenges();
+    //code for games and chat rooms goes here
+    let index = 0;
+    while(checkIndexToLength(challengeJson, index)) {
+    // add the others here so that the generation spreads them out on the page by 3
+        if(checkIndexToLength(challengeJson, index)) {
+            createChallengeCard(challengeJson[index]);
+        }
+    }
+
+}
+
+function checkIndexToLength(arr, index) {
+    return arr.length < index;
+}
+
+
+
+
