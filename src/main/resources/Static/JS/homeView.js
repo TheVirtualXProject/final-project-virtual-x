@@ -65,7 +65,7 @@ function chooseCardColor(challengeCard) {
 function checkForPictureAdd() {
     let pictureCardDiv = document.createElement("div");
     pictureCardDiv.classList.add("activity-card");
-    if(pictureCounter === 3) {
+    if(pictureCounter === 2) {
         let chosenPicture = chooseRandomPicture(smallPictures);
         while(chosenPicture === lastSmallPicture) {
             chosenPicture = chooseRandomPicture(smallPictures);
@@ -81,7 +81,7 @@ function checkForPictureAdd() {
 
 
     }
-    else if(pictureCounter === 4) {
+    else if(pictureCounter === 3) {
         let chosenPicture = chooseRandomPicture(largePictures);
         while(chosenPicture === lastLargePicture) {
             chosenPicture = chooseRandomPicture(largePictures);
@@ -95,7 +95,7 @@ function checkForPictureAdd() {
         pictureCardDiv.appendChild(img);
         main.appendChild(pictureCardDiv);
     }
-    else if(pictureCounter === 5) {
+    else if(pictureCounter === 4) {
         pictureCounter = 0;
     }
     else {
@@ -108,3 +108,44 @@ function chooseRandomPicture(pictureArray) {
     return pictureArray[index];
 
 }
+
+
+let something = {
+    account: {
+        realName: "BOB"
+
+    },
+    maxPlayers: 5,
+    joinedPlayers: 1,
+    description: "SALKDJASLKDLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+
+};
+
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
+createChallengeCard(something);
