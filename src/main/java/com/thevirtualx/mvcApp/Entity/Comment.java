@@ -1,10 +1,21 @@
 package com.thevirtualx.mvcApp.Entity;
+import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Embeddable
 public class Comment {
+//account
+
     private String text;
+
 
     public Comment(String text) {
         this.text = text;
+    }
+
+    public Comment() {
+
     }
 
     public String getText() {
@@ -17,4 +28,6 @@ public class Comment {
                 "text='" + text + '\'' +
                 '}';
     }
+
+
 }

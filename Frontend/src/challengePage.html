@@ -26,42 +26,73 @@
     </header>
 
     <main class="_main">
-      <section class="challenge-main">
-        <div class="popular-challenges">
-          <h2>Popular Challenges</h2>
-          <ol class="popular-challenges-list">
-            <li><a href="singleChallenge.html">A Mile A Day</a></li>
-            <li>Make Salad For Lunch</li>
-            <li>One Minute Push-Up</li>
-            <li>Popular Challenge four</li>
-            <li>Popular Challenge five</li>
-            <li>Popular Challenge six</li>
-            <li>Popular Challenge seven</li>
-            <li>Popular Challenge eight</li>
-            <li>Popular Challenge night</li>
-            <li>Popular Challenge ten</li>
-          </ol>
-        </div>
-        <div class="current-challenges">
-          <img src="./img/challenge-view-main-image2.jpg" alt="Ride bikes">
-          <h2>Current Challenges</h2>
-          <ol class="current-challenges-list">
-            <li><a href="singleChallenge.html">A Mile A Day</a></li>
-            <li>One Minute Push-Up</li>
-            <li>Eat A Whole Pizza</li>
-            <li>Current Challenge four</li>
-            <li>Current Challenge five</li>
-            <li>Current Challenge six</li>
-            <li>Current Challenge seven</li>
-            <li>Current Challenge eight</li>
-            <li>Current Challenge night</li>
-            <li>Current Challenge ten</li>
-          </ol>
-        </div>
-        <button class="add-challenge-button">Add New Challenges</button>
-     </section>
-  </main>
-  <footer class="_footer">&copy;2021 The Virtual X Team</footer>
+      <div class="challenge-main">
+
+        <section class="add-challenge-section">
+          <!-- Trigger/Open The Modal -->
+          <button class="add-challenge-button">Add New Challenge</button>
+          <!-- The Modal -->
+          <div class="modal-add-challenge">
+            <!-- Modal content -->
+            <div class="modal-challenge-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add New Challenge</h2>
+              </div>
+              <form class="add-challenge-form" action="">
+                <div class="form">
+                  <input type="text" placeholder="Challenge ImageUrl" required>
+                  <input type="text" placeholder="Challenge Name" required>
+                  <input type="text" placeholder="Host Name" required>
+                  <input type="text" placeholder="Challenge Capacity" required>
+                  <input type="text" placeholder="Challenge Duration" required>
+                  <textarea placeholder="Challenge Description" rows="4" cols="50" required>
+                  </textarea>
+                  <button class="submit-button" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="challenge-section">
+          <div class="popular-challenges">
+            <h2>Popular Challenges</h2>
+            <ol class="popular-challenges-list">
+              <li><a href="singleChallenge.html">A Mile A Day</a></li>
+              <li>Make Salad For Lunch</li>
+              <li>One Minute Push-Up</li>
+              <li>Popular Challenge four</li>
+              <li>Popular Challenge five</li>
+              <li>Popular Challenge six</li>
+              <li>Popular Challenge seven</li>
+              <li>Popular Challenge eight</li>
+              <li>Popular Challenge night</li>
+              <li>Popular Challenge ten</li>
+            </ol>
+          </div>
+          <div class="current-challenges">
+            <img src="./img/challenge-view-main-image2.jpg" alt="Ride bikes">
+            <h2>Current Challenges</h2>
+            <ol class="current-challenges-list">
+              <li><a href="singleChallenge.html">A Mile A Day</a></li>
+              <li>One Minute Push-Up</li>
+              <li>Eat A Whole Pizza</li>
+              <li>Current Challenge four</li>
+              <li>Current Challenge five</li>
+              <li>Current Challenge six</li>
+              <li>Current Challenge seven</li>
+              <li>Current Challenge eight</li>
+              <li>Current Challenge night</li>
+              <li>Current Challenge ten</li>
+            </ol>
+          </div>
+        </section>
+
+
+      </div>
+    </main>
+    <footer class="_footer">&copy;2021 The Virtual X Team</footer>
   </div>
 </body>
 

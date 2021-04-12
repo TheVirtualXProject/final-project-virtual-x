@@ -1,7 +1,7 @@
 package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.Account;
-import com.thevirtualx.mvcApp.Service.AccountStorage;
+import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -43,7 +43,7 @@ public class SecurityController {
     @PostMapping("/create-account")
     public String createAccount(String username, String password, String realName) {
         Account account = new Account(username, password, realName, 0, null, true, "USER");
-        accountStorage.saveAccount(account);
+        accountStorage.addAccount(account);
         //TODO eventually have this return a success page
         return "redirect:/login";
     }

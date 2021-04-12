@@ -94,7 +94,7 @@ body {
 
 /* style challenge page */
 /* style challenge page */
-.challenge-main {
+.challenge-section {
   /* border: 2px solid black; */
   display: grid;
   grid-template-columns: 1fr 2fr;

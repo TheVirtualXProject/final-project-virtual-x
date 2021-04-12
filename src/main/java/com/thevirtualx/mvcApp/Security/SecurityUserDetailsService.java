@@ -1,8 +1,7 @@
 package com.thevirtualx.mvcApp.Security;
 
 import com.thevirtualx.mvcApp.Entity.Account;
-import com.thevirtualx.mvcApp.Service.AccountRepo;
-import com.thevirtualx.mvcApp.Service.AccountStorage;
+import com.thevirtualx.mvcApp.Repo.AccountRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,9 +12,9 @@ import java.util.Optional;
 @Service
 public class SecurityUserDetailsService implements UserDetailsService {
 
-    private AccountRepo accountRepo;
+    private AccountRepository accountRepo;
 
-    public SecurityUserDetailsService(AccountRepo accountRepo) {
+    public SecurityUserDetailsService(AccountRepository accountRepo) {
         this.accountRepo = accountRepo;
     }
     @Override
