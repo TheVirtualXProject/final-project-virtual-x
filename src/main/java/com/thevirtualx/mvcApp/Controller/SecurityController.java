@@ -57,9 +57,4 @@ public class SecurityController {
         return false;
     }
 
-
-    @GetMapping("/")
-    public String quickTest() {
-        return "homeView";
-    }
 }

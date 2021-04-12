@@ -65,7 +65,7 @@ function chooseCardColor(challengeCard) {
 function checkForPictureAdd() {
     let pictureCardDiv = document.createElement("div");
     pictureCardDiv.classList.add("activity-card");
-    if(pictureCounter === 2) {
+    if(pictureCounter === 2 || pictureCounter === 4) {
         let chosenPicture = chooseRandomPicture(smallPictures);
         while(chosenPicture === lastSmallPicture) {
             chosenPicture = chooseRandomPicture(smallPictures);
@@ -81,7 +81,7 @@ function checkForPictureAdd() {
 
 
     }
-    else if(pictureCounter === 3) {
+    else if(pictureCounter === 3 || pictureCounter === 9) {
         let chosenPicture = chooseRandomPicture(largePictures);
         while(chosenPicture === lastLargePicture) {
             chosenPicture = chooseRandomPicture(largePictures);
@@ -95,8 +95,8 @@ function checkForPictureAdd() {
         pictureCardDiv.appendChild(img);
         main.appendChild(pictureCardDiv);
     }
-    else if(pictureCounter === 4) {
-        pictureCounter = 0;
+    else if(pictureCounter === 10) {
+        pictureCounter = 1;
     }
     else {
         pictureCounter++;
