@@ -2,23 +2,51 @@ plugins {
 	id 'org.springframework.boot' version '2.4.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'pl.allegro.tech.build.axion-release' version '1.12.0'
+	id 'com.palantir.docker' version '0.25.0'
+	id 'com.palantir.docker-run' version '0.25.0'
 }
 
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+jar {
+	enabled=true;
+	manifest {
+		attributes 'Main-Class': 'com.thevirtualx.mvcApp.AppApplication'
+	}
+}
 group = 'com.thevirtualx'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
+String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'lynxbob'
+String imageName = "${dockerHubUsernameProperty}/virtualx"
+
+docker {
+	name imageName
+	files "build/libs/${bootJar.archiveFileName.get()}"
+	buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
+}
+
+dockerRun {
+	name project.name
+	image imageName
+	ports '80:8080'
+	clean true
+}
+
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'

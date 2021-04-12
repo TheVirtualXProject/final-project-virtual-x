@@ -11,7 +11,7 @@ public class Challenge {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     @ManyToOne
     private Account account;
     @ElementCollection
@@ -46,7 +46,7 @@ public class Challenge {
         this.isPublic = isPublic;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
     public String getTitle() {

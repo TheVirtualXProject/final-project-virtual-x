@@ -7,9 +7,7 @@ import javax.persistence.Id;
 @Embeddable
 public class Friend {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+
 
     private String account;
 
@@ -20,4 +18,8 @@ public class Friend {
     protected Friend(){
 
     }
+
+ 
+
+
 }

@@ -10,7 +10,7 @@ public class Account {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     @ElementCollection
     private Collection<Comment> comments;
     @ElementCollection
@@ -22,13 +22,14 @@ public class Account {
     private String realName;
     private int contributionPoints;
     private String profilePicture;
+    private String roles;
     private boolean statusServerSide;
 
     protected Account(){
 
     }
 
-    public Account(String username, String password, String realName, int contributionPoints, String profilePicture) {
+    public Account(String username, String password, String realName, int contributionPoints, String profilePicture, boolean statusServerSide, String roles) {
         this.username = username;
         this.password = password;
         this.realName = realName;
@@ -36,7 +37,11 @@ public class Account {
         this.comments = new ArrayList<>();
         this.profilePicture = profilePicture;
         this.friends = new ArrayList<>();
+        this.statusServerSide = statusServerSide;
+        this.roles = roles;
+
     }
+
 
     public String getUsername() {
         return username;
@@ -58,6 +63,14 @@ public class Account {
         return comments;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
     public String getProfilePicture() {
         return profilePicture;
     }
@@ -70,19 +83,6 @@ public class Account {
         return friends;
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", realName='" + realName + '\'' +
-                ", contributionPoints=" + contributionPoints +
-                ", comments=" + comments +
-                ", profilePicture='" + profilePicture + '\'' +
-                ", statusServerSide=" + statusServerSide +
-                ", friends=" + friends +
-                '}';
-    }
 }
 //Username
 //Password

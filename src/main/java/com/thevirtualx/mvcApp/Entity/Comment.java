@@ -6,9 +6,7 @@ import javax.persistence.Id;
 @Embeddable
 public class Comment {
 //account
-    @Id
-    @GeneratedValue
-    private Long id;
+
     private String text;
 
 
@@ -30,4 +28,6 @@ public class Comment {
                 "text='" + text + '\'' +
                 '}';
     }
+
+
 }
