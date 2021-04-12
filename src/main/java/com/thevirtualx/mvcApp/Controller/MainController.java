@@ -1,8 +1,7 @@
 package com.thevirtualx.mvcApp.Controller;
 
 
-import com.thevirtualx.mvcApp.Service.AccountRepository;
-import com.thevirtualx.mvcApp.Service.AccountStorage;
+import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import org.springframework.stereotype.Controller;
 
 @Controller

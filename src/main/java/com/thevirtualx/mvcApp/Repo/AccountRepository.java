@@ -1,4 +1,4 @@
-package com.thevirtualx.mvcApp.Service;
+package com.thevirtualx.mvcApp.Repo;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import org.springframework.data.repository.CrudRepository;

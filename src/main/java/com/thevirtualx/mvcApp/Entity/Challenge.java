@@ -18,6 +18,7 @@ public class Challenge {
     private int popularity;
     private Collection<Comment> comments;
     private String challenges;
+    //account for contibution points
 
     public Challenge(Account account, int rating, int popularity, String challenges) {
         this.account = account;

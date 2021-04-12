@@ -6,7 +6,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Comment {
-
+//account
     @Id
     @GeneratedValue
     private Long id;
