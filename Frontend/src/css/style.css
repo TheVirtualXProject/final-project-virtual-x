@@ -71,6 +71,74 @@ li.right {
 /* challenges view style */
 /* challenges view style */
 /* challenges view style */
+
+.challenge-main {
+  display: flex;
+  flex-direction: column;
+}
+.add-challenge-section {
+  /* border: 2px solid red; */
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+.add-challenge-button {
+  width: 10em;
+  height: 2em;
+  cursor: pointer;
+  background-color: var(--secondary-color-orange);
+  border: none;
+}
+/* The Modal (background) */
+.modal-add-challenge {
+  /* display: none; */
+  /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-challenge-content {
+  background-color: var(--primary-color-purple);
+  opacity: 0.8;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 30%; /* Could be more or less, depending on screen size */
+  color: white;
+  padding: 50px;
+}
+.modal-header h2 {
+  margin: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 2px;
+  margin: 2px;
+}
+
+/* The Close Button */
+.close {
+  color: var(--primary-color-lightBlue);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--primary-color-darkBlue);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .popular-challenges-list,
 .current-challenges-list {
   display: flex;
@@ -100,23 +168,17 @@ li.right {
 .current-challenges {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
-  /* background-image: url(https://images.unsplash.com/photo-1525378792388-21b8f28ee57d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80); */
-}
-.add-challenge-button {
-  width: 150px;
-  cursor: pointer;
 }
 
 /* single challenge page style*/
-.single-challenge-info{
+.single-challenge-info {
   text-align: left;
   margin-left: 30px;
 }
 
-._singleChallengeComment h2{
-  margin-top:50px;
+._singleChallengeComment h2 {
+  margin-top: 50px;
   margin-bottom: 20px;
-
 }
 ._footer {
   text-align: center;
