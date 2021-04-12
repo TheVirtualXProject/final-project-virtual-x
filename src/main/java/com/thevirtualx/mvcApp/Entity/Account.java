@@ -1,28 +1,39 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Entity
 public class Account {
+    @Id
+    @GeneratedValue
+    private long id;
     private String username;
     private String password;
     private String realName;
     private int contributionPoints;
-    private Collection<Comment> comments;
+//    private Collection<Comment> comments;
     private String profilePicture;
+    private String roles;
     private boolean statusServerSide;
-    private Collection<Long> friends;
+//    private Collection<Long> friends;
 
-    public Account(String username, String password, String realName, int contributionPoints, String profilePicture, boolean statusServerSide) {
+    public Account(String username, String password, String realName, int contributionPoints, String profilePicture, boolean statusServerSide, String roles) {
         this.username = username;
         this.password = password;
         this.realName = realName;
         this.contributionPoints = contributionPoints;
-        this.comments = new ArrayList<>();
+//        this.comments = new ArrayList<>();
         this.profilePicture = profilePicture;
         this.statusServerSide = statusServerSide;
-        this.friends = new ArrayList<>();
+        this.roles = roles;
+//        this.friends = new ArrayList<>();
     }
+
+    protected Account() {}
 
     public String getUsername() {
         return username;
@@ -40,8 +51,16 @@ public class Account {
         return contributionPoints;
     }
 
-    public Collection<Comment> getComments() {
-        return comments;
+//    public Collection<Comment> getComments() {
+//        return comments;
+//    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getRoles() {
+        return roles;
     }
 
     public String getProfilePicture() {
@@ -52,23 +71,10 @@ public class Account {
         return statusServerSide;
     }
 
-    public Collection<Long> getFriends() {
-        return friends;
-    }
+//    public Collection<Long> getFriends() {
+//        return friends;
+//    }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", realName='" + realName + '\'' +
-                ", contributionPoints=" + contributionPoints +
-                ", comments=" + comments +
-                ", profilePicture='" + profilePicture + '\'' +
-                ", statusServerSide=" + statusServerSide +
-                ", friends=" + friends +
-                '}';
-    }
 }
 //Username
 //Password
