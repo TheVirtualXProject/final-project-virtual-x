@@ -28,14 +28,13 @@ public class Account {
 
     }
 
-    public Account(String username, String password, String realName, int contributionPoints, String profilePicture, boolean statusServerSide) {
+    public Account(String username, String password, String realName, int contributionPoints, String profilePicture) {
         this.username = username;
         this.password = password;
         this.realName = realName;
         this.contributionPoints = contributionPoints;
         this.comments = new ArrayList<>();
         this.profilePicture = profilePicture;
-        this.statusServerSide = statusServerSide;
         this.friends = new ArrayList<>();
     }
 

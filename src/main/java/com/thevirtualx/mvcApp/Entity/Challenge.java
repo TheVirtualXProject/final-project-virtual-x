@@ -3,6 +3,7 @@ package com.thevirtualx.mvcApp.Entity;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -30,15 +31,15 @@ public class Challenge {
     }
 
 
-    public Challenge(Long id, String title, Account account, String description, String image, int rating, int popularity, Collection<Comment> comments, String challenges, String duration, String size, boolean isPublic) {
-        this.id = id;
+    public Challenge( String title, Account account, String description, String image, int rating, int popularity,
+                       String challenges, String duration, String size, boolean isPublic) {
         this.title = title;
         this.account = account;
         this.description = description;
         this.image = image;
         this.rating = rating;
         this.popularity = popularity;
-        this.comments = comments;
+        this.comments = new ArrayList<>();
         this.challenges = challenges;
         this.duration = duration;
         this.size = size;
@@ -48,97 +49,64 @@ public class Challenge {
     public Long getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Account getAccount() {
         return account;
     }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getImage() {
         return image;
     }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public int getRating() {
         return rating;
     }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
     public int getPopularity() {
         return popularity;
     }
-
-    public void setPopularity(int popularity) {
-        this.popularity = popularity;
-    }
-
     public Collection<Comment> getComments() {
         return comments;
     }
-
-    public void setComments(Collection<Comment> comments) {
-        this.comments = comments;
-    }
-
     public String getChallenges() {
         return challenges;
     }
-
-    public void setChallenges(String challenges) {
-        this.challenges = challenges;
-    }
-
     public String getDuration() {
         return duration;
     }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
     public String getSize() {
         return size;
     }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
     public Boolean getPublic() {
         return isPublic;
     }
 
+    public void addComment(Comment commentToAdd) {
+        comments.add(commentToAdd);
+    }
+
     public void setPublic(boolean aPublic) {
         isPublic = aPublic;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+    public void setChallenges(String challenges) {
+        this.challenges = challenges;
+    }
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+    public void setSize(String size) {
+        this.size = size;
     }
 
 
