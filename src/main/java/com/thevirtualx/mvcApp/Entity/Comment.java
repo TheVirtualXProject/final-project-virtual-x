@@ -11,6 +11,7 @@ public class Comment {
     private Long id;
     private String text;
 
+
     public Comment(String text) {
         this.text = text;
     }

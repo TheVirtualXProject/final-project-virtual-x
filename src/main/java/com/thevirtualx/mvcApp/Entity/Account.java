@@ -67,7 +67,7 @@ public class Account {
         return statusServerSide;
     }
 
-    public Collection<Long> getFriends() {
+    public Collection<String> getFriends() {
         return friends;
     }
 
