@@ -8,7 +8,7 @@ public class ChallengeController {
 
     private ChallengeStorage challengeStorage;
 
-    public ChatroomController(ChallengeStorage challengeStorage){
+    public ChallengeController (ChallengeStorage challengeStorage){
         this.challengeStorage = challengeStorage;
     }
 }
