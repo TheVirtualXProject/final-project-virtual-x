@@ -1,10 +1,10 @@
-package com.thevirtualx.mvcApp.Service;
+package com.thevirtualx.mvcApp.Repo;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface AccountRepo extends CrudRepository<Account, Long> {
+public interface AccountRepository extends CrudRepository<Account, Long> {
     Optional<Account> findByUsername(String username);
 }
