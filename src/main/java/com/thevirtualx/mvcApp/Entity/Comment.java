@@ -1,10 +1,9 @@
 package com.thevirtualx.mvcApp.Entity;
-
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+@Embeddable
 public class Comment {
 //account
     @Id

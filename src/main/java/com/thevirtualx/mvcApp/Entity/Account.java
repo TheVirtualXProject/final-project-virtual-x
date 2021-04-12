@@ -1,8 +1,6 @@
 package com.thevirtualx.mvcApp.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -13,15 +11,18 @@ public class Account {
     @Id
     @GeneratedValue
     private Long id;
-
+    @ElementCollection
+    private Collection<Comment> comments;
+    @ElementCollection
+    private Collection<String> friends;
+    @OneToMany(mappedBy="account")
+    private Collection<Challenge> challenges;
     private String username;
     private String password;
     private String realName;
     private int contributionPoints;
-    private Collection<Comment> comments; // add relationship
     private String profilePicture;
     private boolean statusServerSide;
-    private Collection<Long> friends;
 
     protected Account(){
 
