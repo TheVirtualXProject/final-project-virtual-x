@@ -1,17 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Virtual-X</title>
-</head>
-<body>
-<div class="container">
-    <form action="/create-account" method="post" class="create-account-form">
-        <input type="text" placeholder="real name" name="realName" required class="real-name-input">
-        <input type="text" placeholder="username" name="username" required class="username-input">
-        <input type="password" placeholder="password" name="password" required class="password-input">
-        <button class="create-account-button" type="submit">Create Account</button>
-    </form>
-</div>
-</body>
+    <link rel="stylesheet" type="text/css" href="../Static/CSS/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="_logins">
+          <div class="_signUp">
+            <a href="/create-account"><h4>Sign Up</h4></a>
+          </div>
+          <div class="_signIn">
+            <a href="/login"><h4>Sign In</h4></a>
+          </div>
+        </div>
+      </div>
+      <div class="hold-thymeleaf">
+        <span class="_alertMessage" th:text="${error}">
+          Alert!!!!!! Wrong password!!!!!!!!</span
+        >
+      </div>
+      <div class="main">
+        <div class="_mainContent">
+          <div class="_loginHeading">
+            <h2 class="form-signin-heading">Create Account</h2>
+          </div>
+          <div class="_loginForm">
+            <form class="form-signin" method="post" action="/login">
+              <div class="_password">
+                <!-- <label for="password" class="sr-only">Password</label> -->
+                <br />
+                <input
+                  type="text"
+                  id="realName"
+                  name="realName"
+                  class="form-control"
+                  placeholder="Full Name"
+                  required=""
+                />
+              </div>
+              <div class="_username">
+                <br />
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-control"
+                  placeholder="Username"
+                  required=""
+                  autofocus=""
+                />
+              </div>
+              <div class="_password">
+                <br />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required=""
+                />
+              </div>
+              <div class="_signInButton">
+                <input
+                  name="_csrf"
+                  type="hidden"
+                  value="6bbf9b99-cb92-47bc-9f82-710f648e7219"
+                />
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
 </html>
