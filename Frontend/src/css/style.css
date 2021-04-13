@@ -63,9 +63,21 @@ li.right {
   flex-direction: column;
   margin: 25.5px;
 }
-
-.activity-card h2 {
-  text-align: center;
+.light-blue,
+.dark-blue,
+.yellow,
+.red,
+.purple {
+  padding: 25px;
+}
+.join-button {
+  margin-top: 15px;
+  width: 10em;
+  align-self: center;
+}
+.activity-card p {
+  padding: 5px;
+  text-align: left;
 }
 
 /* challenges view style */
@@ -92,7 +104,7 @@ li.right {
 /* The Modal (background) */
 .modal-add-challenge,
 .modal-add-chatroom {
-  /* display: none;  */
+  display: none;
   /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -181,6 +193,8 @@ textarea {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
+
+/* single challenge page style*/
 .single-challenge-info {
   text-align: left;
   margin-left: 30px;
@@ -190,6 +204,8 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
+
+/*game page style*/
 .popular-games-list,
 .current-games-list {
   display: flex;
