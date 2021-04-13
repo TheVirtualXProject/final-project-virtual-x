@@ -106,3 +106,18 @@ body {
   width: 800px;
   display: flex;
 }
+
+/*style game page*/
+.game-main{
+  /* border: 2px solid black; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 100px;
+}
+
+/*style single game page*/
+._singleGameMain {
+  width: 800px;
+  height: 400px;
+  display: flex;
+}
