@@ -2,6 +2,7 @@ package com.thevirtualx.mvcApp;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Challenge;
+import com.thevirtualx.mvcApp.Entity.Comment;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
 import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
@@ -63,7 +64,7 @@ public class Populator implements CommandLineRunner {
 
 //        Comment mileCom1 = new Comment("I don't walk, I lift weights.");
 //        mileWalk.addComment(mileCom1);
-//        challengeStorage.addChallenge(mileWalk);
+        challengeStorage.addChallenge(mileWalk);
 
         Challenge flowerHunt = new Challenge("Lunch hour flower hunt", weiwei,
                 "Spring is finally here!!! Have you told yourself “Outside is so nice, I want to go outside today.” But as time goes by, you never make it outside.\n" +
@@ -74,17 +75,19 @@ public class Populator implements CommandLineRunner {
 
 //        Comment gigitygigity = new Comment("oh right");
 //        flowerHunt.addComment(gigitygigity);
-//        challengeStorage.addChallenge(flowerHunt);
+        challengeStorage.addChallenge(flowerHunt);
 
         Challenge drinkWater = new Challenge("Water Bottle Challenge!", bishnu,
                 "Drink a bottle of water in under 1 minute!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
                 "Drink a bottle of water in 1 minute.", "1 min", 1,5, true);
+        challengeStorage.addChallenge(drinkWater);
 
         Challenge floorIsLava = new Challenge("The Floor is Lava!", bishnu,
                 "Lava has breached the main floor! Jump from desk to desk to stay alive!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
                 "Floor is lava, Jumping", "30 min", 2,6, true);
+        challengeStorage.addChallenge(floorIsLava);
 
 //        how do comments know where to go and who they belong to at the same time
     }
