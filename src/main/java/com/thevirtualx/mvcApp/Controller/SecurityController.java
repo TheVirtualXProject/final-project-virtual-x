@@ -2,6 +2,8 @@ package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -49,6 +51,7 @@ public class SecurityController {
         //TODO eventually have this return a success page
         return "redirect:/login";
     }
+
 
 
     public boolean checkForLogin() {
