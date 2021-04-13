@@ -13,4 +13,7 @@ public class ChallengeStorage {
     public void addChallenge(Challenge challengeToAdd) {challengeRepo.save(challengeToAdd);}
     public Challenge retrieveChallengeById(Long id) {return challengeRepo.findById(id).get();}
     public void deleteChallengeById(Long id) {challengeRepo.deleteById(id);}
+    public Iterable<Challenge> getAllChallenges() {
+        return challengeRepo.findAll();
+    }
 }
