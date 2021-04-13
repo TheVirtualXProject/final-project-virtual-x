@@ -18,6 +18,9 @@ let pictureCounter = 0;
 
 
 function createChallengeCard(challenge) {
+    let title = document.createElement("h2");
+    title.classList.add("title");
+    title.innerText = challenge.title;
     let challengeDiv = document.createElement("div");
     challengeDiv.classList.add("activity-card");
     challengeDiv = chooseCardColor(challengeDiv);
@@ -29,7 +32,7 @@ function createChallengeCard(challenge) {
     size.innerText = `Size: ${challenge.joinedPlayers}/${challenge.maxPlayers}`;
     let duration = document.createElement("h4");
     duration.classList.add("duration");
-    duration.innerText = `Duration: Sample Duration`;
+    duration.innerText = `Duration: ${challenge.duration}`;
     let description = document.createElement("p");
     description.classList.add("description");
     description.innerText = challenge.description;
@@ -38,6 +41,7 @@ function createChallengeCard(challenge) {
     join.innerText = "Join";
     //remember to add event listeners to these buttons at this part later
 
+    challengeDiv.appendChild(title);
     challengeDiv.appendChild(host);
     challengeDiv.appendChild(size);
     challengeDiv.appendChild(duration);
@@ -111,22 +115,11 @@ function chooseRandomPicture(pictureArray) {
 }
 
 
-let something = {
-    account: {
-        realName: "BOB"
-
-    },
-    maxPlayers: 5,
-    joinedPlayers: 1,
-    description: "SALKDJASLKDLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
-
-};
 
 async function checkForChallenges() {
     let challengeJson = await fetch("http://localhost:8080/api/challenges",{
         method: "GET",
-    });
-    console.log(challengeJson);
+    }).then(response => response.json());
 
     return challengeJson;
 }
@@ -140,14 +133,15 @@ async function processJsonValues() {
         if(checkIndexToLength(challengeJson, index)) {
             createChallengeCard(challengeJson[index]);
         }
+        index++;
     }
 
 }
 
 function checkIndexToLength(arr, index) {
-    return arr.length < index;
+    return arr.length > index;
 }
 
-
+processJsonValues();
 
 
