@@ -181,8 +181,6 @@ textarea {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-
-/* single challenge page style----------------------------*/
 .single-challenge-info {
   text-align: left;
   margin-left: 30px;
@@ -192,8 +190,6 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-
-/*game page style------------------------------*/
 .popular-games-list,
 .current-games-list {
   display: flex;
@@ -215,7 +211,6 @@ textarea {
   background-color: var(--primary-color-yellow);
   height: 3em;
   padding: 20px;
-  color: black;
 }
 .current-games h2 {
   padding: 20px;
@@ -240,7 +235,36 @@ textarea {
 ._singleGameComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
-  border: red solid 2px;
+}
+._singleChallengeCommentFormSection {
+  margin: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+._singleChallengeCommentForm {
+  background-color: brown;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+._singleChallengeButton {
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 60px;
+}
+._singleChallengeButton:hover {
+  background-color: cadetblue;
+}
+._singleChallengeFormInputs {
+  height: 30px;
 }
 
 /* chatroom page style-----------------------*/
