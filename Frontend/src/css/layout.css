@@ -1,6 +1,4 @@
 /* ----------------Site layout ------------------ */
-/* ----------------Site layout ------------------ */
-/* ----------------Site layout ------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
 /* font-family: 'Gugi', cursive;
  */
@@ -38,12 +36,6 @@ body {
   grid-column: 1 / 7;
 }
 ._main {
-  /* grid-row: 2 / 6;
-  grid-column: 1 /7;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; */
-
   display: table;
   text-align: center;
   margin: auto;
@@ -92,8 +84,7 @@ body {
   color: white;
 }
 
-/* style challenge page */
-/* style challenge page */
+/* style challenge page -------------------*/
 .challenge-section {
   /* border: 2px solid black; */
   display: grid;
@@ -101,22 +92,34 @@ body {
   grid-gap: 100px;
 }
 
-/*single challenge page */
+/*single challenge page ---------------*/
 ._singleChallengeMain {
   width: 800px;
   display: flex;
 }
 
-/*style game page*/
-.game-main{
+/*style game page------------------------*/
+.game-main {
   /* border: 2px solid black; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 100px;
 }
 
-/*style single game page*/
+/*style single game page--------------------*/
 ._singleGameMain {
+  width: 800px;
+  height: 400px;
+  display: flex;
+}
+
+/*style chatroom page------------------*/
+.game-section {
+  border: 2px solid black;
+ 
+}
+/*style single chatroom page-------------------*/
+._singleChatroomMain {
   width: 800px;
   height: 400px;
   display: flex;
