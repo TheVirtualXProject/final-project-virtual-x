@@ -38,7 +38,6 @@ li.right {
   float: right;
 }
 
-
 .header-title {
   text-align: center;
   padding: 80px;
@@ -163,20 +162,19 @@ textarea {
 .current-challenges h2 {
   padding: 20px;
 }
-.current-challenges-list a{
+.current-challenges-list a {
   text-decoration: none;
   color: black;
 }
 
-.popular-challenges-list a{
+.popular-challenges-list a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 /* .current-challenges {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-
 
 /* single challenge page style*/
 .single-challenge-info {
@@ -188,7 +186,6 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-
 
 /*game page style*/
 
@@ -214,7 +211,6 @@ textarea {
   height: 3em;
   padding: 20px;
   /* color: black; */
-  
 }
 .current-games h2 {
   padding: 20px;
@@ -223,13 +219,13 @@ textarea {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-.current-games-list a{
+.current-games-list a {
   text-decoration: none;
   color: black;
 }
-.popular-games-list a{
+.popular-games-list a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 /* single game page style*/
 ._singleGameMain {
@@ -239,5 +235,34 @@ textarea {
 ._singleGameComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
-  border: red solid 2px;
+}
+._singleChallengeCommentFormSection {
+  margin: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+._singleChallengeCommentForm {
+  background-color: brown;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+._singleChallengeButton {
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 60px;
+}
+._singleChallengeButton:hover {
+  background-color: cadetblue;
+}
+._singleChallengeFormInputs {
+  height: 30px;
 }
