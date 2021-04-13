@@ -87,8 +87,14 @@ li.right {
   border: none;
 }
 /* The Modal (background) */
+<<<<<<< Updated upstream
 .modal-add-challenge {
   display: none;
+=======
+.modal-add-challenge,
+.modal-add-chatroom {
+  display: none; 
+>>>>>>> Stashed changes
   /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
