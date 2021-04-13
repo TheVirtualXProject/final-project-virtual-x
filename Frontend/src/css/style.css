@@ -38,7 +38,6 @@ li.right {
   float: right;
 }
 
-
 .header-title {
   text-align: center;
   padding: 80px;
@@ -64,9 +63,21 @@ li.right {
   flex-direction: column;
   margin: 25.5px;
 }
-
-.activity-card h2 {
-  text-align: center;
+.light-blue,
+.dark-blue,
+.yellow,
+.red,
+.purple {
+  padding: 25px;
+}
+.join-button {
+  margin-top: 15px;
+  width: 10em;
+  align-self: center;
+}
+.activity-card p {
+  padding: 5px;
+  text-align: left;
 }
 
 /* challenges view style */
@@ -87,14 +98,9 @@ li.right {
   border: none;
 }
 /* The Modal (background) */
-<<<<<<< Updated upstream
-.modal-add-challenge {
-  display: none;
-=======
 .modal-add-challenge,
 .modal-add-chatroom {
-  display: none; 
->>>>>>> Stashed changes
+  display: none;
   /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -169,20 +175,19 @@ textarea {
 .current-challenges h2 {
   padding: 20px;
 }
-.current-challenges-list a{
+.current-challenges-list a {
   text-decoration: none;
   color: black;
 }
 
-.popular-challenges-list a{
+.popular-challenges-list a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 /* .current-challenges {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-
 
 /* single challenge page style*/
 .single-challenge-info {
@@ -194,7 +199,6 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-
 
 /*game page style*/
 
@@ -220,7 +224,6 @@ textarea {
   height: 3em;
   padding: 20px;
   /* color: black; */
-  
 }
 .current-games h2 {
   padding: 20px;
@@ -229,13 +232,13 @@ textarea {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-.current-games-list a{
+.current-games-list a {
   text-decoration: none;
   color: black;
 }
-.popular-games-list a{
+.popular-games-list a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 /* single game page style*/
 ._singleGameMain {
