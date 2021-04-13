@@ -38,7 +38,6 @@ li.right {
   float: right;
 }
 
-
 .header-title {
   text-align: center;
   padding: 80px;
@@ -64,9 +63,21 @@ li.right {
   flex-direction: column;
   margin: 25.5px;
 }
-
-.activity-card h2 {
-  text-align: center;
+.light-blue,
+.dark-blue,
+.yellow,
+.red,
+.purple {
+  padding: 25px;
+}
+.join-button {
+  margin-top: 15px;
+  width: 10em;
+  align-self: center;
+}
+.activity-card p {
+  padding: 5px;
+  text-align: left;
 }
 
 /* challenges view style */
@@ -74,12 +85,16 @@ li.right {
   display: flex;
   flex-direction: column;
 }
-.add-challenge-section {
-  /* border: 2px solid red; */
-  align-self: flex-end;
+
+/* style add button and modal box for challenge page and chatroom page--------------*/
+.add-challenge-section,
+.add-chatroom-section {
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 10px;
 }
-.add-challenge-button {
+.add-challenge-button,
+.add-chatroom-button {
   width: 10em;
   height: 2em;
   cursor: pointer;
@@ -87,7 +102,8 @@ li.right {
   border: none;
 }
 /* The Modal (background) */
-.modal-add-challenge {
+.modal-add-challenge,
+.modal-add-chatroom {
   display: none;
   /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -102,12 +118,13 @@ li.right {
 }
 
 /* Modal Content/Box */
-.modal-challenge-content {
+.modal-challenge-content,
+.modal-chatroom-content {
   background-color: var(--primary-color-purple);
-  opacity: 0.8;
+  opacity: 0.94;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  width: 30%; /* Could be more or less, depending on screen size */
+  width: 25%; /* Could be more or less, depending on screen size */
   color: white;
   padding: 50px;
 }
@@ -163,20 +180,19 @@ textarea {
 .current-challenges h2 {
   padding: 20px;
 }
-.current-challenges-list a{
+.current-challenges-list a {
   text-decoration: none;
   color: black;
 }
 
-.popular-challenges-list a{
+.popular-challenges-list a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 /* .current-challenges {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-
 
 /* single challenge page style*/
 .single-challenge-info {
@@ -189,9 +205,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-
 /*game page style*/
-
 .popular-games-list,
 .current-games-list {
   display: flex;
@@ -205,16 +219,14 @@ textarea {
   font-size: 1.1em;
 }
 .popular-games {
-  background-color: var(--primary-color-purple);
+  background-color: var(--primary-color-red);
   opacity: 0.8;
   color: white;
 }
 .popular-games h2 {
-  background-color: var(--primary-color-red);
+  background-color: var(--primary-color-yellow);
   height: 3em;
   padding: 20px;
-  /* color: black; */
-  
 }
 .current-games h2 {
   padding: 20px;
@@ -223,15 +235,15 @@ textarea {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
 } */
-.current-games-list a{
+.current-games-list a {
   text-decoration: none;
   color: black;
 }
-.popular-games-list a{
+.popular-games-list a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
-/* single game page style*/
+/* single game page style----------------------------*/
 ._singleGameMain {
   border: black solid 2px;
 }
@@ -239,5 +251,58 @@ textarea {
 ._singleGameComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
-  border: red solid 2px;
+}
+._singleChallengeCommentFormSection {
+  margin: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+._singleChallengeCommentForm {
+  background-color: brown;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+._singleChallengeButton {
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 60px;
+}
+._singleChallengeButton:hover {
+  background-color: cadetblue;
+}
+._singleChallengeFormInputs {
+  height: 30px;
+}
+
+/* chatroom page style-----------------------*/
+.current-chatrooms-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 50px 50px;
+}
+.current-chatrooms-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.current-chatrooms h2 {
+  padding: 20px;
+}
+.current-chatrooms-list a {
+  text-decoration: none;
+  color: black;
+}
+
+/* single chatroom style*/
+._singleChatroomMain {
+  border: black solid 2px;
 }

@@ -59,7 +59,7 @@ public class Populator implements CommandLineRunner {
         Challenge mileWalk = new Challenge("Walk a mile during lunch!", connor,
                 "Eating is overrated, be a plant and soak up some sunshine!",
                 "https://www.thestatesman.com/wp-content/uploads/2017/12/WALKING00.jpg", 4, 10,
-                "Walk one mile every day this week.", "7 days", "everyone", true);
+                "Walk one mile every day this week.", "7 days", 1, 5,true);
 
 //        Comment mileCom1 = new Comment("I don't walk, I lift weights.");
 //        mileWalk.addComment(mileCom1);

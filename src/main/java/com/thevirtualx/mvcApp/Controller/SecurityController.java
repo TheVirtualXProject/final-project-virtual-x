@@ -2,6 +2,8 @@ package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -37,6 +39,8 @@ public class SecurityController {
 
     @GetMapping("/create-account")
     public String showCreateAccountPage() {
+        if(checkForLogin())
+            return "redirect:/";
         return "createAccount";
     }
 
@@ -49,6 +53,7 @@ public class SecurityController {
     }
 
 
+
     public boolean checkForLogin() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
@@ -56,4 +61,7 @@ public class SecurityController {
         }
         return false;
     }
+
+
+
 }
