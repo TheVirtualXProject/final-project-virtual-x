@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+/* font-family: 'Gugi', cursive;
+font-family: 'Lato', sans-serif; */
+
+/* ----------header style--------- */
+/* ----------header style--------- */
+/* ----------header style--------- */
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--secondary-color-orange);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-list {
+  float: left;
+  margin: 0;
+}
+
+li.nav-list a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: var(--primary-color-darkBlue);
+}
+li a.active {
+  background-color: var(--primary-color-lightBlue);
+}
+li.right {
+  float: right;
+}
+
+.header-title {
+  text-align: center;
+  padding: 80px;
+  font-family: var(--header-font);
+  font-weight: normal;
+  font-size: 4em;
+  color: var(--primary-color-lightBlue);
+}
+
+@media screen and (max-width: 600px) {
+  ul.navBar li.right,
+  ul.navBar li {
+    float: none;
+  }
+}
+
+/* ----------home view style--------- */
+/* ----------home view style--------- */
+/* ----------home view style--------- */
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  margin: 25.5px;
+}
+
+.activity-card h2 {
+  text-align: center;
+}
+
+/* challenges view style */
+/* challenges view style */
+/* challenges view style */
+.popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  padding: 0 0 50px 50px;
+}
+.popular-challenges-list li,
+.current-challenges-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.popular-challenges {
+  background-color: var(--primary-color-darkBlue);
+  opacity: 0.8;
+  color: white;
+}
+.popular-challenges h2 {
+  background-color: var(--primary-color-lightBlue);
+  height: 3em;
+  padding: 20px;
+}
+.current-challenges h2 {
+  padding: 20px;
+}
+.current-challenges {
+  background-color: var(--primary-color-lightBlue);
+  opacity: 0.8;
+  /* background-image: url(https://images.unsplash.com/photo-1525378792388-21b8f28ee57d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80); */
+}
+.add-challenge-button {
+  width: 150px;
+  cursor: pointer;
+}
+
+/* single challenge page style*/
+.single-challenge-info{
+  text-align: left;
+  margin-left: 30px;
+}
+
+._singleChallengeComment h2{
+  margin-top:50px;
+  margin-bottom: 20px;
+
+}
+._footer {
+  text-align: center;
+  padding: 30px;
+}

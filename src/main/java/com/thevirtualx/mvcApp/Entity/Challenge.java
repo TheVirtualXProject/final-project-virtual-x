@@ -23,7 +23,8 @@ public class Challenge {
     private int popularity;
     private String challenges;
     private String duration;
-    private String size;
+    private int joinedPlayers;
+    private int maxPlayers;
     private boolean isPublic;
 
     protected Challenge() {
@@ -32,7 +33,7 @@ public class Challenge {
 
 
     public Challenge( String title, Account account, String description, String image, int rating, int popularity,
-                       String challenges, String duration, String size, boolean isPublic) {
+                       String challenges, String duration, int joinedPlayers, int maxPlayers, boolean isPublic) {
         this.title = title;
         this.account = account;
         this.description = description;
@@ -42,7 +43,8 @@ public class Challenge {
         this.comments = new ArrayList<>();
         this.challenges = challenges;
         this.duration = duration;
-        this.size = size;
+        this.joinedPlayers = joinedPlayers;
+        this.maxPlayers = maxPlayers;
         this.isPublic = isPublic;
     }
 
@@ -76,9 +78,19 @@ public class Challenge {
     public String getDuration() {
         return duration;
     }
-    public String getSize() {
-        return size;
+
+    public int getJoinedPlayers() {
+        return joinedPlayers;
     }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public boolean isPublic() {
+        return isPublic;
+    }
+
     public Boolean getPublic() {
         return isPublic;
     }
@@ -105,26 +117,22 @@ public class Challenge {
     public void setDuration(String duration) {
         this.duration = duration;
     }
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-
 
     @Override
     public String toString() {
         return "Challenge{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
                 ", account=" + account +
+                ", comments=" + comments +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
                 ", rating=" + rating +
                 ", popularity=" + popularity +
-                ", comments=" + comments +
                 ", challenges='" + challenges + '\'' +
                 ", duration='" + duration + '\'' +
-                ", size='" + size + '\'' +
+                ", joinedPlayers=" + joinedPlayers +
+                ", maxPlayers=" + maxPlayers +
                 ", isPublic=" + isPublic +
                 '}';
     }
