@@ -37,6 +37,8 @@ public class SecurityController {
 
     @GetMapping("/create-account")
     public String showCreateAccountPage() {
+        if(checkForLogin())
+            return "redirect:/";
         return "createAccount";
     }
 
