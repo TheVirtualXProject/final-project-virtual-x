@@ -117,7 +117,7 @@ function chooseRandomPicture(pictureArray) {
 
 
 async function checkForChallenges() {
-    let challengeJson = await fetch("http://localhost:8080/api/challenges",{
+    let challengeJson = await fetch("/api/challenges",{
         method: "GET",
     }).then(response => response.json());
 
