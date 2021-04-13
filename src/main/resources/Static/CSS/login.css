@@ -50,6 +50,10 @@ a {
   height: 30px;
   display: none;
 }
+.form-signin-heading {
+  font-weight: 400;
+  color: azure;
+}
 
 ._logins {
   width: 40%;
@@ -61,7 +65,7 @@ a {
 }
 ._signUp {
   cursor: pointer;
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(238, 238, 238);
   width: 100%;
   height: 100%;
   display: flex;
@@ -72,7 +76,7 @@ a {
 ._signIn {
   cursor: pointer;
   font-size: 1.1em;
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(224, 224, 224);
   width: 100%;
   height: 100%;
   display: flex;
@@ -88,9 +92,9 @@ a {
 ._mainContent {
   background: linear-gradient(
     to top right,
-    rgb(81, 158, 194),
-    rgb(45, 119, 204),
-    rgb(78, 145, 172)
+    rgb(70, 145, 207),
+    rgb(204, 45, 45),
+    rgb(78, 78, 221)
   );
   width: 40%;
   height: 100%;
@@ -135,6 +139,7 @@ a {
   border: none;
   border-radius: 5px;
   transition: 0.2s;
+  margin: 20px;
 }
 .btn:hover {
   background-color: rgb(212, 212, 212);
