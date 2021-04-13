@@ -28,7 +28,7 @@ li.nav-list a {
   padding: 14px 16px;
   text-decoration: none;
 }
-li a:hover:not(.active) {
+.navBar li a:hover:not(.active) {
   background-color: var(--primary-color-darkBlue);
 }
 li a.active {
@@ -53,24 +53,107 @@ li.right {
     float: none;
   }
 }
-
+._footer {
+  text-align: center;
+  padding: 30px;
+}
 /* ----------home view style--------- */
-/* ----------home view style--------- */
-/* ----------home view style--------- */
-
 .activity-card {
   display: flex;
   flex-direction: column;
   margin: 25.5px;
 }
-
-.activity-card h2 {
-  text-align: center;
+.light-blue,
+.dark-blue,
+.yellow,
+.red,
+.purple {
+  padding: 25px;
+}
+.join-button {
+  margin-top: 15px;
+  width: 10em;
+  align-self: center;
+}
+.activity-card p {
+  padding: 5px;
+  text-align: left;
 }
 
 /* challenges view style */
-/* challenges view style */
-/* challenges view style */
+.challenge-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* style add button and modal box for challenge page and chatroom page--------------*/
+.add-challenge-section,
+.add-chatroom-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.add-challenge-button,
+.add-chatroom-button {
+  width: 10em;
+  height: 2em;
+  cursor: pointer;
+  background-color: var(--secondary-color-orange);
+  border: none;
+}
+/* The Modal (background) */
+.modal-add-challenge,
+.modal-add-chatroom {
+  display: none;
+  /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-challenge-content,
+.modal-chatroom-content {
+  background-color: var(--primary-color-purple);
+  opacity: 0.94;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 25%; /* Could be more or less, depending on screen size */
+  color: white;
+  padding: 50px;
+}
+.modal-header h2 {
+  margin: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 2px;
+  margin: 2px;
+}
+
+/* The Close Button */
+.close {
+  color: var(--primary-color-lightBlue);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--primary-color-darkBlue);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .popular-challenges-list,
 .current-challenges-list {
   display: flex;
@@ -97,28 +180,129 @@ li.right {
 .current-challenges h2 {
   padding: 20px;
 }
-.current-challenges {
-  background-color: var(--primary-color-lightBlue);
-  opacity: 0.8;
-  /* background-image: url(https://images.unsplash.com/photo-1525378792388-21b8f28ee57d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80); */
-}
-.add-challenge-button {
-  width: 150px;
-  cursor: pointer;
+.current-challenges-list a {
+  text-decoration: none;
+  color: black;
 }
 
+.popular-challenges-list a {
+  text-decoration: none;
+  color: white;
+}
+/* .current-challenges {
+  background-color: var(--primary-color-lightBlue);
+  opacity: 0.8;
+} */
+
 /* single challenge page style*/
-.single-challenge-info{
+.single-challenge-info {
   text-align: left;
   margin-left: 30px;
 }
 
-._singleChallengeComment h2{
-  margin-top:50px;
+._singleChallengeComment h2 {
+  margin-top: 50px;
   margin-bottom: 20px;
-
 }
-._footer {
-  text-align: center;
-  padding: 30px;
+
+/*game page style*/
+.popular-games-list,
+.current-games-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 50px 50px;
+}
+.popular-games-list li,
+.current-games-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.popular-games {
+  background-color: var(--primary-color-red);
+  opacity: 0.8;
+  color: white;
+}
+.popular-games h2 {
+  background-color: var(--primary-color-yellow);
+  height: 3em;
+  padding: 20px;
+}
+.current-games h2 {
+  padding: 20px;
+}
+/* .current-games {
+  background-color: var(--primary-color-lightBlue);
+  opacity: 0.8;
+} */
+.current-games-list a {
+  text-decoration: none;
+  color: black;
+}
+.popular-games-list a {
+  text-decoration: none;
+  color: white;
+}
+/* single game page style----------------------------*/
+._singleGameMain {
+  border: black solid 2px;
+}
+
+._singleGameComment h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+._singleChallengeCommentFormSection {
+  margin: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+._singleChallengeCommentForm {
+  background-color: brown;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+._singleChallengeButton {
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 60px;
+}
+._singleChallengeButton:hover {
+  background-color: cadetblue;
+}
+._singleChallengeFormInputs {
+  height: 30px;
+}
+
+/* chatroom page style-----------------------*/
+.current-chatrooms-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 50px 50px;
+}
+.current-chatrooms-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.current-chatrooms h2 {
+  padding: 20px;
+}
+.current-chatrooms-list a {
+  text-decoration: none;
+  color: black;
+}
+
+/* single chatroom style*/
+._singleChatroomMain {
+  border: black solid 2px;
 }

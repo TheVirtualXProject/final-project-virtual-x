@@ -35,7 +35,8 @@ function createChallengeCard(challenge) {
     duration.innerText = `Duration: ${challenge.duration}`;
     let description = document.createElement("p");
     description.classList.add("description");
-    description.innerText = challenge.description;
+    let challengeDesc = trimChallengeLength(challenge.description);
+    description.innerText = challengeDesc;
     let join = document.createElement("button");
     join.classList.add("join-button");
     join.innerText = "Join";
@@ -53,6 +54,14 @@ function createChallengeCard(challenge) {
 
 
 
+}
+
+function trimChallengeLength(desc) {
+    if(desc.length > 100) {
+        desc = desc.substring(0, 100);
+        desc += "...";
+    }
+    return desc;
 }
 
 function chooseCardColor(challengeCard) {
