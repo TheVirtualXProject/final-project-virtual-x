@@ -1,64 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Virtual-X</title>
-  <base href="/">
-  <link rel="stylesheet" type="text/css" href="/CSS/login.css" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="header">
-      <div class="_logins">
-        <a href="/create-account">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Virtual-X</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/CSS/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="_logins">
           <div class="_signUp">
-            <h4>Sign Up</h4>
+            <a class="signUpA" href="/create-account"><h4>Sign Up</h4></a>
           </div>
-        </a>
-        <a href="/login">
           <div class="_signIn">
-            <h4>Sign In</h4>
+            <a class="signInA" href="/login"><h4>Sign In</h4></a>
           </div>
-        </a>
-      </div>
-    </div>
-    <div class="hold-thymeleaf">
-      <span class="_alertMessage" th:text="${error}">
-        Alert!!!!!! Wrong password!!!!!!!!</span>
-    </div>
-    <div class="main">
-      <div class="_mainContent">
-        <div class="_loginHeading">
-          <h2 class="form-signin-heading">Login</h2>
-        </div>
-        <div class="_loginForm">
-          <form class="form-signin" method="post" action="/login">
-            <div class="_username">
-              <!-- <label for="username" class="sr-only">Username</label> -->
-              <br />
-              <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
-                autofocus="" />
-            </div>
-            <div class="_password">
-              <!-- <label for="password" class="sr-only">Password</label> -->
-              <br />
-              <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-                required="" />
-            </div>
-            <div class="_signInButton">
-              <input name="_csrf" type="hidden" value="6bbf9b99-cb92-47bc-9f82-710f648e7219" />
-              <button class="btn btn-lg btn-primary btn-block" type="submit">
-                Sign In
-              </button>
-            </div>
-          </form>
         </div>
       </div>
+      <div class="hold-thymeleaf">
+        <span class="_alertMessage" th:text="${error}">
+          Alert!!!!!! Wrong password!!!!!!!!</span
+        >
+      </div>
+      <div class="main">
+        <div class="_mainContent">
+          <div class="_loginHeading">
+            <h2 class="form-signin-heading">Login</h2>
+          </div>
+          <div class="_loginForm">
+            <form class="form-signin" method="post" action="/login">
+              <div class="_username">
+                <!-- <label for="username" class="sr-only">Username</label> -->
+                <br />
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-control"
+                  placeholder="Username"
+                  required=""
+                  autofocus=""
+                />
+              </div>
+              <div class="_password">
+                <!-- <label for="password" class="sr-only">Password</label> -->
+                <br />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required=""
+                />
+              </div>
+              <div class="_signInButton">
+                <input
+                  name="_csrf"
+                  type="hidden"
+                  value="6bbf9b99-cb92-47bc-9f82-710f648e7219"
+                />
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                  Sign In
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer"></div>
     </div>
-    <div class="footer"></div>
-  </div>
-</body>
-
+  </body>
 </html>
