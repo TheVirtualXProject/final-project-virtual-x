@@ -17,6 +17,7 @@ public class Challenge {
     @ElementCollection
     private Collection<Comment> comments;
     private String title;
+    @Lob
     private String description;
     private String image;
     private int rating;

@@ -1,5 +1,7 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import net.minidev.json.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
