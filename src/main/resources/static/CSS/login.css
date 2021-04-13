@@ -144,3 +144,22 @@ a {
 .btn:hover {
   background-color: rgb(212, 212, 212);
 }
+
+.signInA {
+  width:100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+.signUpA {
+  width:100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+h4 {
+  text-align: center;
+  align-self: center;
+}
