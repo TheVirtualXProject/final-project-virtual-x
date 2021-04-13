@@ -28,7 +28,7 @@ li.nav-list a {
   padding: 14px 16px;
   text-decoration: none;
 }
-li a:hover:not(.active) {
+.navBar li a:hover:not(.active) {
   background-color: var(--primary-color-darkBlue);
 }
 li a.active {
@@ -37,6 +37,7 @@ li a.active {
 li.right {
   float: right;
 }
+
 
 .header-title {
   text-align: center;
@@ -53,11 +54,11 @@ li.right {
     float: none;
   }
 }
-
+._footer {
+  text-align: center;
+  padding: 30px;
+}
 /* ----------home view style--------- */
-/* ----------home view style--------- */
-/* ----------home view style--------- */
-
 .activity-card {
   display: flex;
   flex-direction: column;
@@ -69,9 +70,6 @@ li.right {
 }
 
 /* challenges view style */
-/* challenges view style */
-/* challenges view style */
-
 .challenge-main {
   display: flex;
   flex-direction: column;
@@ -90,7 +88,7 @@ li.right {
 }
 /* The Modal (background) */
 .modal-add-challenge {
-  /* display: none; */
+  display: none;
   /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -165,10 +163,20 @@ textarea {
 .current-challenges h2 {
   padding: 20px;
 }
-.current-challenges {
+.current-challenges-list a{
+  text-decoration: none;
+  color: black;
+}
+
+.popular-challenges-list a{
+  text-decoration: none;
+  color:white;
+}
+/* .current-challenges {
   background-color: var(--primary-color-lightBlue);
   opacity: 0.8;
-}
+} */
+
 
 /* single challenge page style*/
 .single-challenge-info {
@@ -180,7 +188,56 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-._footer {
-  text-align: center;
-  padding: 30px;
+
+
+/*game page style*/
+
+.popular-games-list,
+.current-games-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 50px 50px;
+}
+.popular-games-list li,
+.current-games-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.popular-games {
+  background-color: var(--primary-color-purple);
+  opacity: 0.8;
+  color: white;
+}
+.popular-games h2 {
+  background-color: var(--primary-color-red);
+  height: 3em;
+  padding: 20px;
+  /* color: black; */
+  
+}
+.current-games h2 {
+  padding: 20px;
+}
+/* .current-games {
+  background-color: var(--primary-color-lightBlue);
+  opacity: 0.8;
+} */
+.current-games-list a{
+  text-decoration: none;
+  color: black;
+}
+.popular-games-list a{
+  text-decoration: none;
+  color:white;
+}
+/* single game page style*/
+._singleGameMain {
+  border: black solid 2px;
+}
+
+._singleGameComment h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: red solid 2px;
 }
