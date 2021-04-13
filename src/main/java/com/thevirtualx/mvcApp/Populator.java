@@ -70,7 +70,7 @@ public class Populator implements CommandLineRunner {
                         "This lunch hour flower hunt will give you a chance to go outside, and snip pictures of the flowers that you see in your yard, or on the way of your walk.\n" +
                         "Enjoy the sun and get moving by doing this challenge.",
                 "https://www.thestatesman.com/wp-content/uploads/2017/12/WALKING00.jpg", 5, 10,
-                "Pick flowers every lunch break", "30 mins", "10", true);
+                "Pick flowers every lunch break", "30 mins", 1,5, true);
 
 //        Comment gigitygigity = new Comment("oh right");
 //        flowerHunt.addComment(gigitygigity);
@@ -79,12 +79,12 @@ public class Populator implements CommandLineRunner {
         Challenge drinkWater = new Challenge("Water Bottle Challenge!", bishnu,
                 "Drink a bottle of water in under 1 minute!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
-                "Drink a bottle of water in 1 minute.", "1 min", "5", true);
+                "Drink a bottle of water in 1 minute.", "1 min", 1,5, true);
 
         Challenge floorIsLava = new Challenge("The Floor is Lava!", bishnu,
                 "Lava has breached the main floor! Jump from desk to desk to stay alive!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
-                "Floor is lava, Jumping", "30 min", "everyone", true);
+                "Floor is lava, Jumping", "30 min", 2,6, true);
 
 //        how do comments know where to go and who they belong to at the same time
     }

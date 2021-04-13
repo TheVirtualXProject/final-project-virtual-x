@@ -8,13 +8,13 @@ public class Comment {
     private String text;
     private String username;
     private String importMedia;
-    private Long challengeId;
+    private Long currentChallengeId;
 
-    public Comment(String text, String username, String importMedia, Long challengeId) {
+    public Comment(String text, String username, String importMedia, Long currentChallengeId) {
         this.text = text;
         this.username = username;
         this.importMedia = importMedia;
-        this.challengeId = challengeId;
+        this.currentChallengeId = currentChallengeId;
     }
 
     protected Comment() {
@@ -46,11 +46,11 @@ public class Comment {
     }
 
     public Long getChallengeId() {
-        return challengeId;
+        return currentChallengeId;
     }
 
     public void setChallengeId(Long challengeId) {
-        this.challengeId = challengeId;
+        this.currentChallengeId = challengeId;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class Comment {
                 "text='" + text + '\'' +
                 ", username='" + username + '\'' +
                 ", importMedia='" + importMedia + '\'' +
-                ", challengeId=" + challengeId +
+                ", challengeId=" + currentChallengeId +
                 '}';
     }
 }
