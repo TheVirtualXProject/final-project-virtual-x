@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en"
 xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.thymeleaf.org">
+xmlns:th="http://www.thymeleaf.org"
+>
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Virtual-X</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="/CSS/style.css" />
+  <link rel="stylesheet" href="/CSS/layout.css" />
 </head>
 
 <body>
@@ -60,32 +61,17 @@ xmlns="http://www.w3.org/1999/xhtml"
           <div class="popular-challenges">
             <h2>Popular Challenges</h2>
             <ol class="popular-challenges-list">
-              <li><a href="singleChallenge.html">A Mile A Day</a></li>
-              <li>Make Salad For Lunch</li>
-              <li>One Minute Push-Up</li>
-              <li>Popular Challenge four</li>
-              <li>Popular Challenge five</li>
-              <li>Popular Challenge six</li>
-              <li>Popular Challenge seven</li>
-              <li>Popular Challenge eight</li>
-              <li>Popular Challenge night</li>
-              <li>Popular Challenge ten</li>
+                <th:block th:each="challenge:${challenges}">
+                    <li><a th:href="'/challenge/' + ${challenge.id}"></a></li>
+                </th:block>
             </ol>
           </div>
           <div class="current-challenges">
-            <img src="./img/challenge-view-main-image2.jpg" alt="Ride bikes">
+            <img src="/images/challenge-view-main-image2.jpg" alt="Ride bikes">
             <h2>Current Challenges</h2>
             <ol class="current-challenges-list">
-              <li><a href="singleChallenge.html">A Mile A Day</a></li>
-              <li>One Minute Push-Up</li>
-              <li>Eat A Whole Pizza</li>
-              <li>Current Challenge four</li>
-              <li>Current Challenge five</li>
-              <li>Current Challenge six</li>
-              <li>Current Challenge seven</li>
-              <li>Current Challenge eight</li>
-              <li>Current Challenge night</li>
-              <li>Current Challenge ten</li>
+                <li><a th:href="/challenge/${challenge.id}"></a></li>
+              
             </ol>
           </div>
         </section>
