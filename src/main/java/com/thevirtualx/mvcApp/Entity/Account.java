@@ -85,6 +85,10 @@ public class Account {
         return friends;
     }
 
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
+
 }
 //Username
 //Password

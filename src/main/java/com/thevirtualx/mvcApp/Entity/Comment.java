@@ -1,5 +1,9 @@
 package com.thevirtualx.mvcApp.Entity;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.Embeddable;
+import java.io.File;
+import java.io.FileInputStream;
 
 @Embeddable
 public class Comment {
@@ -7,10 +11,10 @@ public class Comment {
 
     private String text;
     private String username;
-    private String importMedia;
+    private UploadFile importMedia;
     private Long currentChallengeId;
 
-    public Comment(String text, String username, String importMedia, Long currentChallengeId) {
+    public Comment(String text, String username, UploadFile importMedia, Long currentChallengeId) {
         this.text = text;
         this.username = username;
         this.importMedia = importMedia;
@@ -37,12 +41,21 @@ public class Comment {
         this.username = username;
     }
 
-    public String getImportMedia() {
+    public UploadFile getImportMedia() {
         return importMedia;
     }
 
-    public void setImportMedia(String importMedia) {
+    public void setImportMedia(UploadFile importMedia) {
         this.importMedia = importMedia;
+    }
+
+    public Long getCurrentChallengeId() {
+        return currentChallengeId;
+    }
+
+
+    public void setCurrentChallengeId(Long currentChallengeId) {
+        this.currentChallengeId = currentChallengeId;
     }
 
     public Long getChallengeId() {
