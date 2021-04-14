@@ -61,17 +61,18 @@ xmlns:th="http://www.thymeleaf.org"
           <div class="popular-challenges">
             <h2>Popular Challenges</h2>
             <ol class="popular-challenges-list">
-                <th:block th:each="challenge:${challenges}">
-                    <li><a th:href="'/challenge/' + ${challenge.id}"></a></li>
-                </th:block>
+              <th:block th:each="challenge:${challenges}">
+                <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
+              </th:block>
             </ol>
           </div>
           <div class="current-challenges">
             <img src="/images/challenge-view-main-image2.jpg" alt="Ride bikes">
             <h2>Current Challenges</h2>
             <ol class="current-challenges-list">
-                <li><a th:href="/challenge/${challenge.id}"></a></li>
-              
+              <th:block th:each="challenge:${challenges}">
+                <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
+              </th:block>
             </ol>
           </div>
         </section>
