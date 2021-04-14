@@ -1,5 +1,7 @@
 package com.thevirtualx.mvcApp.Entity;
 import javax.persistence.Embeddable;
+import java.io.File;
+import java.io.FileInputStream;
 
 @Embeddable
 public class Comment {
@@ -7,10 +9,10 @@ public class Comment {
 
     private String text;
     private String username;
-    private String importMedia;
+    private File importMedia;
     private Long currentChallengeId;
 
-    public Comment(String text, String username, String importMedia, Long currentChallengeId) {
+    public Comment(String text, String username, File importMedia, Long currentChallengeId) {
         this.text = text;
         this.username = username;
         this.importMedia = importMedia;
@@ -37,11 +39,11 @@ public class Comment {
         this.username = username;
     }
 
-    public String getImportMedia() {
+    public File getImportMedia() {
         return importMedia;
     }
 
-    public void setImportMedia(String importMedia) {
+    public void setImportMedia(File importMedia) {
         this.importMedia = importMedia;
     }
 
