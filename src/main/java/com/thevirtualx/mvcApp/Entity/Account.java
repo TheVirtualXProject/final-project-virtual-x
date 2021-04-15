@@ -17,8 +17,8 @@ public class Account {
     private Collection<Comment> comments;
     @ElementCollection
     private Collection<String> friends;
-    @OneToMany(mappedBy="account")
-    private Collection<Challenge> challenges;
+    @ManyToMany
+    private Collection<Challenge> joinedChallenges;
     private String username;
     private String password;
     private String realName;

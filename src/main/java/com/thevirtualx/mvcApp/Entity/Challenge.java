@@ -4,6 +4,7 @@ package com.thevirtualx.mvcApp.Entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -12,8 +13,8 @@ public class Challenge {
     @Id
     @GeneratedValue
     private long id;
-    @ManyToOne
-    private Account account;
+    @ManyToMany(mappedBy = "joinedChallenges")
+    private Collection<Account> accounts;
     @ElementCollection
     private Collection<Comment> comments;
     private String title;
@@ -33,10 +34,10 @@ public class Challenge {
     }
 
 
-    public Challenge( String title, Account account, String description, String image, int rating, int popularity,
+    public Challenge( String title, String description, String image, int rating, int popularity,
                        String challenges, String duration, int joinedPlayers, int maxPlayers, boolean isPublic) {
         this.title = title;
-        this.account = account;
+        this.accounts = new ArrayList<Account>();
         this.description = description;
         this.image = image;
         this.rating = rating;
@@ -55,8 +56,8 @@ public class Challenge {
     public String getTitle() {
         return title;
     }
-    public Account getAccount() {
-        return account;
+    public Collection<Account> getAccounts() {
+        return accounts;
     }
     public String getDescription() {
         return description;
@@ -79,23 +80,19 @@ public class Challenge {
     public String getDuration() {
         return duration;
     }
-
     public int getJoinedPlayers() {
         return joinedPlayers;
     }
-
     public int getMaxPlayers() {
         return maxPlayers;
     }
-
     public boolean isPublic() {
         return isPublic;
     }
 
-    public Boolean getPublic() {
-        return isPublic;
+    public void addAccount(Account accountToAdd) {
+        accounts.add(accountToAdd);
     }
-
     public void addComment(Comment commentToAdd) {
         comments.add(commentToAdd);
     }
@@ -118,12 +115,17 @@ public class Challenge {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+//    public void printAccounts() {
+//        for (int i: accounts) {
+//            System.out.print(i);
+//        }
+//    }
 
     @Override
     public String toString() {
         return "Challenge{" +
                 "id=" + id +
-                ", account=" + account +
+                ", accounts=" + accounts +
                 ", comments=" + comments +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +

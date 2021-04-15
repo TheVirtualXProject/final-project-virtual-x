@@ -47,16 +47,10 @@ public class ChallengeController {
             String name = file.getOriginalFilename();
             uFile = new UploadFile(name, file.getBytes(), file.getContentType());
 
-
         } catch (Exception e) {
             System.out.println("Failed");
             return "redirect:/challenge/" + id;
         }
-
-
-
-
-
 
         String username = principal.getName();
         Challenge challenge = challengeStorage.retrieveChallengeById(id);
@@ -69,6 +63,31 @@ public class ChallengeController {
         accountStorage.addAccount(account);
         return "redirect:/challenge/" + id;
     }
+
+    @PostMapping("/challenge/add-challenge")
+    public String addChallenge(MultipartFile img, int capacity, String challengeName, String duration, String description, Principal principal) {
+        UploadFile uFile;
+        try {
+            String name = img.getOriginalFilename();
+            uFile = new UploadFile(name, img.getBytes(), img.getContentType());
+
+        } catch (Exception e) {
+            System.out.println("Failed");
+            return "redirect:/challenge";
+        }
+        boolean pub= capacity<=0;
+
+        Account creator = accountStorage.retrieveAccountByUsername(principal.getName());
+
+        Challenge challenge = new Challenge(challengeName,description,uFile, 0, 0, )
+
+
+
+    }
+
+//    @PostMapping("/challenge/{id}/join")
+//    public String joinChallenge(@PathVariable Long id, Principal principal)
+
 
 
 
