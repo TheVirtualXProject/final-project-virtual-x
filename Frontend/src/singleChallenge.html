@@ -49,15 +49,14 @@
               </p>
             </div>
           </section>
-
+          <hr />
           <section class="_singleChallengeComment">
-            <h2>Comments</h2>
             <div class="_singleChallengeCommentFormSection">
               <div class="_singleChallengeCommentForm">
+                <h4>Comments</h4>
                 <form>
                   <br />
-
-                  <label for="addMedia">Upload Media</label>
+                  <!-- <label for="addMedia">Upload Media</label> -->
                   <input
                     class="_singleChallengeFormInputs"
                     type="file"
@@ -67,12 +66,15 @@
                   />
                   <br />
                   <br />
-                  <input
+                  <textarea
                     class="_singleChallengeFormInputs"
                     type="text"
-                    placeholder="your comment"
+                    placeholder="your comments"
                     name="comment"
-                  />
+                    rows="3"
+                    cols="30"
+                  ></textarea>
+
                   <br />
                   <br />
                   <button
@@ -86,9 +88,15 @@
               </div>
             </div>
             <div class="_commentsForSingleChallenge">
-              <div class="_displayProfile"></div>
-              <div class="_displayActualComment"></div>
-              <div class="_displayActualMedia"></div>
+              <div class="_displayProfile">
+                <h1>Profile</h1>
+              </div>
+              <div class="_displayActualComment">
+                <h1>comments</h1>
+              </div>
+              <div class="_displayActualMedia">
+                <h1>Media</h1>
+              </div>
             </div>
           </section>
         </div>

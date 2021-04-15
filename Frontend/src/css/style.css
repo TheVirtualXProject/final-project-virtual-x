@@ -235,7 +235,6 @@ textarea {
   text-align: left;
   margin-left: 30px;
 }
-
 ._singleChallengeComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -286,7 +285,6 @@ textarea {
   margin-bottom: 20px;
 }
 ._singleChallengeCommentFormSection {
-  margin: 20px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -296,25 +294,12 @@ textarea {
 ._singleChallengeCommentForm {
   background-color: coral;
   height: 100%;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-}
-.ulSingleChallenge {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.ulSingleChallenge li {
-  list-style-type: none;
-  background-color: rgb(101, 210, 214);
-  width: 48%;
-  border-radius: 5px;
 }
 
 ._singleChallengeButton {
@@ -325,9 +310,6 @@ textarea {
 }
 ._singleChallengeButton:hover {
   background-color: cadetblue;
-}
-._singleChallengeFormInputs {
-  height: 30px;
 }
 
 /* chatroom page style-----------------------*/
@@ -356,3 +338,34 @@ textarea {
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
+._singleChallengeComment {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: auto;
+}
+._singleChallengeCommentFormSection {
+  width: 40%;
+  margin-right: 30px;
+}
+._commentsForSingleChallenge {
+  width: 60%;
+  border-radius: 10px;
+  height: 100%;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-evenly;
+}
+._singleChallengeMain {
+  margin-bottom: 5%;
+}
+._singleChallengeFormInputs {
+  width: 100%;
+}
+._singleChallengeContainer {
+  height: auto;
+}
