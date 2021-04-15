@@ -71,7 +71,7 @@ li.right {
   margin: 0;
 }
 .dropdown:hover .dropbtn {
-  background-color:var(--primary-color-red);
+  background-color: var(--primary-color-red);
 }
 .dropdown-content {
   display: none;
@@ -353,3 +353,6 @@ textarea {
 ._singleChatroomMain {
   border: black solid 2px;
 }
+/* ------------SingleChallengeCommentSection------------- */
+/* ------------SingleChallengeCommentSection------------- */
+/* ------------SingleChallengeCommentSection------------- */
