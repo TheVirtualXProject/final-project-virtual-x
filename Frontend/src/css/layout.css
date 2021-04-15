@@ -39,16 +39,31 @@ body {
   display: table;
   text-align: center;
   margin: auto;
-  width: 1500px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
 }
 ._footer {
   background-color: var(--background);
   grid-row: 6 / 8;
   grid-column: 1 / 7;
+}
+/*home main style----------*/
+.home-main {
+  display: flex;
+  flex-direction: column;
+  /* background-color: powderblue; */
+}
+.dropdown {
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* border: blue solid 3px;
+  background-color: violet; */
+  width: 1500px;
 }
 .light-blue,
 .dark-blue,
@@ -89,7 +104,7 @@ body {
   /* border: 2px solid black; */
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-gap: 100px;
+  grid-gap: 50px;
 }
 
 /*single challenge page ---------------*/
@@ -103,7 +118,7 @@ body {
   /* border: 2px solid black; */
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-gap: 100px;
+  grid-gap: 50px;
 }
 
 /*style single game page--------------------*/
@@ -116,7 +131,6 @@ body {
 /*style chatroom page------------------*/
 .game-section {
   border: 2px solid black;
- 
 }
 /*style single chatroom page-------------------*/
 ._singleChatroomMain {
