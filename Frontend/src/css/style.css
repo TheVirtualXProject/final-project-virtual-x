@@ -353,10 +353,10 @@ textarea {
   margin-right: 30px;
 }
 ._commentsForSingleChallenge {
-  width: 60%;
+  width: 100%;
   border-radius: 10px;
   height: 100%;
-  background-color: tomato;
+  background-color: ;
   display: flex;
   justify-content: space-evenly;
 }
@@ -368,4 +368,20 @@ textarea {
 }
 ._singleChallengeContainer {
   height: auto;
+}
+._commentsForSingleChallenge {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 0 20px;
+}
+.comment-pic {
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+}
+.enlarged {
+  /* display: none;
+  width: 400px;
+  height: 300px; */
 }
