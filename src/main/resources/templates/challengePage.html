@@ -1,87 +1,117 @@
 <!DOCTYPE html>
-<html lang="en"
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org"
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
 >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual-X</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/layout.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual-X</title>
-  <link rel="stylesheet" href="/CSS/style.css" />
-  <link rel="stylesheet" href="/CSS/layout.css" />
-</head>
+  <body>
+    <div class="_container">
+      <header class="_header">
+        <nav>
+          <ul class="navBar">
+            <li class="active nav-list">
+              <a href="/">HOME</a>
+            </li>
+            <li class="nav-list">
+              <a href="/challenge">CHALLENGES</a>
+            </li>
+            <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
+            <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
+            <li class="right nav-list"><a href="#">ACCOUNT</a></li>
+          </ul>
+        </nav>
+        <h1 class="header-title">Challenges</h1>
+      </header>
 
-<body>
-  <div class="_container">
-    <header class="_header">
-      <nav>
-        <ul class="navBar">
-          <li class="active nav-list"><a href="homeViewPrototype.html">HOME</a></li>
-          <li class="nav-list"><a href="challengePage.html">CHALLENGES</a></li>
-          <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
-          <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
-          <li class="right nav-list"><a href="#">ACCOUNT</a></li>
-        </ul>
-      </nav>
-      <h1 class="header-title">Challenges</h1>
-    </header>
-
-    <main class="_main">
-      <div class="challenge-main">
-
-        <section class="add-challenge-section">
-          <!-- Trigger/Open The Modal -->
-          <button class="add-challenge-button">Add New Challenge</button>
-          <!-- The Modal -->
-          <div class="modal-add-challenge">
-            <!-- Modal content -->
-            <div class="modal-challenge-content">
-              <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Add New Challenge</h2>
-              </div>
-              <form class="add-challenge-form" action="">
-                <div class="form">
-                  <input type="text" placeholder="Challenge ImageUrl" required>
-                  <input type="text" placeholder="Challenge Name" required>
-                  <input type="text" placeholder="Host Name" required>
-                  <input type="text" placeholder="Challenge Capacity" required>
-                  <input type="text" placeholder="Challenge Duration" required>
-                  <textarea placeholder="Challenge Description" rows="4" cols="50" required></textarea>
-                  <button class="submit-button" type="submit">Submit</button>
+      <main class="_main">
+        <div class="challenge-main">
+          <section class="add-challenge-section">
+            <!-- Trigger/Open The Modal -->
+            <button class="add-challenge-button">Add New Challenge</button>
+            <!-- The Modal -->
+            <div class="modal-add-challenge">
+              <!-- Modal content -->
+              <div class="modal-challenge-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Add New Challenge</h2>
                 </div>
-              </form>
+                <form class="add-challenge-form" action="">
+                  <div class="form">
+                    <input
+                      type="text"
+                      placeholder="Challenge ImageUrl"
+                      required
+                    />
+                    <input type="text" placeholder="Challenge Name" required />
+                    <input type="text" placeholder="Host Name" required />
+                    <input
+                      type="text"
+                      placeholder="Challenge Capacity"
+                      required
+                    />
+                    <input
+                      type="text"
+                      placeholder="Challenge Duration"
+                      required
+                    />
+                    <textarea
+                      placeholder="Challenge Description"
+                      rows="4"
+                      cols="50"
+                      required
+                    ></textarea>
+                    <button class="submit-button" type="submit">Submit</button>
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="challenge-section">
-          <div class="popular-challenges">
-            <h2>Popular Challenges</h2>
-            <ol class="popular-challenges-list">
-              <th:block th:each="challenge:${challenges}">
-                <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
-              </th:block>
-            </ol>
-          </div>
-          <div class="current-challenges">
-            <img src="/images/challenge-view-main-image2.jpg" alt="Ride bikes">
-            <h2>Current Challenges</h2>
-            <ol class="current-challenges-list">
-              <th:block th:each="challenge:${challenges}">
-                <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
-              </th:block>
-            </ol>
-          </div>
-        </section>
-
-
-      </div>
-    </main>
-    <footer class="_footer">&copy;2021 The Virtual X Team</footer>
-  </div>
-</body>
-
+          <section class="challenge-section">
+            <div class="popular-challenges">
+              <h2>Popular Challenges</h2>
+              <ol class="popular-challenges-list">
+                <th:block th:each="challenge:${challenges}">
+                  <li>
+                    <a
+                      th:text="${challenge.title}"
+                      th:href="'/challenge/' + ${challenge.id}"
+                    ></a>
+                  </li>
+                </th:block>
+              </ol>
+            </div>
+            <div class="current-challenges">
+              <img
+                src="/images/challenge-view-main-image2.jpg"
+                alt="Ride bikes"
+              />
+              <h2>Current Challenges</h2>
+              <ol class="current-challenges-list">
+                <th:block th:each="challenge:${challenges}">
+                  <li>
+                    <a
+                      th:text="${challenge.title}"
+                      th:href="'/challenge/' + ${challenge.id}"
+                    ></a>
+                  </li>
+                </th:block>
+              </ol>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="_footer">&copy;2021 The Virtual X Team</footer>
+    </div>
+  </body>
 </html>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,10 +19,10 @@
         <nav>
           <ul class="navBar">
             <li class="active nav-list">
-              <a href="homeViewPrototype.html">HOME</a>
+              <a href="/">HOME</a>
             </li>
             <li class="nav-list">
-              <a href="challengePage.html">CHALLENGES</a>
+              <a href="/challenge">CHALLENGES</a>
             </li>
             <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
             <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
@@ -40,9 +42,18 @@
             />
             <div class="single-challenge-info">
               <h2 th:text="${challenge.title}">A Mile A Day</h2>
-              <h3 th:text="${challenge.account.realName}" class="host">Host:Jon</h3>
-              <h4 th:text="${challenge.joinedPlayers} + '/' + ${challenge.maxPlayers}"class="size">Size:4 (max:6)</h4>
-              <h4 th:text="${challenge.duration}" class="duration">Duration:7</h4>
+              <h3 th:text="${challenge.account.realName}" class="host">
+                Host:Jon
+              </h3>
+              <h4
+                th:text="${challenge.joinedPlayers} + '/' + ${challenge.maxPlayers}"
+                class="size"
+              >
+                Size:4 (max:6)
+              </h4>
+              <h4 th:text="${challenge.duration}" class="duration">
+                Duration:7
+              </h4>
               <button class="join-button">JOIN</button>
               <p th:text="${challenge.description}" class="description">
                 Join me for a new daily challenge - A Mile A DAY. It is a long
