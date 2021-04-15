@@ -56,11 +56,14 @@
               <div class="_singleChallengeCommentForm">
                 <form>
                   <br />
+
+                  <label for="addMedia">Upload Media</label>
                   <input
                     class="_singleChallengeFormInputs"
-                    type="text"
-                    placeholder="your name"
-                    name="name"
+                    type="file"
+                    id="img"
+                    name="addMedia"
+                    accept="image/*"
                   />
                   <br />
                   <br />
@@ -82,10 +85,9 @@
                 </form>
               </div>
             </div>
-            <ul>
-              <li>this challenge was difficult</li>
-              <li>Hello, this challenge was easy!</li>
-            </ul>
+            <div>
+              <ul class="ulSingleChallenge"></ul>
+            </div>
           </section>
         </div>
       </main>
