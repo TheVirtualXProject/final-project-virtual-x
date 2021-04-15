@@ -13,14 +13,16 @@ public class Challenge {
     @Id
     @GeneratedValue
     private long id;
-    @ManyToMany(mappedBy = "joinedChallenges")
+    @ManyToMany
     private Collection<Account> accounts;
+    private String creatorName;
     @ElementCollection
     private Collection<Comment> comments;
     private String title;
     @Lob
     private String description;
     private String image;
+    private UploadFile imageFile;
     private int rating;
     private int popularity;
     private String challenges;
@@ -35,7 +37,7 @@ public class Challenge {
 
 
     public Challenge( String title, String description, String image, int rating, int popularity,
-                       String challenges, String duration, int joinedPlayers, int maxPlayers, boolean isPublic) {
+                       String challenges, String duration, int joinedPlayers, int maxPlayers, boolean isPublic, String creatorName) {
         this.title = title;
         this.accounts = new ArrayList<Account>();
         this.description = description;
@@ -48,6 +50,23 @@ public class Challenge {
         this.joinedPlayers = joinedPlayers;
         this.maxPlayers = maxPlayers;
         this.isPublic = isPublic;
+        this.creatorName = creatorName;
+    }
+    public Challenge( String title, String description, UploadFile imageFile, int rating, int popularity,
+        String challenges, String duration, int joinedPlayers, int maxPlayers, boolean isPublic, String creatorName) {
+        this.title = title;
+        this.accounts = new ArrayList<Account>();
+        this.description = description;
+        this.imageFile = imageFile;
+        this.rating = rating;
+        this.popularity = popularity;
+        this.comments = new ArrayList<>();
+        this.challenges = challenges;
+        this.duration = duration;
+        this.joinedPlayers = joinedPlayers;
+        this.maxPlayers = maxPlayers;
+        this.isPublic = isPublic;
+        this.creatorName = creatorName;
     }
 
     public long getId() {
@@ -92,6 +111,7 @@ public class Challenge {
 
     public void addAccount(Account accountToAdd) {
         accounts.add(accountToAdd);
+        joinedPlayers++;
     }
     public void addComment(Comment commentToAdd) {
         comments.add(commentToAdd);

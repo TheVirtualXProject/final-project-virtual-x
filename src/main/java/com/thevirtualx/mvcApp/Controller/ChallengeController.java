@@ -79,10 +79,11 @@ public class ChallengeController {
 
         Account creator = accountStorage.retrieveAccountByUsername(principal.getName());
 
-        Challenge challenge = new Challenge(challengeName,description,uFile, 0, 0, )
-
-
-
+        Challenge challenge = new Challenge(challengeName,description,uFile,
+                0, 0, "",duration,0,capacity,pub, creator.getRealName());
+        challenge.addAccount(creator);
+        challengeStorage.addChallenge(challenge);
+        return "redirect:/challenge/"+challenge.getId();
     }
 
 //    @PostMapping("/challenge/{id}/join")

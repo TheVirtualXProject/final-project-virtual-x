@@ -57,36 +57,40 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Challenge mileWalk = new Challenge("Walk a mile during lunch!", connor,
+        Challenge mileWalk = new Challenge("Walk a mile during lunch!",
                 "Eating is overrated, be a plant and soak up some sunshine!",
                 "https://www.thestatesman.com/wp-content/uploads/2017/12/WALKING00.jpg", 4, 10,
-                "Walk one mile every day this week.", "7 days", 1, 5,true);
+                "Walk one mile every day this week.", "7 days", 1, 5,true, connor.getRealName());
 
 //        Comment mileCom1 = new Comment("I don't walk, I lift weights.");
 //        mileWalk.addComment(mileCom1);
+        mileWalk.addAccount(connor);
         challengeStorage.addChallenge(mileWalk);
 
-        Challenge flowerHunt = new Challenge("Lunch hour flower hunt", weiwei,
+        Challenge flowerHunt = new Challenge("Lunch hour flower hunt",
                 "Spring is finally here!!! Have you told yourself “Outside is so nice, I want to go outside today.” But as time goes by, you never make it outside.\n" +
                         "This lunch hour flower hunt will give you a chance to go outside, and snip pictures of the flowers that you see in your yard, or on the way of your walk.\n" +
                         "Enjoy the sun and get moving by doing this challenge.",
                 "https://www.thestatesman.com/wp-content/uploads/2017/12/WALKING00.jpg", 5, 10,
-                "Pick flowers every lunch break", "30 mins", 1,5, true);
+                "Pick flowers every lunch break", "30 mins", 1,5, true, weiwei.getRealName());
 
 //        Comment gigitygigity = new Comment("oh right");
 //        flowerHunt.addComment(gigitygigity);
+        flowerHunt.addAccount(weiwei);
         challengeStorage.addChallenge(flowerHunt);
 
-        Challenge drinkWater = new Challenge("Water Bottle Challenge!", bishnu,
+        Challenge drinkWater = new Challenge("Water Bottle Challenge!",
                 "Drink a bottle of water in under 1 minute!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
-                "Drink a bottle of water in 1 minute.", "1 min", 1,5, true);
+                "Drink a bottle of water in 1 minute.", "1 min", 1,5, true, bishnu.getRealName());
+        drinkWater.addAccount(bishnu);
         challengeStorage.addChallenge(drinkWater);
 
-        Challenge floorIsLava = new Challenge("The Floor is Lava!", bishnu,
+        Challenge floorIsLava = new Challenge("The Floor is Lava!",
                 "Lava has breached the main floor! Jump from desk to desk to stay alive!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
-                "Floor is lava, Jumping", "30 min", 2,6, true);
+                "Floor is lava, Jumping", "30 min", 2,6, true, bishnu.getRealName());
+        floorIsLava.addAccount(bishnu);
         challengeStorage.addChallenge(floorIsLava);
 
 //        how do comments know where to go and who they belong to at the same time
