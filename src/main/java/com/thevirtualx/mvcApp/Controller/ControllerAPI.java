@@ -12,6 +12,9 @@ import javax.sql.rowset.serial.SerialBlob;
 import java.security.Principal;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 @RestController
 public class ControllerAPI {
@@ -27,8 +30,8 @@ public class ControllerAPI {
 
 
     @GetMapping("/api/challenges")
-    public Iterable<Challenge> getAllChallenges() {
-        return challengeStorage.getAllChallenges();
+    public ArrayList<Challenge> getAllChallenges() {
+        return sortByRecent();
     }
 
 
@@ -53,5 +56,31 @@ public class ControllerAPI {
     }
 
 
+
+
+    public ArrayList<Challenge> sortByRecent() {
+        ArrayList<Challenge> temp = new ArrayList<>();
+        Iterable<Challenge> challenges = challengeStorage.getAllChallenges();
+        for(Challenge challenge: challenges) {
+            temp.add(0, challenge);
+        }
+        return temp;
+    }
+
+    public ArrayList<Challenge> sortByPopular() {
+        ArrayList<Challenge> temp = new ArrayList<>();
+        for(Challenge challenge: challengeStorage.getAllChallenges()) {
+            temp.add(challenge);
+        }
+        Collections.sort(temp, new Comparator<Challenge>() {
+            @Override
+            public int compare(Challenge o1, Challenge o2) {
+                Integer int1 = o1.getRating();
+                Integer int2 = o2.getRating();
+                return int1.compareTo(int2);
+            }
+        });
+        return temp;
+    }
 
 }

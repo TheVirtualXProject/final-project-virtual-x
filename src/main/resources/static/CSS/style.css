@@ -434,3 +434,31 @@ textarea {
   background-color: rgb(223, 217, 217);
   border-radius: 20px;
 }
+
+.commentImg {
+  height: 200px;
+  max-width: 400px;
+}
+
+.commentImg[src=""] {
+  display: none;
+}
+
+.single-challenge-img {
+  height:200px;
+  width: 200px;
+}
+
+.ulSingleChallenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ulSingleChallenge li {
+  list-style-type: none;
+  background-color: rgb(101, 210, 214);
+  width: 48%;
+  border-radius: 5px;
+}
