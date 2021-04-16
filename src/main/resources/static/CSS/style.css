@@ -71,7 +71,7 @@ li.right {
   margin: 0;
 }
 .dropdown:hover .dropbtn {
-  background-color:var(--primary-color-red);
+  background-color: var(--primary-color-red);
 }
 .dropdown-content {
   display: none;
@@ -235,7 +235,6 @@ textarea {
   text-align: left;
   margin-left: 30px;
 }
-
 ._singleChallengeComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -286,7 +285,6 @@ textarea {
   margin-bottom: 20px;
 }
 ._singleChallengeCommentFormSection {
-  margin: 20px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -296,13 +294,14 @@ textarea {
 ._singleChallengeCommentForm {
   background-color: coral;
   height: 100%;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
 }
+<<<<<<< HEAD
 .ulSingleChallenge {
   width: 100%;
   display: flex;
@@ -316,6 +315,8 @@ textarea {
   width: 48%;
   border-radius: 5px;
 }
+=======
+>>>>>>> origin/dev
 
 ._singleChallengeButton {
   cursor: pointer;
@@ -325,9 +326,6 @@ textarea {
 }
 ._singleChallengeButton:hover {
   background-color: cadetblue;
-}
-._singleChallengeFormInputs {
-  height: 30px;
 }
 
 /* chatroom page style-----------------------*/
@@ -352,4 +350,54 @@ textarea {
 /* single chatroom style*/
 ._singleChatroomMain {
   border: black solid 2px;
+}
+/* ------------SingleChallengeCommentSection------------- */
+/* ------------SingleChallengeCommentSection------------- */
+/* ------------SingleChallengeCommentSection------------- */
+._singleChallengeComment {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: auto;
+}
+._singleChallengeCommentFormSection {
+  width: 40%;
+  margin-right: 30px;
+}
+._commentsForSingleChallenge {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  background-color: ;
+  display: flex;
+  justify-content: space-evenly;
+}
+._singleChallengeMain {
+  margin-bottom: 5%;
+}
+._singleChallengeFormInputs {
+  width: 100%;
+}
+._singleChallengeContainer {
+  height: auto;
+}
+._commentsForSingleChallenge {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 0 20px;
+}
+.comment-pic {
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+}
+.enlarged {
+  /* display: none;
+  width: 400px;
+  height: 300px; */
 }
