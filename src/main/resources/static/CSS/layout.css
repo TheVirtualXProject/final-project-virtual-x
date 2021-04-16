@@ -139,7 +139,8 @@ body {
   display: flex;
 }
 /*style account page ------------------*/
-._accountContainer{
+
+._accountContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;

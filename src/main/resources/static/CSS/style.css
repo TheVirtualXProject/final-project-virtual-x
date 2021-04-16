@@ -239,6 +239,9 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
+textarea {
+  resize: none;
+}
 
 /*game page style*/
 .popular-games-list,
