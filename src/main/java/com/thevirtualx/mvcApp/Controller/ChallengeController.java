@@ -13,6 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 @Controller
 //@RequestMapping("/challenge")
@@ -28,7 +31,8 @@ public class ChallengeController {
 
     @GetMapping("/challenge")
     public String displayAllChallenges(Model model){
-        model.addAttribute("challenges", challengeStorage.getAllChallenges());
+        model.addAttribute("challengesRecent", sortByRecent());
+        model.addAttribute("challengesPopular", sortByPopular());
         return "challengePage";
     }
 
@@ -84,6 +88,31 @@ public class ChallengeController {
         return "redirect:/challenge/" + id;
     }
 
+
+    public ArrayList<Challenge> sortByRecent() {
+        ArrayList<Challenge> temp = new ArrayList<>();
+        Iterable<Challenge> challenges = challengeStorage.getAllChallenges();
+        for(Challenge challenge: challenges) {
+            temp.add(0, challenge);
+        }
+        return temp;
+    }
+
+    public ArrayList<Challenge> sortByPopular() {
+        ArrayList<Challenge> temp = new ArrayList<>();
+        for(Challenge challenge: challengeStorage.getAllChallenges()) {
+            temp.add(challenge);
+        }
+        Collections.sort(temp, new Comparator<Challenge>() {
+            @Override
+            public int compare(Challenge o1, Challenge o2) {
+                Integer int1 = o1.getRating();
+                Integer int2 = o2.getRating();
+                return int1.compareTo(int2);
+            }
+        });
+        return temp;
+    }
 
 
 
