@@ -40,9 +40,9 @@
             />
             <div class="single-challenge-info">
               <h2 th:text="${challenge.title}">A Mile A Day</h2>
-              <h3 th:text="${challenge.account.realName}" class="host">Host:Jon</h3>
-              <h4 th:text="${challenge.joinedPlayers} + '/' + ${challenge.maxPlayers}"class="size">Size:4 (max:6)</h4>
-              <h4 th:text="${challenge.duration}" class="duration">Duration:7</h4>
+              <h3 th:text="'Host: ' + ${challenge.creatorName}" class="host">Host:Jon</h3>
+              <h4 class="size">Size:4 (max:6)</h4>
+              <h4 th:text="'Duration: ' + ${challenge.duration}" class="duration">Duration:7</h4>
               <button class="join-button">JOIN</button>
               <p th:text="${challenge.description}" class="description">
                 Join me for a new daily challenge - A Mile A DAY. It is a long
@@ -57,31 +57,33 @@
             <div class="_singleChallengeCommentFormSection">
               <div class="_singleChallengeCommentForm">
                 <form>
-                  <br />
-                  <input
-                    class="_singleChallengeFormInputs"
-                    type="text"
-                    placeholder="your name"
-                    name="name"
-                  />
-                  <br />
-                  <br />
-                  <input
-                    class="_singleChallengeFormInputs"
-                    type="text"
-                    placeholder="your comment"
-                    name="comment"
-                  />
-                  <br />
-                  <br />
-                  <button
-                    class="_singleChallengeButton"
-                    type="submit"
-                    name="submit"
-                  >
-                    Submit
-                  </button>
-                </form>
+                    <br />
+  
+                    <label for="addMedia">Upload Media</label>
+                    <input
+                      class="_singleChallengeFormInputs"
+                      type="file"
+                      id="img"
+                      name="addMedia"
+                      accept="image/*"
+                    />
+                    <br />
+                    <br />
+                    <input
+                      class="_singleChallengeFormInputs"
+                      type="text"
+                      placeholder="your comment"
+                      name="comment"
+                    />
+                    <br />
+                    <br />
+                    <button
+                      class="_singleChallengeButton"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </form>
               </div>
             </div>
             <ul>
@@ -95,4 +97,5 @@
       <footer class="_footer">&copy;2021 The Virtual X Team</footer>
     </div>
   </body>
+  <script src="/JS/singleChallengePage.js"></script>
 </html>

@@ -3,7 +3,6 @@ package com.thevirtualx.mvcApp.Controller;
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Challenge;
 import com.thevirtualx.mvcApp.Entity.Comment;
-import com.thevirtualx.mvcApp.Entity.UploadFile;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
 import org.springframework.stereotype.Controller;
@@ -11,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.security.Principal;
 
 @Controller
@@ -39,22 +40,13 @@ public class ChallengeController {
     }
 
     @PostMapping("/challenge/{id}/addComment")
-    public String addCommentToChallenge(@PathVariable Long id, String body, Principal principal, MultipartFile file){
+    public String addCommentToChallenge(@PathVariable Long id, String body, Principal principal, String file){
 
-        UploadFile uFile;
 
-        try {
-            String name = file.getOriginalFilename();
-            uFile = new UploadFile(name, file.getBytes(), file.getContentType());
-
-        } catch (Exception e) {
-            System.out.println("Failed");
-            return "redirect:/challenge/" + id;
-        }
 
         String username = principal.getName();
         Challenge challenge = challengeStorage.retrieveChallengeById(id);
-        Comment commentToAdd = new Comment(body, username, uFile, id);
+        Comment commentToAdd = new Comment(body, username, file, id);
         challenge.addComment(commentToAdd);
         challengeStorage.addChallenge(challenge);
 
@@ -65,31 +57,29 @@ public class ChallengeController {
     }
 
     @PostMapping("/challenge/add-challenge")
-    public String addChallenge(MultipartFile img, int capacity, String challengeName, String duration, String description, Principal principal) {
-        UploadFile uFile;
-        try {
-            String name = img.getOriginalFilename();
-            uFile = new UploadFile(name, img.getBytes(), img.getContentType());
+    public String addChallenge(String img, int capacity, String challengeName, String duration, String description, Principal principal) throws IOException, URISyntaxException {
 
-        } catch (Exception e) {
-            System.out.println("Failed");
-            return "redirect:/challenge";
-        }
-        boolean pub= capacity<=0;
 
+
+        boolean pub = capacity<=0;
+        System.out.println(pub);
         Account creator = accountStorage.retrieveAccountByUsername(principal.getName());
 
-        Challenge challenge = new Challenge(challengeName,description,uFile,
-                0, 0, "",duration,0,capacity,pub, creator.getRealName());
+        Challenge challenge = new Challenge(challengeName,description,img,
+                0, 0, "",duration,0, capacity , pub, creator.getRealName());
         challenge.addAccount(creator);
         challengeStorage.addChallenge(challenge);
-        return "redirect:/challenge/"+challenge.getId();
+        return "redirect:/api/challenges/"+ challenge.getId() + "/url";
     }
 
-//    @PostMapping("/challenge/{id}/join")
-//    public String joinChallenge(@PathVariable Long id, Principal principal)
-
-
+    @PostMapping("/challenge/{id}/join-challenge")
+    public String joinChallenge(@PathVariable Long id, Principal principal) {
+        Challenge challenge = challengeStorage.retrieveChallengeById(id);
+        Account account = accountStorage.retrieveAccountByUsername(principal.getName());
+        challenge.addAccount(account);
+        challengeStorage.addChallenge(challenge);
+        return "redirect:/challenge/" + id;
+    }
 
 
 

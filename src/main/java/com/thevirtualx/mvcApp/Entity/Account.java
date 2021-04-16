@@ -88,6 +88,9 @@ public class Account {
     public void addComment(Comment comment) {
         comments.add(comment);
     }
+    public void addToContributionCount() {
+        this.contributionPoints++;
+    }
 
 }
 //Username

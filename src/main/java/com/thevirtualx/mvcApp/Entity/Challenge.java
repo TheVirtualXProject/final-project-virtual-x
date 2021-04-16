@@ -21,8 +21,8 @@ public class Challenge {
     private String title;
     @Lob
     private String description;
+    @Lob
     private String image;
-    private UploadFile imageFile;
     private int rating;
     private int popularity;
     private String challenges;
@@ -52,22 +52,7 @@ public class Challenge {
         this.isPublic = isPublic;
         this.creatorName = creatorName;
     }
-    public Challenge( String title, String description, UploadFile imageFile, int rating, int popularity,
-        String challenges, String duration, int joinedPlayers, int maxPlayers, boolean isPublic, String creatorName) {
-        this.title = title;
-        this.accounts = new ArrayList<Account>();
-        this.description = description;
-        this.imageFile = imageFile;
-        this.rating = rating;
-        this.popularity = popularity;
-        this.comments = new ArrayList<>();
-        this.challenges = challenges;
-        this.duration = duration;
-        this.joinedPlayers = joinedPlayers;
-        this.maxPlayers = maxPlayers;
-        this.isPublic = isPublic;
-        this.creatorName = creatorName;
-    }
+
 
     public long getId() {
         return id;
@@ -96,6 +81,12 @@ public class Challenge {
     public String getChallenges() {
         return challenges;
     }
+
+    public String getCreatorName() {
+        return creatorName;
+    }
+
+
     public String getDuration() {
         return duration;
     }
@@ -112,6 +103,7 @@ public class Challenge {
     public void addAccount(Account accountToAdd) {
         accounts.add(accountToAdd);
         joinedPlayers++;
+        accountToAdd.addToContributionCount();
     }
     public void addComment(Comment commentToAdd) {
         comments.add(commentToAdd);

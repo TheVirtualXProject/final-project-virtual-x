@@ -294,7 +294,7 @@ textarea {
   align-items: center;
 }
 ._singleChallengeCommentForm {
-  background-color: brown;
+  background-color: coral;
   height: 100%;
   width: 50%;
   display: flex;
@@ -303,6 +303,20 @@ textarea {
   justify-content: space-evenly;
   border-radius: 10px;
 }
+.ulSingleChallenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ulSingleChallenge li {
+  list-style-type: none;
+  background-color: rgb(101, 210, 214);
+  width: 48%;
+  border-radius: 5px;
+}
+
 ._singleChallengeButton {
   cursor: pointer;
   border: none;
