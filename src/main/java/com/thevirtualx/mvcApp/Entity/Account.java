@@ -17,8 +17,8 @@ public class Account {
     private Collection<Comment> comments;
     @ElementCollection
     private Collection<String> friends;
-    @OneToMany(mappedBy="account")
-    private Collection<Challenge> challenges;
+    @ManyToMany(mappedBy = "accounts")
+    private Collection<Challenge> joinedChallenges;
     private String username;
     private String password;
     private String realName;
@@ -87,6 +87,9 @@ public class Account {
 
     public void addComment(Comment comment) {
         comments.add(comment);
+    }
+    public void addToContributionCount() {
+        this.contributionPoints++;
     }
 
 }

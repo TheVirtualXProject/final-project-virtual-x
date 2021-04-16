@@ -42,14 +42,38 @@ xmlns:th="http://www.thymeleaf.org"
                 <span class="close">&times;</span>
                 <h2>Add New Challenge</h2>
               </div>
-              <form class="add-challenge-form" action="">
+              <form method="POST" class="add-challenge-form" action="/challenge/add-challenge" enctype="multipart/form-data">
                 <div class="form">
-                  <input type="text" placeholder="Challenge ImageUrl" required>
-                  <input type="text" placeholder="Challenge Name" required>
-                  <input type="text" placeholder="Host Name" required>
-                  <input type="text" placeholder="Challenge Capacity" required>
-                  <input type="text" placeholder="Challenge Duration" required>
-                  <textarea placeholder="Challenge Description" rows="4" cols="50" required></textarea>
+                  <input
+                    placeholder="Challenge ImageUrl"
+                    type="file"
+                    id="img"
+                    name="img"
+                    accept="image/*"
+                    class="file";
+                  />
+                  <input type="text" placeholder="Challenge Name" required
+                  name="challengeName" />
+                  <input
+                    type="text"
+                    placeholder="Challenge Capacity (0 for unlimited)"
+                    required
+                    name="capacity"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Challenge Duration(Type any measurement of time)"
+                    required
+                    name="duration"
+                  />
+                  <textarea
+                    placeholder="Challenge Description"
+                    rows="4"
+                    cols="50"
+                    required
+                    maxlength="255"
+                    name="desc"
+                  ></textarea>
                   <button class="submit-button" type="submit">Submit</button>
                 </div>
               </form>
@@ -83,5 +107,6 @@ xmlns:th="http://www.thymeleaf.org"
     <footer class="_footer">&copy;2021 The Virtual X Team</footer>
   </div>
 </body>
+<script src="/JS/challengePage.js" ></script>
 
 </html>

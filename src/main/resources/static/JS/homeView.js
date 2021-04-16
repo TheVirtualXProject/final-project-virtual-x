@@ -1,4 +1,4 @@
-let main = document.querySelector("._main");
+let main = document.querySelector(".cards");
 let colorClasses = ["light-blue", "dark-blue", "yellow" , "red", "purple"];
 let smallPictures = ["/images/home-image-square-chat.jpg", 
 "/images/home-image-square-darts.jpg",
@@ -26,7 +26,7 @@ function createChallengeCard(challenge) {
     challengeDiv = chooseCardColor(challengeDiv);
     let host = document.createElement("h3");
     host.classList.add("host");
-    host.innerText = `Author: ${challenge.account.realName}`;
+    host.innerText = `Author: ${challenge.creatorName}`;
     let size = document.createElement("h4");
     size.classList.add("size");
     size.innerText = `Size: ${challenge.joinedPlayers}/${challenge.maxPlayers}`;
