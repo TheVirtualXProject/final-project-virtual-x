@@ -385,7 +385,49 @@ textarea {
   height: 300px; */
 }
 ._accountContainer {
-  background-color: teal;
+  /* background-color: teal; */
   width: 100%;
-  height: 1000px;
+  height: 100%;
+}
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.account-main-left {
+  background-color: var(--primary-color-red);
+  margin: 25px;
+  width: 18%;
+}
+.friends-list {
+  background-color: rgba(255, 255, 255, 0.562);
+  border-radius: 20px;
+  margin: 20px;
+  align-self: flex-start;
+}
+.friends-list h2,
+.posted-challenges h2,
+.posted-comments h2 {
+  padding: 10px;
+}
+.friends-list img {
+  width: 50px;
+  border-radius: 50%;
+}
+.account-main-right {
+  margin: 25px;
+  width: 40%;
+}
+.posted-challenges {
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+.posted-comments {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
 }
