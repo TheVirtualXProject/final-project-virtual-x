@@ -66,8 +66,6 @@ public class ChallengeController {
     @PostMapping("/challenge/add-challenge")
     public String addChallenge(String img, int capacity, String challengeName, String duration, String desc, Principal principal) throws IOException, URISyntaxException {
 
-
-
         boolean pub = capacity<=0;
         System.out.println(desc);
         Account creator = accountStorage.retrieveAccountByUsername(principal.getName());
@@ -85,7 +83,7 @@ public class ChallengeController {
         Account account = accountStorage.retrieveAccountByUsername(principal.getName());
         challenge.addAccount(account);
         challengeStorage.addChallenge(challenge);
-        return "redirect:/challenge/" + id;
+        return "redirect:/api/challenges/"+ challenge.getId() + "/url";
     }
 
 

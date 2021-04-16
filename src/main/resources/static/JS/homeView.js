@@ -20,6 +20,10 @@ let pictureCounter = 0;
 function createChallengeCard(challenge) {
     let title = document.createElement("h2");
     title.classList.add("title");
+    let challengeLink = document.createElement("a");
+    challengeLink.href = "/challenge/" + challenge.id;
+    challengeLink.appendChild(title);
+
     title.innerText = challenge.title;
     let challengeDiv = document.createElement("div");
     challengeDiv.classList.add("activity-card");
@@ -42,7 +46,7 @@ function createChallengeCard(challenge) {
     join.innerText = "Join";
     //remember to add event listeners to these buttons at this part later
 
-    challengeDiv.appendChild(title);
+    challengeDiv.appendChild(challengeLink);
     challengeDiv.appendChild(host);
     challengeDiv.appendChild(size);
     challengeDiv.appendChild(duration);
@@ -52,7 +56,15 @@ function createChallengeCard(challenge) {
 
     checkForPictureAdd();
 
+    join.addEventListener("click", ()=> {
+        fetch("/challenge/" + challenge.id + "/join-challenge", {
+            method:"POST"
+        })
+        .then(response => response.text())
+        .then(url => window.location.href = url)
 
+    });
+    
 
 }
 
