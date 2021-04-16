@@ -37,7 +37,7 @@
           <section class="_singleChallengeMain">
             <img class="single-challenge-img" src="/images/single-challenge-page-img2.jpg" alt="Walking" />
             <div class="single-challenge-info">
-              <h2>A Mile A Day</h2>
+              <h2 th:text="${challenge.title}">A Mile A Day</h2>
               <h3 th:text="'Host: ' + ${challenge.getCreatorName()}" class="host">Host:Jon</h3>
               <h4 class="size">Size:4 (max:6)</h4>
               <h4 th:text="'Duration: ' + ${challenge.duration}"class="duration">Duration:7</h4>
