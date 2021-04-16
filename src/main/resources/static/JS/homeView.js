@@ -18,6 +18,9 @@ let pictureCounter = 0;
 
 
 function createChallengeCard(challenge) {
+    if(!challenge.public && challenge.joinedPlayers >= challenge.maxPlayers) {
+        return;
+    }
     let title = document.createElement("h2");
     title.classList.add("title");
     let challengeLink = document.createElement("a");
@@ -33,7 +36,13 @@ function createChallengeCard(challenge) {
     host.innerText = `Author: ${challenge.creatorName}`;
     let size = document.createElement("h4");
     size.classList.add("size");
-    size.innerText = `Size: ${challenge.joinedPlayers}/${challenge.maxPlayers}`;
+    if(challenge.public) {
+        size.innerText = `Size: ${challenge.joinedPlayers}`;
+    }
+    else {
+        size.innerText = `Size: ${challenge.joinedPlayers}/${challenge.maxPlayers}`;
+    }
+    
     let duration = document.createElement("h4");
     duration.classList.add("duration");
     duration.innerText = `Duration: ${challenge.duration}`;
@@ -55,6 +64,7 @@ function createChallengeCard(challenge) {
     main.appendChild(challengeDiv);
 
     checkForPictureAdd();
+    checkForJoinDisable(join, challenge);
 
     join.addEventListener("click", ()=> {
         fetch("/challenge/" + challenge.id + "/join-challenge", {
@@ -66,6 +76,17 @@ function createChallengeCard(challenge) {
     });
     
 
+}
+
+async function checkForJoinDisable(join, challenge){
+    let isAccountThere = await fetch("/api/challenges/" + challenge.id + "/check-users", {
+        method: "GET"
+    }).then(response => response.json());
+
+    if(isAccountThere) {
+        join.disabled = true;
+        join.innerText = "Already Joined";
+    }
 }
 
 function trimChallengeLength(desc) {
