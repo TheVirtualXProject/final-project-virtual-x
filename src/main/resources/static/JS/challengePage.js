@@ -37,13 +37,15 @@ f.addEventListener("submit", (event) => {
     let formData = new FormData();
     inputs.forEach(input => {
         if(input.files) {
-           
+
         }
         else {
             formData.append(input.name, input.value);
         }
 
     });
+    let textarea = document.querySelector("textarea");
+    formData.append(textarea.name, textarea.value);
 
 
     reader.readAsDataURL(currentFile);
