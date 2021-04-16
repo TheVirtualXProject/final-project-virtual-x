@@ -138,3 +138,10 @@ body {
   height: 400px;
   display: flex;
 }
+/*style account page ------------------*/
+._accountContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
