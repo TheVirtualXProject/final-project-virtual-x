@@ -32,17 +32,15 @@
 
       <main class="_main">
         <div class="_singleChallengeContainer">
+          
+
           <section class="_singleChallengeMain">
-            <img
-              class="single-challenge-img"
-              src="/images/single-challenge-page-img2.jpg"
-              alt="Walking"
-            />
+            <img class="single-challenge-img" src="/images/single-challenge-page-img2.jpg" alt="Walking" />
             <div class="single-challenge-info">
-              <h2 th:text="${challenge.title}">A Mile A Day</h2>
-              <h3 th:text="'Host: ' + ${challenge.creatorName}" class="host">Host:Jon</h3>
+              <h2>A Mile A Day</h2>
+              <h3 th:text="'Host: ' + ${challenge.getCreatorName()}" class="host">Host:Jon</h3>
               <h4 class="size">Size:4 (max:6)</h4>
-              <h4 th:text="'Duration: ' + ${challenge.duration}" class="duration">Duration:7</h4>
+              <h4 th:text="'Duration: ' + ${challenge.duration}"class="duration">Duration:7</h4>
               <button class="join-button">JOIN</button>
               <p th:text="${challenge.description}" class="description">
                 Join me for a new daily challenge - A Mile A DAY. It is a long
@@ -51,45 +49,46 @@
               </p>
             </div>
           </section>
-
+          <hr />
           <section class="_singleChallengeComment">
-            <h2>Comments</h2>
             <div class="_singleChallengeCommentFormSection">
               <div class="_singleChallengeCommentForm">
-                <form>
-                    <br />
+                <h4>Comments</h4>
+                <form class="add-comment-form" method="POST" action="/">
+                  <!-- <br /> -->
+                  <!-- <label for="addMedia">Upload Media</label> -->
+                  <input class="_singleChallengeFormInputs fileInput" type="file" id="img" name="addMedia" accept="image/*" />
+                  <br />
+                  <!-- <br /> -->
+                  <textarea class="_singleChallengeFormInputs commentTextArea" type="text" placeholder="your comments" name="comment"
+                    rows="3" cols="30" required></textarea>
   
-                    <label for="addMedia">Upload Media</label>
-                    <input
-                      class="_singleChallengeFormInputs"
-                      type="file"
-                      id="img"
-                      name="addMedia"
-                      accept="image/*"
-                    />
-                    <br />
-                    <br />
-                    <input
-                      class="_singleChallengeFormInputs"
-                      type="text"
-                      placeholder="your comment"
-                      name="comment"
-                    />
-                    <br />
-                    <br />
-                    <button
-                      class="_singleChallengeButton"
-                      type="submit"
-                    >
-                      Submit
-                    </button>
-                  </form>
+                  <br />
+                  <!-- <br /> -->
+                  <button class="_singleChallengeButton" type="submit" name="submit">
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
-            <ul>
-              <li>this challenge was difficult</li>
-              <li>Hello, this challenge was easy!</li>
-            </ul>
+  
+            <div class="_commentsForSingleChallenge">
+              <th:block th:each="comment:${challenge.getComments()}">
+                <div class="_displayProfile">
+                  <h4 th:text="${comment.getUsername()}">User name</h4>
+                </div>
+                <div class="_displayActualComment" th:text="${comment.getText()}">
+                  Great challenge, had a lot of fun doing it with my coworkers. Met some awesome people from other
+                  departments.
+                </div>
+                <div class="_displayCommentImg">
+                  <img th:src="${comment.importMedia}" class="commentImg" alt="Comment Pic">
+                </div>
+                <hr>
+                <br>
+
+              </th:block>
+            </div>
           </section>
         </div>
       </main>

@@ -40,13 +40,16 @@ public class ChallengeController {
     }
 
     @PostMapping("/challenge/{id}/addComment")
-    public String addCommentToChallenge(@PathVariable Long id, String body, Principal principal, String file){
+    public String addCommentToChallenge(@PathVariable Long id, String comment, Principal principal, String addMedia){
 
+        if(addMedia == null) {
+            addMedia = "";
+        }
 
 
         String username = principal.getName();
         Challenge challenge = challengeStorage.retrieveChallengeById(id);
-        Comment commentToAdd = new Comment(body, username, file, id);
+        Comment commentToAdd = new Comment(comment, username, addMedia, id);
         challenge.addComment(commentToAdd);
         challengeStorage.addChallenge(challenge);
 
@@ -57,15 +60,15 @@ public class ChallengeController {
     }
 
     @PostMapping("/challenge/add-challenge")
-    public String addChallenge(String img, int capacity, String challengeName, String duration, String description, Principal principal) throws IOException, URISyntaxException {
+    public String addChallenge(String img, int capacity, String challengeName, String duration, String desc, Principal principal) throws IOException, URISyntaxException {
 
 
 
         boolean pub = capacity<=0;
-        System.out.println(pub);
+        System.out.println(desc);
         Account creator = accountStorage.retrieveAccountByUsername(principal.getName());
 
-        Challenge challenge = new Challenge(challengeName,description,img,
+        Challenge challenge = new Challenge(challengeName,desc,img,
                 0, 0, "",duration,0, capacity , pub, creator.getRealName());
         challenge.addAccount(creator);
         challengeStorage.addChallenge(challenge);

@@ -43,6 +43,13 @@ public class Comment {
         this.username = username;
     }
 
+    public String getImportMedia() {
+        return importMedia;
+    }
+
+    public void setImportMedia(String importMedia) {
+        this.importMedia = importMedia;
+    }
 
     public Long getCurrentChallengeId() {
         return currentChallengeId;

@@ -301,7 +301,6 @@ textarea {
   justify-content: space-evenly;
   border-radius: 10px;
 }
-<<<<<<< HEAD
 .ulSingleChallenge {
   width: 100%;
   display: flex;
@@ -315,8 +314,6 @@ textarea {
   width: 48%;
   border-radius: 5px;
 }
-=======
->>>>>>> origin/dev
 
 ._singleChallengeButton {
   cursor: pointer;
@@ -400,4 +397,19 @@ textarea {
   /* display: none;
   width: 400px;
   height: 300px; */
+}
+
+.single-challenge-img {
+  height:200px;
+  width: 200px;
+}
+
+
+.commentImg[src=""] {
+  display: none;
+}
+
+.commentImg {
+  height: 200px;
+  max-width: 400px;
 }
