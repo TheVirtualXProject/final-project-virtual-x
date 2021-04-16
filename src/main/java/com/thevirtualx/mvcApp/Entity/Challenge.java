@@ -151,4 +151,7 @@ public class Challenge {
                 ", isPublic=" + isPublic +
                 '}';
     }
+
+
+
 }
