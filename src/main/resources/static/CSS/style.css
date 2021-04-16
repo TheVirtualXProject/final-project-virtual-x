@@ -30,7 +30,7 @@ li.nav-list a {
 li a.active {
   background-color: var(--primary-color-lightBlue);
 }
-li.right {
+div.right {
   float: right;
 }
 .header-title {
@@ -301,19 +301,6 @@ textarea {
   justify-content: space-evenly;
   border-radius: 10px;
 }
-.ulSingleChallenge {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.ulSingleChallenge li {
-  list-style-type: none;
-  background-color: rgb(101, 210, 214);
-  width: 48%;
-  border-radius: 5px;
-}
 
 ._singleChallengeButton {
   cursor: pointer;
@@ -369,7 +356,6 @@ textarea {
   width: 100%;
   border-radius: 10px;
   height: 100%;
-  background-color: ;
   display: flex;
   justify-content: space-evenly;
 }
@@ -398,18 +384,78 @@ textarea {
   width: 400px;
   height: 300px; */
 }
+._accountContainer {
+  /* background-color: teal; */
+  width: 100%;
+  height: 100%;
+}
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.account-main-left {
+  background-color: var(--primary-color-red);
+  margin: 25px;
+  width: 18%;
+}
+.friends-list {
+  background-color: rgba(255, 255, 255, 0.562);
+  border-radius: 20px;
+  margin: 20px;
+  align-self: flex-start;
+}
+.friends-list h2,
+.posted-challenges h2,
+.posted-comments h2 {
+  padding: 10px;
+}
+.friends-list img {
+  width: 50px;
+  border-radius: 50%;
+}
+.account-main-right {
+  margin: 25px;
+  width: 40%;
+}
+.posted-challenges {
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+.posted-comments {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+
+.commentImg {
+  height: 200px;
+  max-width: 400px;
+}
+
+.commentImg[src=""] {
+  display: none;
+}
 
 .single-challenge-img {
   height:200px;
   width: 200px;
 }
 
-
-.commentImg[src=""] {
-  display: none;
+.ulSingleChallenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.commentImg {
-  height: 200px;
-  max-width: 400px;
+.ulSingleChallenge li {
+  list-style-type: none;
+  background-color: rgb(101, 210, 214);
+  width: 48%;
+  border-radius: 5px;
 }
