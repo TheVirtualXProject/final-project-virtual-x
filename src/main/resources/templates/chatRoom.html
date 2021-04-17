@@ -42,11 +42,11 @@
                 <span class="close">&times;</span>
                 <h2>Add New Chatroom</h2>
               </div>
-              <form class="add-chatroom-form" action="">
+              <form method="POST" class="add-chatroom-form" action="/chat/addChat">
                 <div class="form">
                   <input type="text" placeholder="Chatroom Name" required name="chatName">
                   <input type="text" placeholder="Chatroom Capacity" required name="maxSize">
-                  <textarea placeholder="Chatroom Description" rows="4" cols="50" required></textarea>
+                  <textarea placeholder="Chatroom Description" rows="4" cols="50" required name="desc"></textarea>
                   <button class="submit-button" type="submit">Submit</button>
                 </div>
               </form>
@@ -57,18 +57,10 @@
         <section class="chatroom-section">
           <div class="current-chatrooms">
             <img src="/images/chat-view-main-image2.jpg" alt="Chat image">
-            <h2>Current Games</h2>
+            <h2>Current Chatrooms</h2>
             <ol class="current-chatrooms-list">
-              <li><a href="singleChatroom.html">Sample Chatroom One</a></li>
-              <li>Sample Chatroom two</li>
-              <li>Sample Chatroom three</li>
-              <li>Sample Chatroom four</li>
-              <li>Sample Chatroom five</li>
-              <li>Sample Chatroom six</li>
-              <li>Sample Chatroom seven</li>
-              <li>Sample Chatroom eight</li>
-              <li>Sample Chatroom night</li>
-              <li>Sample Chatroom ten</li>
+              
+              
             </ol>
           </div>
         </section>
@@ -77,5 +69,6 @@
     <footer class="_footer">&copy;2021 The Virtual X Team</footer>
   </div>
 </body>
+<script src="/JS/chatRoom.js"></script>
 
 </html>
