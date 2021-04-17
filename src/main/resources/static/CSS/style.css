@@ -30,7 +30,7 @@ li.nav-list a {
 li a.active {
   background-color: var(--primary-color-lightBlue);
 }
-li.right {
+div.right {
   float: right;
 }
 .header-title {
@@ -41,9 +41,12 @@ li.right {
   font-size: 4em;
   color: var(--primary-color-lightBlue);
 }
-
+/*get rid of all a tag default value----------*/
+a { color: inherit;
+  text-decoration: none;
+}
 @media screen and (max-width: 600px) {
-  ul.navBar li.right,
+  ul.navBar div.right,
   ul.navBar li {
     float: none;
   }
@@ -239,6 +242,9 @@ textarea {
   margin-top: 50px;
   margin-bottom: 20px;
 }
+textarea {
+  resize: none;
+}
 
 /*game page style*/
 .popular-games-list,
@@ -294,25 +300,12 @@ textarea {
 ._singleChallengeCommentForm {
   background-color: coral;
   height: 100%;
-  width: 100%;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-}
-.ulSingleChallenge {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.ulSingleChallenge li {
-  list-style-type: none;
-  background-color: rgb(101, 210, 214);
-  width: 48%;
-  border-radius: 5px;
 }
 
 ._singleChallengeButton {
@@ -352,7 +345,7 @@ textarea {
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
 ._singleChallengeComment {
-  background-color: transparent;
+  /* background-color: red; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -362,14 +355,13 @@ textarea {
   height: auto;
 }
 ._singleChallengeCommentFormSection {
-  width: 40%;
+  width: 30%;
   margin-right: 30px;
 }
 ._commentsForSingleChallenge {
-  width: 100%;
+  width: 70%;
   border-radius: 10px;
   height: 100%;
-  background-color: ;
   display: flex;
   justify-content: space-evenly;
 }
@@ -398,18 +390,77 @@ textarea {
   width: 400px;
   height: 300px; */
 }
+._accountContainer {
+  /* background-color: teal; */
+  width: 100%;
+  height: 100%;
+}
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.account-main-left {
+  background-color: var(--primary-color-red);
+  margin: 25px;
+  width: 18%;
+}
+.friends-list {
+  background-color: rgba(255, 255, 255, 0.562);
+  border-radius: 20px;
+  margin: 20px;
+  align-self: flex-start;
+}
+.friends-list h2,
+.posted-challenges h2,
+.posted-comments h2 {
+  padding: 10px;
+}
+.friends-list img {
+  width: 50px;
+  border-radius: 50%;
+}
+.account-main-right {
+  margin: 25px;
+  width: 40%;
+}
+.posted-challenges {
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+.posted-comments {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+.commentImg {
+  height: 200px;
+  max-width: 400px;
+}
 
 .single-challenge-img {
   height:200px;
   width: 200px;
 }
 
-
-.commentImg[src=""] {
-  display: none;
+.ulSingleChallenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ulSingleChallenge li {
+  list-style-type: none;
+  background-color: rgb(101, 210, 214);
+  width: 48%;
+  border-radius: 5px;
 }
 
-.commentImg {
-  height: 200px;
-  max-width: 400px;
+textarea {
+  resize: none;
 }
