@@ -464,3 +464,7 @@ textarea {
 textarea {
   resize: none;
 }
+
+.commentImg[src=""] {
+  display: none;
+}
