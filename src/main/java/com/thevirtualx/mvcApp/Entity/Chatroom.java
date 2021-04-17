@@ -1,10 +1,8 @@
 package com.thevirtualx.mvcApp.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -17,6 +15,8 @@ public class Chatroom {
 //    private Collection<Account> accounts;
     @Lob
     private String channelName;
+    @ManyToMany
+    private Collection<Account> accounts;
     private String author;
     private String description;
     private int currentSize;
@@ -31,7 +31,8 @@ public class Chatroom {
         this.description = "";
         this.maxSize = 4;
         this.currentSize = 1;
-        creation = Instant.now();
+        this.creation = Instant.now();
+        this.accounts = new ArrayList<>();
     }
     public Chatroom(String channelName, String author,int maxSize, String description) {
         this.channelName = channelName;
@@ -39,7 +40,8 @@ public class Chatroom {
         this.author = author;
         this.description = description;
         this.currentSize = 1;
-        creation = Instant.now();
+        this.creation = Instant.now();
+        this.accounts = new ArrayList<>();
     }
 
     protected Chatroom() {
@@ -50,6 +52,13 @@ public class Chatroom {
 //        return accounts;
 //    }
 
+    public void addAccount(Account accountToAdd) {
+        accounts.add(accountToAdd);
+        currentSize++;
+        accountToAdd.addToContributionCount();
+    }
+
+
     public String getChannelName() {
         return channelName;
     }
@@ -58,5 +67,25 @@ public class Chatroom {
     }
     public Instant getCreation(){
         return creation;
+    }
+
+    public Collection<Account> getAccounts() {
+        return accounts;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getCurrentSize() {
+        return currentSize;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
     }
 }

@@ -51,6 +51,19 @@ public class ChatroomController {
     }
 
 
+    @PostMapping("/chat/{id}/join-chatroom")
+    public String joinChatroom(@PathVariable Long id, Principal principal) {
+        Chatroom chatroom = chatroomStorage.retrieveChatroomById(id);
+        Account account = accountStorage.retrieveAccountByUsername(principal.getName());
+        if(!chatroom.getAccounts().contains(account)) {
+            chatroom.addAccount(account);
+            chatroomStorage.addChatroom(chatroom);
+        }
+
+        return "redirect:/api/chatrooms/" + chatroom.getId() + "/url";
+
+    }
+
 
 
 

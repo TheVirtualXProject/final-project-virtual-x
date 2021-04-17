@@ -92,6 +92,12 @@ public class ControllerAPI {
     }
 
 
+    @GetMapping("/api/chatrooms/{id}/url")
+    public String returnChatroomUrl(@PathVariable Long id) {
+        return "/chat/" + id;
+    }
+
+
 
     public ArrayList<Challenge> sortChallengeByRecent() {
         ArrayList<Challenge> temp = new ArrayList<>();
