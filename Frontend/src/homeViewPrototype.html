@@ -1,67 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Virtual-X</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/layout.css" />
-  </head>
 
-  <body>
-    <div class="_container">
-      <header class="_header">
-        <nav>
-          <ul class="navBar">
-            <li class="active nav-list" ><a href="homeViewPrototype.html">Home</a></li>
-            <li class="nav-list"><a href="challengePage.html">Challenges</a></li>
-            <li class="nav-list"><a href="gamePage.html">Games</a></li>
-            <li class="nav-list"><a href="chatRoom.html">Chats</a></li>
-            <li class="right nav-list"><a href="#">Account Options</a></li>
-          </ul>
-        </nav>
-        <h1 class="header-title">Virtual X</h1>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual-X</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/ratingStyle.css">
+  <script src="https://kit.fontawesome.com/bc1222c043.js" crossorigin="anonymous"></script>
+</head>
 
-      <main class="_main">
-        <div class="_openChallenges">
-          <h2>Open Challenges</h2>
-          <ol class="open-challenges-list">
-            <li>Challenge one</li>
-            <li>Challenge two</li>
-            <li>Challenge three</li>
-            <li>Challenge four</li>
-            <li>Challenge five</li>
-            <li>Challenge six</li>
-          </ol>
+<body>
+  <div class="_container">
+    <header class="_header">
+      <nav>
+        <ul class="navBar">
+          <li class="active nav-list"><a href="homeViewPrototype.html">HOME</a></li>
+          <li class="nav-list"><a href="challengePage.html">CHALLENGES</a></li>
+          <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
+          <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
+          <div class="right">
+            <li class="nav-list"><a href="accountPage.html">ACCOUNT</a></li>
+            <li class="nav-list last-right"><a href="#">LOGOUT</a></li>
+          </div>
+        </ul>
+      </nav>
+      <h1 class="header-title">Virtual X</h1>
+    </header>
+
+    <main class="_main">
+      <div class="home-main">
+        <div class="dropdown">
+          <button class="dropbtn">Sort By Type
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Open Challenges</a>
+            <a href="#">Open Games</a>
+            <a href="#">Open Chatrooms</a>
+          </div>
         </div>
+        <div class="cards">
+          <div class="activity-card light-blue">
+            <h2 class="title"><a href="singleChallenge.html">A Mile A Day</a></h2>
+            <h3 class="host">Host:Jon</h3>
+            <h4 class="size">Size:4 (max:6)</h4>
+            <h4 class="duration">Duration:7</h4>
+            <p class="description">Join me for a new daily challenge - A Mile A DAY. It is a long established fact that
+              a
+              reader will be distracted by the readable content of a page when looking at its layout. </p>
+            <button class="join-button">JOIN</button>
+          </div>
 
-        <div class="_openGames">
-          <h2>Open Games</h2>
-          <ol class="open-games-list">
-            <li>Game one</li>
-            <li>Game two</li>
-            <li>Game three</li>
-            <li>Game four</li>
-            <li>Game five</li>
-            <li>Game six</li>
-          </ol>
-        </div>
+          <div class="activity-card dark-blue">
+            <h2 class="title">Pool Table</h2>
+            <h3 class="host">Host:Connor</h3>
+            <h4 class="size">Size:1 (max:2)</h4>
+            <p class="description">Play pool and meet someone new. It is a long established fact that a reader will be
+              distracted by the readable content of a page when looking at its layout. </p>
+            <button class="join-button">JOIN</button>
+          </div>
 
-        <div class="_openChatrooms">
-          <h2>Open Chatrooms</h2>
-          <ol class="open-chatrooms-list">
-            <li>Chatroom one</li>
-            <li>Chatroom two</li>
-            <li>Chatroom three</li>
-            <li>Chatroom four</li>
-            <li>Chatroom five</li>
-            <li>Chatroom six</li>
-          </ol>
+          <div class="activity-card yellow">
+            <h2 class="title">Chat Room One</h2>
+            <h3 class="host">Host:Jelanie</h3>
+            <h4 class="size">Size:2</h4>
+            <p class="description">Virtual coffee chat is opening here. It is a long established fact that a reader will
+              be
+              distracted by the readable content of a page when looking at its layout. </p>
+            <button class="join-button">JOIN</button>
+          </div>
+
+          <div class="activity-card img-deco-square">
+            <img class="home-square-img" src="/Frontend/src/img/home-image-square-chat.jpg" alt="Chat">
+          </div>
+
+          <div class="activity-card img-deco-rectangle">
+            <img class="home-rectangle-img" src="/Frontend/src/img/home-image-rectangle-drink.jpg" alt="Cheers">
+          </div>
+
+          <div class="activity-card red">
+            <h2 class="title">Chess Game</h2>
+            <h3 class="host">Host:Branden</h3>
+            <h4 class="size">Size:4</h4>
+            <p class="description">Play chess and meet someone new. It is a long established fact that a reader will be
+              distracted by the readable content of a page when looking at its layout. </p>
+            <button class="join-button">JOIN</button>
+          </div>
+
+          <div class="activity-card purple">
+            <h2 class="title">One Minute Push Up</h2>
+            <h3 class="host">Host:Bishnu</h3>
+            <h4 class="size">Size:2 (max:10)</h4>
+            <h4 class="duration">Duration:1</h4>
+            <p class="description"> You got energy, I got a challenge for you. It is a long established fact that a
+              reader
+              will be distracted by the readable content of a page when looking at its layout. </p>
+            <button class="join-button">JOIN</button>
+          </div>
         </div>
-      </main>
-      <footer class="_footer">&copy;2021 The Virtual X Team</footer>
-    </div>
-  </body>
+      </div>
+    </main>
+    <footer class="_footer">&copy;2021 The Virtual X Team</footer>
+  </div>
+</body>
+
+
 </html>

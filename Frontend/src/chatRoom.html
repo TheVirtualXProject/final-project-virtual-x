@@ -1,32 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Virtual-X</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/layout.css" />
-  </head>
 
-  <body>
-    <div class="_container">
-      <header class="_header">
-        <nav>
-            <ul class="navBar">
-                <li class="active"><a href="homeViewPrototype.html">Home</a></li>
-                <li><a href="challengePage.html">Challenges</a></li>
-                <li><a href="gamePage.html">Games</a></li>
-                <li><a href="chatRoom.html">Chats</a></li>
-                <li class="right"><a href="#">Account Options</a></li>
-              </ul>
-        </nav>
-        <h1 class="header-title">Chat Room</h1>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual-X</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+</head>
 
-      <main class="_main"></main>
+<body>
+  <div class="_container">
+    <header class="_header">
+      <nav>
+        <ul class="navBar">
+          <li class="active nav-list"><a href="homeViewPrototype.html">HOME</a></li>
+          <li class="nav-list"><a href="challengePage.html">CHALLENGES</a></li>
+          <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
+          <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
+          <div class="right">
+            <li class="nav-list"><a href="accountPage.html">ACCOUNT</a></li>
+            <li class="nav-list last-right"><a href="#">LOGOUT</a></li>
+          </div>
+        </ul>
+      </nav>
+      <h1 class="header-title">Chatrooms</h1>
+    </header>
 
-      <footer class="_footer">&copy;2021 The Virtual X Team</footer>
-    </div>
-  </body>
+    <main class="_main">
+      <div class="chatroom-main">
+
+        <section class="add-chatroom-section">
+          <!-- Trigger/Open The Modal -->
+          <button class="add-chatroom-button">Add New Chatroom</button>
+          <!-- The Modal -->
+          <div class="modal-add-chatroom">
+            <!-- Modal content -->
+            <div class="modal-chatroom-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add New Chatroom</h2>
+              </div>
+              <form class="add-chatroom-form" action="">
+                <div class="form">
+                  <input type="text" placeholder="Chatroom Name" required>
+                  <input type="text" placeholder="Chatroom Capacity" required>
+                  <textarea placeholder="Chatroom Description" rows="4" cols="50" required></textarea>
+                  <button class="submit-button" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="chatroom-section">
+          <div class="current-chatrooms">
+            <img src="./img/chat-view-main-image2.jpg" alt="Chat image">
+            <h2>Current Games</h2>
+            <ol class="current-chatrooms-list">
+              <li><a href="singleChatroom.html">Sample Chatroom One</a></li>
+              <li>Sample Chatroom two</li>
+              <li>Sample Chatroom three</li>
+              <li>Sample Chatroom four</li>
+              <li>Sample Chatroom five</li>
+              <li>Sample Chatroom six</li>
+              <li>Sample Chatroom seven</li>
+              <li>Sample Chatroom eight</li>
+              <li>Sample Chatroom night</li>
+              <li>Sample Chatroom ten</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="_footer">&copy;2021 The Virtual X Team</footer>
+  </div>
+</body>
+
 </html>
