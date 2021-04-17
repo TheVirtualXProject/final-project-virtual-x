@@ -3,6 +3,7 @@ package com.thevirtualx.mvcApp.Entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import java.util.Collection;
 
 @Entity
@@ -12,11 +13,21 @@ public class Chatroom {
     @GeneratedValue
     private Long id;
 //    private Collection<Account> accounts;
-    private String title;
+    @Lob
+    private String channelName;
+    private String author;
+    private int currentSize = 0;
+    private int maxSize = 4;
 
-    public Chatroom(String title) {
-//       this.accounts = accounts;
-        this.title = title;
+
+    public Chatroom(String channelName, String author) {
+        this.channelName = channelName;
+        this.author = author;
+    }
+    public Chatroom(String channelName, String author,int maxSize) {
+        this.channelName = channelName;
+        this.maxSize = maxSize;
+        this.author = author;
     }
 
     protected Chatroom() {
@@ -27,7 +38,10 @@ public class Chatroom {
 //        return accounts;
 //    }
 
-    public String getTitle() {
-        return title;
+    public String getChannelName() {
+        return channelName;
+    }
+    public Long getId(){
+        return id;
     }
 }
