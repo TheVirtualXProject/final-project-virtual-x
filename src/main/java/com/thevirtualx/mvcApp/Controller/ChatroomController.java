@@ -33,6 +33,7 @@ public class ChatroomController {
     public String createNewChatroom(String chatName, int maxSize, Principal principal, String desc) {
         Account author = accountStorage.retrieveAccountByUsername(principal.getName());
         Chatroom newChat = new Chatroom(chatName, author.getRealName(), maxSize, desc);
+        newChat.addAccount(author);
         chatroomStorage.addChatroom(newChat);
         return "redirect:/chat/" + newChat.getId();
     }

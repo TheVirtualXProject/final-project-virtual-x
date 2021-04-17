@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeViewController {
 
 
-
-
-
-
-
     @GetMapping("/")
     public String displayHomeView() {
 
