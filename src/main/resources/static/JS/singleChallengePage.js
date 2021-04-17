@@ -115,8 +115,28 @@ commentForm.addEventListener("submit", (event)=> {
 
 }) 
 
+function setUpRatingSystem() {
+    let starWidget = document.querySelector(".star-widget");
+    let labels = starWidget.querySelectorAll("label");
+    labels.forEach(input => {
+        let inputVal = document.querySelector("#" + input.htmlFor);
+        input.addEventListener("click", () => sendHttpRequest(inputVal.value));
+    });
+}
+
+function sendHttpRequest(value) {
+    let request = new XMLHttpRequest();
+    let formData = new FormData();
+    formData.append("rate", value);
+    request.open("POST", "/api/challenges/" + challengeId +  "/rate");
+    request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    request.send(formData);
+
+    
+}
 
 
 
 fetchChallengeData();
+setUpRatingSystem();
 

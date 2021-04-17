@@ -18,6 +18,8 @@ public class Challenge {
     private String creatorName;
     @ElementCollection
     private Collection<Comment> comments;
+    @ElementCollection
+    private Collection<Rated> hasRated;
     private String title;
     @Lob
     private String description;
@@ -45,6 +47,7 @@ public class Challenge {
         this.rating = rating;
         this.popularity = popularity;
         this.comments = new ArrayList<>();
+        this.hasRated = new ArrayList<>();
         this.challenges = challenges;
         this.duration = duration;
         this.joinedPlayers = joinedPlayers;
@@ -85,6 +88,9 @@ public class Challenge {
     public String getCreatorName() {
         return creatorName;
     }
+    public Collection<Rated> getHasRated() {
+        return hasRated;
+    }
 
 
     public String getDuration() {
@@ -104,6 +110,10 @@ public class Challenge {
         accounts.add(accountToAdd);
         joinedPlayers++;
         accountToAdd.addToContributionCount();
+    }
+
+    public void addUserToRated(Rated rated) {
+        hasRated.add(rated);
     }
     public void addComment(Comment commentToAdd) {
         comments.add(commentToAdd);
@@ -132,6 +142,21 @@ public class Challenge {
 //            System.out.print(i);
 //        }
 //    }
+
+    public void replaceUserRating(Rated rated) {
+        if(hasRated.contains(rated)) {
+            hasRated.remove(rated);
+            hasRated.add(rated);
+        }
+    }
+
+    public void findAverageRating() {
+        rating = 0;
+        for(Rated rated: hasRated) {
+            rating += rated.getRating();
+        }
+        rating /= hasRated.size();
+    }
 
     @Override
     public String toString() {

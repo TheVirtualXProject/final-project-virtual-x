@@ -2,10 +2,12 @@ package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Challenge;
+import com.thevirtualx.mvcApp.Entity.Rated;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.rowset.serial.SerialBlob;
@@ -55,6 +57,23 @@ public class ControllerAPI {
         return "/challenge/" +id;
     }
 
+    @PostMapping("/api/challenges/{id}/rate")
+    public int rateChallenge(int rate, @PathVariable Long id, Principal principal) {
+        Rated rated  = new Rated(principal.getName(), rate);
+        Challenge challenge = challengeStorage.retrieveChallengeById(id);
+        if(!challenge.getHasRated().contains(rated)) {
+            challenge.addUserToRated(rated);
+        }
+        else {
+            challenge.replaceUserRating(rated);
+
+        }
+        challenge.findAverageRating();
+        challengeStorage.addChallenge(challenge);
+
+        return challenge.getRating();
+
+    }
 
 
 
@@ -77,7 +96,7 @@ public class ControllerAPI {
             public int compare(Challenge o1, Challenge o2) {
                 Integer int1 = o1.getRating();
                 Integer int2 = o2.getRating();
-                return int1.compareTo(int2);
+                return int2.compareTo(int1);
             }
         });
         return temp;
