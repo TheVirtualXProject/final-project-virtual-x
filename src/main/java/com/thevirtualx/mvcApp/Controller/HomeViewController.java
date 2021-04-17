@@ -14,6 +14,7 @@ public class HomeViewController {
 
     @GetMapping("/")
     public String displayHomeView() {
+
         return "homeView";
     }
 }

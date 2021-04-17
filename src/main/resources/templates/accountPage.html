@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+>
 
 <head>
     <meta charset="UTF-8" />
@@ -31,11 +34,11 @@
         <main class="_main">
             <div class="_accountContainer">
                 <section class="account-main-left">
-                    <img class="profile-pic" src="images/account-profile-pic1.jpg" alt="Profile pic">
-                    <h1>Weiwei-20</h1>
-                    <p>Real Name: Weiwei Jiang</p>
-                    <h3>Points:110</h3>
-                    <div class="friends-list">
+                    <img class="profile-pic" src="images/account-profile-pic1.jpg" alt="Profile pic"> <!-- thymeleaf -->
+                    <h1>Weiwei-20</h1><!-- thymeleaf -->
+                    <p>Real Name: Weiwei Jiang</p><!-- thymeleaf -->
+                    <h3>Points:110</h3><!-- thymeleaf -->
+                    <div class="friends-list"><!-- nonfunctional, git rid of -->
                         <h2>Friends</h2>
                         <img src="/images/account-profile-pic2.jpg" alt="">
                         <h4>Jay</h4>
@@ -45,7 +48,7 @@
                 </section>
                 <section class="account-main-right">
                     <div class="posted-challenges">
-                        <h2>My Challenges</h2>
+                        <h2>My Challenges</h2><!-- thymeleaf, loop -->
                         <h4>Lunch hour flower hunt</h4>
                         <p>Spring is finally here!!! Have you told yourself “Outside is so nice, I want to go outside
                             today.” But as time goes by, you never make it outside.
@@ -64,7 +67,7 @@
 
 
                     <div class="posted-comments">
-                        <h2>Comments</h2>
+                        <h2>Comments</h2><!-- thymeleaf, loop -->
                         <h4>Walk a mile during lunch!</h4>
                         <p>Great challenge! Got to talk to a coworker who works in the account department. We found out
                             we

@@ -78,6 +78,50 @@ function createChallengeCard(challenge) {
 
 }
 
+
+function createChatroomCard(chatroom) {
+    if(chatroom.currentSize >= chatroom.maxSize) {
+        return;
+    }
+    let chatroomDiv = document.createElement("div");
+    chatroomDiv.classList.add("activity-card");
+    chatroomDiv = chooseCardColor(chatroomDiv);
+    let title = document.createElement("h2");
+    title.classList.add("title");
+    title.innerText = chatroom.channelName;
+    let host = document.createElement("h3");
+    host.classList.add("host");
+    host.innerText = `Host: ${chatroom.author}`;
+    let size = document.createElement("h4");
+    size.classList.add("size");
+    size.innerText = "Size: " + chatroom.currentSize + "/" + chatroom.maxSize;
+    let chatDesc = document.createElement("p");
+    chatDesc.classList.add("description");
+    chatDesc.innerText = chatroom.description;
+    let join = document.createElement("button");
+    join.classList.add("join-button");
+    join.innerText = "Join";
+
+
+    chatroomDiv.appendChild(title);
+    chatroomDiv.appendChild(host);
+    chatroomDiv.appendChild(size);
+    chatroomDiv.appendChild(chatDesc);
+    chatroomDiv.appendChild(join);
+    main.appendChild(chatroomDiv);
+
+    checkForPictureAdd();
+
+    join.addEventListener("click", () => {
+        fetch("/chat/" + chatroom.id + "/join-chatroom", {
+            method: "POST",
+        }).then(response => response.text())
+        .then(url => window.location.href = url);
+    });
+
+
+}
+
 async function checkForJoinDisable(join, challenge){
     let isAccountThere = await fetch("/api/challenges/" + challenge.id + "/check-users", {
         method: "GET"
@@ -166,14 +210,25 @@ async function checkForChallenges() {
     return challengeJson;
 }
 
+async function checkForChatrooms() {
+    let chatroomJson = await fetch("/api/chatrooms", {
+        method: "GET",
+    }).then(response => response.json());
+    return chatroomJson;
+}
+
 async function processJsonValues() {
     let challengeJson =  await checkForChallenges();
+    let chatroomJson = await checkForChatrooms();
     //code for games and chat rooms goes here
     let index = 0;
-    while(checkIndexToLength(challengeJson, index)) {
+    while(checkIndexToLength(challengeJson, index) || checkIndexToLength(chatroomJson, index)) {
     // add the others here so that the generation spreads them out on the page by 3
         if(checkIndexToLength(challengeJson, index)) {
             createChallengeCard(challengeJson[index]);
+        }
+        if(checkIndexToLength(chatroomJson, index)) {
+            createChatroomCard(chatroomJson[index]);
         }
         index++;
     }
