@@ -22,7 +22,10 @@ xmlns:th="http://www.thymeleaf.org"
           <li class="nav-list"><a href="/challenge">CHALLENGES</a></li>
           <li class="nav-list"><a href="/game">GAMES</a></li>
           <li class="nav-list"><a href="/chat">CHATS</a></li>
-          <li class="right nav-list"><a href="/account">ACCOUNT</a></li>
+          <div class="right">
+            <li class="nav-list"><a href="/account">ACCOUNT</a></li>
+            <li class="nav-list last-right"><a href="/logout">LOGOUT</a></li>
+          </div>
         </ul>
       </nav>
       <h1 class="header-title">Challenges</h1>
@@ -85,7 +88,7 @@ xmlns:th="http://www.thymeleaf.org"
           <div class="popular-challenges">
             <h2>Popular Challenges</h2>
             <ol class="popular-challenges-list">
-              <th:block th:each="challenge:${challenges}">
+              <th:block th:each="challenge:${challengesPopular}">
                 <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
               </th:block>
             </ol>
@@ -94,7 +97,7 @@ xmlns:th="http://www.thymeleaf.org"
             <img src="/images/challenge-view-main-image2.jpg" alt="Ride bikes">
             <h2>Current Challenges</h2>
             <ol class="current-challenges-list">
-              <th:block th:each="challenge:${challenges}">
+              <th:block th:each="challenge:${challengesRecent}">
                 <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
               </th:block>
             </ol>

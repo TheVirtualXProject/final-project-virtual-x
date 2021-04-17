@@ -30,7 +30,7 @@ li.nav-list a {
 li a.active {
   background-color: var(--primary-color-lightBlue);
 }
-li.right {
+div.right {
   float: right;
 }
 .header-title {
@@ -238,6 +238,9 @@ textarea {
 ._singleChallengeComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
+}
+textarea {
+  resize: none;
 }
 
 /*game page style*/
