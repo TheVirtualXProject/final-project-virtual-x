@@ -1,11 +1,14 @@
 package com.thevirtualx.mvcApp.Controller;
 
+import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Chatroom;
+import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
 
@@ -13,9 +16,11 @@ import java.security.Principal;
 public class ChatroomController {
 
     private ChatroomStorage chatroomStorage;
+    private AccountStorage accountStorage;
 
-    public ChatroomController (ChatroomStorage chatroomStorage) {
+    public ChatroomController (ChatroomStorage chatroomStorage, AccountStorage accountStorage) {
         this.chatroomStorage = chatroomStorage;
+        this.accountStorage = accountStorage;
     }
 
 
@@ -35,6 +40,14 @@ public class ChatroomController {
         model.addAttribute("channelName", chatroom.getChannelName());
 
         return "singleChatroom";
+    }
+
+    @PostMapping("/chat/addChat")
+    public String createNewChatroom( String chatName, int maxSize, Principal principal) {
+        Account author = accountStorage.retrieveAccountByUsername(principal.getName());
+        Chatroom newChat = new Chatroom(chatName, author.getRealName(), maxSize);
+        chatroomStorage.addChatroom(newChat);
+        return "redirect:/chat/" + newChat.getId();
     }
 
 

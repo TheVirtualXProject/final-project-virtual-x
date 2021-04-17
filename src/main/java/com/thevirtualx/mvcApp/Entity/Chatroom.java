@@ -15,10 +15,19 @@ public class Chatroom {
 //    private Collection<Account> accounts;
     @Lob
     private String channelName;
+    private String author;
+    private int currentSize = 0;
+    private int maxSize = 4;
 
-    public Chatroom(String channelName) {
-//       this.accounts = accounts;
+
+    public Chatroom(String channelName, String author) {
         this.channelName = channelName;
+        this.author = author;
+    }
+    public Chatroom(String channelName, String author,int maxSize) {
+        this.channelName = channelName;
+        this.maxSize = maxSize;
+        this.author = author;
     }
 
     protected Chatroom() {

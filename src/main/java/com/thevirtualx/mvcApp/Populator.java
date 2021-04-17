@@ -94,7 +94,7 @@ public class Populator implements CommandLineRunner {
         floorIsLava.addAccount(bishnu);
         challengeStorage.addChallenge(floorIsLava);
 
-        Chatroom chadsOnly = new Chatroom("forTheChads");
+        Chatroom chadsOnly = new Chatroom("forTheChads", connor.getRealName());
         chatroomStorage.addChatroom(chadsOnly);
         System.out.println(chadsOnly.getId());
     }
