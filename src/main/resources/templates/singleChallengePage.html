@@ -9,6 +9,8 @@
     <title>Virtual-X</title>
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="/CSS/layout.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/CSS/ratingStyle.css">
   </head>
 
   <body>
@@ -37,6 +39,20 @@
             <img class="single-challenge-img" src="/images/single-challenge-page-img2.jpg" alt="Walking" />
             <div class="single-challenge-info">
               <h2 th:text="${challenge.title}">A Mile A Day</h2>
+              <div class = "star-container">
+                <div class="star-widget">
+                  <input type="radio" name="rate" id="rate-5" value="5">
+                  <label for="rate-5" class="fas fa-star" ></label>
+                  <input type="radio" name="rate" id="rate-4" value="4">
+                  <label for="rate-4" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-3" value="3">
+                  <label for="rate-3" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-2" value="2">
+                  <label for="rate-2" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-1" value="1">
+                  <label for="rate-1" class="fas fa-star"></label>
+                </div>
+              </div>
               <h3 th:text="'Host: ' + ${challenge.getCreatorName()}" class="host">Host:Jon</h3>
               <h4 class="size">Size:4 (max:6)</h4>
               <h4 th:text="'Duration: ' + ${challenge.duration}"class="duration">Duration:7</h4>
