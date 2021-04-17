@@ -29,6 +29,14 @@ public class ChatroomController {
         return  "chatRoom";
     }
 
+    @PostMapping("/chat/addChat")
+    public String createNewChatroom(String chatName, int maxSize, Principal principal, String desc) {
+        Account author = accountStorage.retrieveAccountByUsername(principal.getName());
+        Chatroom newChat = new Chatroom(chatName, author.getRealName(), maxSize, desc);
+        chatroomStorage.addChatroom(newChat);
+        return "redirect:/chat/" + newChat.getId();
+    }
+
     @GetMapping("/chat/{chatId}")
     public String displaySingleChatroom(@PathVariable Long chatId, Model model, Principal principal) {
         String kiwiIRC = "https://kiwiirc.com/client/irc.kiwiirc.com/?nick=";
@@ -42,13 +50,7 @@ public class ChatroomController {
         return "singleChatroom";
     }
 
-    @PostMapping("/chat/addChat")
-    public String createNewChatroom( String chatName, int maxSize, Principal principal) {
-        Account author = accountStorage.retrieveAccountByUsername(principal.getName());
-        Chatroom newChat = new Chatroom(chatName, author.getRealName(), maxSize);
-        chatroomStorage.addChatroom(newChat);
-        return "redirect:/chat/" + newChat.getId();
-    }
+
 
 
 

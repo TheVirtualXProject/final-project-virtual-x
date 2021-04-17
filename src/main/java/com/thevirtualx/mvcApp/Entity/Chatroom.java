@@ -16,18 +16,24 @@ public class Chatroom {
     @Lob
     private String channelName;
     private String author;
-    private int currentSize = 0;
-    private int maxSize = 4;
+    private String description;
+    private int currentSize;
+    private int maxSize;
 
 
     public Chatroom(String channelName, String author) {
         this.channelName = channelName;
         this.author = author;
+        this.description = "";
+        this.maxSize = 4;
+        this.currentSize = 1;
     }
-    public Chatroom(String channelName, String author,int maxSize) {
+    public Chatroom(String channelName, String author,int maxSize, String description) {
         this.channelName = channelName;
         this.maxSize = maxSize;
         this.author = author;
+        this.description = description;
+        this.currentSize = 1;
     }
 
     protected Chatroom() {
