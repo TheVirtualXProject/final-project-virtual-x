@@ -41,8 +41,13 @@ div.right {
   font-size: 4em;
   color: var(--primary-color-lightBlue);
 }
-
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
 @media screen and (max-width: 600px) {
+  
   ul.navBar li.right,
   ul.navBar li {
     float: none;
@@ -105,7 +110,7 @@ div.right {
 .yellow,
 .red,
 .purple {
-  padding: 25px;
+  /* padding: 25px; */
   text-align: center;
   font-family: var(--body-text-font);
 }
@@ -355,13 +360,7 @@ textarea {
   width: 40%;
   margin-right: 30px;
 }
-._commentsForSingleChallenge {
-  width: 100%;
-  border-radius: 10px;
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
+
 ._singleChallengeMain {
   margin-bottom: 5%;
 }
@@ -376,6 +375,11 @@ textarea {
   flex-direction: column;
   text-align: start;
   padding: 0 20px;
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 .comment-pic {
   width: 200px;
