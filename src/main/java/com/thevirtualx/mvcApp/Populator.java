@@ -2,6 +2,7 @@ package com.thevirtualx.mvcApp;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Challenge;
+import com.thevirtualx.mvcApp.Entity.Chatroom;
 import com.thevirtualx.mvcApp.Entity.Comment;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
@@ -93,7 +94,9 @@ public class Populator implements CommandLineRunner {
         floorIsLava.addAccount(bishnu);
         challengeStorage.addChallenge(floorIsLava);
 
-//        how do comments know where to go and who they belong to at the same time
+        Chatroom chadsOnly = new Chatroom("forTheChads", connor.getRealName());
+        chatroomStorage.addChatroom(chadsOnly);
+        System.out.println(chadsOnly.getId());
     }
 
 }

@@ -2,16 +2,19 @@ package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Challenge;
+import com.thevirtualx.mvcApp.Entity.Chatroom;
+import com.thevirtualx.mvcApp.Entity.Rated;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
+import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.rowset.serial.SerialBlob;
 import java.security.Principal;
-import java.sql.Blob;
-import java.sql.SQLException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -22,16 +25,19 @@ public class ControllerAPI {
 
     private ChallengeStorage challengeStorage;
     private AccountStorage accountStorage;
+    private ChatroomStorage chatroomStorage;
 
-    public ControllerAPI(ChallengeStorage challengeStorage, AccountStorage accountStorage) {
+    public ControllerAPI(ChallengeStorage challengeStorage, AccountStorage accountStorage,
+                         ChatroomStorage chatroomStorage) {
         this.challengeStorage = challengeStorage;
         this.accountStorage = accountStorage;
+        this.chatroomStorage = chatroomStorage;
     }
 
 
     @GetMapping("/api/challenges")
     public ArrayList<Challenge> getAllChallenges() {
-        return sortByRecent();
+        return sortChallengeByRecent();
     }
 
 
@@ -55,10 +61,45 @@ public class ControllerAPI {
         return "/challenge/" +id;
     }
 
+    @PostMapping("/api/challenges/{id}/rate")
+    public int rateChallenge(int rate, @PathVariable Long id, Principal principal) {
+        Rated rated  = new Rated(principal.getName(), rate);
+        Challenge challenge = challengeStorage.retrieveChallengeById(id);
+        if(!challenge.getHasRated().contains(rated)) {
+            challenge.addUserToRated(rated);
+        }
+        else {
+            challenge.replaceUserRating(rated);
+
+        }
+        challenge.findAverageRating();
+        challengeStorage.addChallenge(challenge);
+
+        return challenge.getRating();
+
+    }
+
+    @GetMapping("/api/chatrooms")
+    public ArrayList<Chatroom> getAllChatrooms() {
+        Instant rightNow = Instant.now();
+        for (Chatroom chatroom:chatroomStorage.retrieveAll()) {
+            if ((Duration.between(chatroom.getCreation(), rightNow).getSeconds() / 60) >= 30) {
+                chatroomStorage.deleteChatroomById(chatroom.getId());
+            }
+        }
+        
+        return sortChatroomByRecent();
+    }
+
+
+    @GetMapping("/api/chatrooms/{id}/url")
+    public String returnChatroomUrl(@PathVariable Long id) {
+        return "/chat/" + id;
+    }
 
 
 
-    public ArrayList<Challenge> sortByRecent() {
+    public ArrayList<Challenge> sortChallengeByRecent() {
         ArrayList<Challenge> temp = new ArrayList<>();
         Iterable<Challenge> challenges = challengeStorage.getAllChallenges();
         for(Challenge challenge: challenges) {
@@ -67,7 +108,16 @@ public class ControllerAPI {
         return temp;
     }
 
-    public ArrayList<Challenge> sortByPopular() {
+    public ArrayList<Chatroom> sortChatroomByRecent() {
+        ArrayList<Chatroom> temp = new ArrayList<>();
+        Iterable<Chatroom> chatrooms = chatroomStorage.retrieveAll();
+        for(Chatroom chatroom: chatrooms) {
+            temp.add(0, chatroom);
+        }
+        return temp;
+    }
+
+    public ArrayList<Challenge> sortChallengeByPopular() {
         ArrayList<Challenge> temp = new ArrayList<>();
         for(Challenge challenge: challengeStorage.getAllChallenges()) {
             temp.add(challenge);
@@ -77,7 +127,7 @@ public class ControllerAPI {
             public int compare(Challenge o1, Challenge o2) {
                 Integer int1 = o1.getRating();
                 Integer int2 = o2.getRating();
-                return int1.compareTo(int2);
+                return int2.compareTo(int1);
             }
         });
         return temp;

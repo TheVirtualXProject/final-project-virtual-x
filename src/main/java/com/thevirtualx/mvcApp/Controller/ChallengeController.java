@@ -87,6 +87,8 @@ public class ChallengeController {
     }
 
 
+
+
     public ArrayList<Challenge> sortByRecent() {
         ArrayList<Challenge> temp = new ArrayList<>();
         Iterable<Challenge> challenges = challengeStorage.getAllChallenges();
@@ -106,11 +108,13 @@ public class ChallengeController {
             public int compare(Challenge o1, Challenge o2) {
                 Integer int1 = o1.getRating();
                 Integer int2 = o2.getRating();
-                return int1.compareTo(int2);
+                return int2.compareTo(int1);
             }
         });
         return temp;
     }
+
+
 
 
 

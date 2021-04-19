@@ -19,6 +19,8 @@ public class Account {
     private Collection<String> friends;
     @ManyToMany(mappedBy = "accounts")
     private Collection<Challenge> joinedChallenges;
+    @ManyToMany(mappedBy = "accounts")
+    private Collection<Chatroom> joinedChatrooms;
     private String username;
     private String password;
     private String realName;
