@@ -1,12 +1,10 @@
 package com.thevirtualx.mvcApp.Controller;
 
-import com.thevirtualx.mvcApp.Entity.Account;
-import com.thevirtualx.mvcApp.Entity.Challenge;
-import com.thevirtualx.mvcApp.Entity.Chatroom;
-import com.thevirtualx.mvcApp.Entity.Rated;
+import com.thevirtualx.mvcApp.Entity.*;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
 import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
+import com.thevirtualx.mvcApp.Storage.GameStorage;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,12 +24,14 @@ public class ControllerAPI {
     private ChallengeStorage challengeStorage;
     private AccountStorage accountStorage;
     private ChatroomStorage chatroomStorage;
+    private GameStorage gameStorage;
 
     public ControllerAPI(ChallengeStorage challengeStorage, AccountStorage accountStorage,
-                         ChatroomStorage chatroomStorage) {
+                         ChatroomStorage chatroomStorage, GameStorage gameStorage) {
         this.challengeStorage = challengeStorage;
         this.accountStorage = accountStorage;
         this.chatroomStorage = chatroomStorage;
+        this.gameStorage = gameStorage;
     }
 
 
@@ -89,6 +89,19 @@ public class ControllerAPI {
         }
         
         return sortChatroomByRecent();
+    }
+
+    @GetMapping("/api/games/playerHash")
+    public GameHash getPlayerData(Principal principal) {
+        Account account = accountStorage.retrieveAccountByUsername(principal.getName());
+        GameHash gameHash = new GameHash(account.getId(), account.getUsername());
+        return gameHash;
+    }
+
+    @GetMapping("/api/games/{id}")
+    public Game retrieveGameInfo(@PathVariable Long id) {
+        Game game = gameStorage.retrieveGameById(id);
+        return game;
     }
 
 
