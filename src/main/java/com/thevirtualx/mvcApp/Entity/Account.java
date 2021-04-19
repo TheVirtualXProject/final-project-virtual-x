@@ -77,6 +77,10 @@ public class Account {
         return profilePicture;
     }
 
+    public Collection<Challenge> getJoinedChallenges() {
+        return joinedChallenges;
+    }
+
     public boolean isStatusServerSide() {
         return statusServerSide;
     }
