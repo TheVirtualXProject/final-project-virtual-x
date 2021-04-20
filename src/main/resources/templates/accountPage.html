@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org"
+
+
 >
+<!--xmlns="http://www.w3.org/1999/xhtml"-->
+<!--xmlns:th="http://www.thymeleaf.org"-->
+
 
 <head>
     <meta charset="UTF-8" />
@@ -11,6 +14,7 @@ xmlns:th="http://www.thymeleaf.org"
     <title>Virtual-X</title>
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="/CSS/layout.css" />
+
 </head>
 
 <body>
@@ -34,27 +38,38 @@ xmlns:th="http://www.thymeleaf.org"
         <main class="_main">
             <div class="_accountContainer">
                 <section class="account-main-left">
-                    <img class="profile-pic" src="images/account-profile-pic1.jpg" alt="Profile pic"> <!-- thymeleaf -->
-                    <h1>Weiwei-20</h1><!-- thymeleaf -->
-                    <p>Real Name: Weiwei Jiang</p><!-- thymeleaf -->
-                    <h3>Points:110</h3><!-- thymeleaf -->
-                    <div class="friends-list"><!-- nonfunctional, git rid of -->
+                    <!-- <img class="profile-pic" src="images/account-profile-pic1.jpg" th:src = ""alt="Profile pic"> Remove, thymeleaf -->
+                    <h1 th:text="${account.username}">Weiwei-20</h1><!-- thymeleaf -->
+                    <p>Real Name: <span th:text="${account.realName}">Wiewie Jiang</span></p><!-- thymeleaf -->
+                    <h3>Points:<span th:text="${account.contributionPoints}">110</span></h3><!-- thymeleaf -->
+                    <!-- <div class="friends-list">
                         <h2>Friends</h2>
                         <img src="/images/account-profile-pic2.jpg" alt="">
                         <h4>Jay</h4>
                         <img src="/images/account-profile-pic3.jpg" alt="">
                         <h4>Conner</h4>
-                    </div>
+                    </div> -->
                 </section>
                 <section class="account-main-right">
                     <div class="posted-challenges">
-                        <h2>My Challenges</h2><!-- thymeleaf, loop -->
-                        <h4>Lunch hour flower hunt</h4>
-                        <p>Spring is finally here!!! Have you told yourself “Outside is so nice, I want to go outside
-                            today.” But as time goes by, you never make it outside.
-                            This lunch hour flower hunt will give you a chance to go outside, and snip pictures of the
-                            flowers that you see in your yard, or on the way of your walk.
-                            Enjoy the sun and get moving by doing this challenge.</p>
+                        <h2>My Challenges</h2><!-- thymeleaf  loop-->
+                        <th:block th:each="challenge : ${account.joinedChallenges}">
+                            <a th:href="'/challenge/'+ ${challenge.id}">
+                                <h4 th:text="${challenge.title}">Lunch hour flower hunt</h4>
+                                <p th:text="${challenge.description}">Spring is finally here!!! Have you told yourself “Outside is so nice, I want to go outside
+                                    today.” But as time goes by, you never make it outside.
+                                    This lunch hour flower hunt will give you a chance to go outside, and snip pictures of the
+                                    flowers that you see in your yard, or on the way of your walk.
+                                    Enjoy the sun and get moving by doing this challenge.
+                                </p>
+                                
+                            </a>
+                        <br>
+                        <hr>
+                        <br>
+                        </th:block>
+                        
+<!--                         
                         <br>
                         <hr>
                         <br>
@@ -62,18 +77,28 @@ xmlns:th="http://www.thymeleaf.org"
                         <p>Spring is finally here!!! Have you told yourself “Outside is so nice, I want to go outside
                             today.”
                             B...</p>
-                        <br>
+                        <br> -->
                     </div>
 
 
                     <div class="posted-comments">
-                        <h2>Comments</h2><!-- thymeleaf, loop -->
-                        <h4>Walk a mile during lunch!</h4>
-                        <p>Great challenge! Got to talk to a coworker who works in the account department. We found out
-                            we
-                            both
-                            like Survivor.</p>
-                        <br>
+                        <h2>Comments</h2><!-- thymeleaf loop-->
+                        
+                        <th:block th:each="comment : ${account.comments}">
+                            <a th:href="'/challenge/' + ${comment.currentChallengeId}">
+                                <h4 th:text="${challengeStorage.retrieveChallengeById(comment.currentChallengeId).title}">Walk a mile during lunch!</h4>
+                                <p th:text="${comment.text}">Great challenge! Got to talk to a coworker who works in the account department. We found out
+                                    we
+                                    both
+                                    like Survivor.
+                                </p>
+                            </a>
+                            <br>
+                            <hr>
+                            <br>
+                        </th:block>
+                        
+                        <!-- <br>
                         <hr>
                         <br>
                         <h4>The Floor is Lava!</h4>
@@ -85,7 +110,7 @@ xmlns:th="http://www.thymeleaf.org"
                         <br>
                         <h4>Lunch hour flower hunt</h4>
                         <p>Great challenge! Met so many fun people during this challenge.</p>
-                        <br>
+                        <br> -->
                     </div>
                 </section>
             </div>
