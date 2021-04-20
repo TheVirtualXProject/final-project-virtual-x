@@ -62,7 +62,11 @@
                                     flowers that you see in your yard, or on the way of your walk.
                                     Enjoy the sun and get moving by doing this challenge.
                                 </p>
+                                
                             </a>
+                        <br>
+                        <hr>
+                        <br>
                         </th:block>
                         
 <!--                         
@@ -79,12 +83,22 @@
 
                     <div class="posted-comments">
                         <h2>Comments</h2><!-- thymeleaf loop-->
-                        <h4>Walk a mile during lunch!</h4>
-                        <p>Great challenge! Got to talk to a coworker who works in the account department. We found out
-                            we
-                            both
-                            like Survivor.</p>
-                        <br>
+                        
+                        <th:block th:each="comment : ${account.comments}">
+                            <a th:href="'/challenge/' + ${comment.currentChallengeId}">
+                                <h4 th:text="${challengeStorage.retrieveChallengeById(comment.currentChallengeId).title}">Walk a mile during lunch!</h4>
+                                <p th:text="${comment.text}">Great challenge! Got to talk to a coworker who works in the account department. We found out
+                                    we
+                                    both
+                                    like Survivor.
+                                </p>
+                            </a>
+                            <br>
+                            <hr>
+                            <br>
+                        </th:block>
+                        
+                        <!-- <br>
                         <hr>
                         <br>
                         <h4>The Floor is Lava!</h4>
@@ -96,7 +110,7 @@
                         <br>
                         <h4>Lunch hour flower hunt</h4>
                         <p>Great challenge! Met so many fun people during this challenge.</p>
-                        <br>
+                        <br> -->
                     </div>
                 </section>
             </div>
