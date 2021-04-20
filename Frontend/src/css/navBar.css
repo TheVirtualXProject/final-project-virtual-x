@@ -16,17 +16,16 @@ nav{
   height: 80px;
   width: 100%;
 }
-label.logo{
+/* label.logo{
   font-family: Gugi;
-  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   color:rgb(30, 213, 202);
   font-size: 35px;
   line-height: 80px;
   padding: 0 100px;
   font-weight: bold;
-}
+} */
 nav ul{
-  float: right;
+  float: left;
   margin-right: 20px;
 }
 nav ul li{
@@ -41,6 +40,7 @@ nav ul li a{
   border-radius: 3px;
   text-transform: uppercase;
 }
+
 a.active,a:hover{
   background: var(--primary-color-lightBlue);
   transition: .5s;
@@ -58,10 +58,10 @@ a.active,a:hover{
   display: none;
 }
 @media (max-width: 952px){
-  label.logo{
+  /* label.logo{
     font-size: 30px;
     padding-left: 50px;
-  }
+  } */
   nav ul li a{
     font-size: 16px;
   }
@@ -76,7 +76,7 @@ a.active,a:hover{
     height: 100vh;
     background:coral;
     top: 80px;
-    left: -100%;
+    left: 100%;
     text-align: center;
     transition: all .5s;
   }
