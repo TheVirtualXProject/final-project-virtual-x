@@ -154,7 +154,7 @@ ol li {
   padding: 5px 10px;
 }
 .challenge-list-content{
-  background-color: rgba(246, 246, 246, 0.568);
+  background-color: rgba(156, 148, 148, 0.568);
   border-radius: 5px;
   margin-bottom: 5px;
 }
@@ -169,7 +169,7 @@ ol li {
   margin-left:50px;
 }
 .current-challenges {
-  background-color: var(--primary-color-lightBlue);
+  /* background-color: var(--primary-color-lightBlue); */
 }
 .current-challenges img{
   /* border:5px solid white;

@@ -27,7 +27,7 @@ body {
   width: 100%;
 }
 ._container {
-  background-color: var(--background);
+  background-color: url(../images/background1.png);
   font-family: var(--body-text-font);
 }
 ._header {
