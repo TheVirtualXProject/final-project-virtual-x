@@ -15,7 +15,7 @@ async function showPopularGames() {
     for(let i = 0; i < 10;i++) {
         let listItem = document.createElement("li");
         let anchor = document.createElement("a");
-        anchor.href = "/game/" + popularGames[i] + "/create-game";
+        anchor.href = "/game/" + popularGames[i].id + "/create-game";
         anchor.innerText = popularGames[i].name;
         listItem.appendChild(anchor);
         popularGamesList.appendChild(listItem);

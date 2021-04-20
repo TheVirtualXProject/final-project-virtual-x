@@ -136,7 +136,6 @@ public class Populator implements CommandLineRunner {
 
         Game testGame = new Game(ticTacToe.getName(), ticTacToe.getShortName(), ticTacToe.getMaxSize(),"Branden Webb", ticTacToe);
         gameStorage.addGame(testGame);
-        System.out.println(testGame.getId());
 
 
 

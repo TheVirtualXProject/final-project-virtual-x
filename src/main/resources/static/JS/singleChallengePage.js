@@ -79,7 +79,10 @@ async function fetchChallengeData() {
 }
 
 function setImage(blob) {
-    challengeImage.src = blob;
+    if(blob) {
+        challengeImage.src = blob;
+    }
+    
 }
 
 reader.addEventListener("load", (event) => {
