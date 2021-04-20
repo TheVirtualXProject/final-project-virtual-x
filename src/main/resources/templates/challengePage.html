@@ -11,24 +11,32 @@ xmlns:th="http://www.thymeleaf.org"
   <title>Virtual-X</title>
   <link rel="stylesheet" href="/CSS/style.css" />
   <link rel="stylesheet" href="/CSS/layout.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 
 <body>
   <div class="_container">
     <header class="_header">
       <nav>
-        <ul class="navBar">
-          <li class="active nav-list"><a href="/">HOME</a></li>
-          <li class="nav-list"><a href="/challenge">CHALLENGES</a></li>
-          <li class="nav-list"><a href="/game">GAMES</a></li>
-          <li class="nav-list"><a href="/chat">CHATS</a></li>
+         <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!-- <label class="logo">Virtual X</label> -->
+        <ul class="nav-items-list">
+          <li class="active"><a href="/">HOME</a></li>
+          <li><a href="/challenge">CHALLENGES</a></li>
+          <li><a href="/game">GAMES</a></li>
+          <li><a href="/chat">CHATS</a></li>
           <div class="right">
-            <li class="nav-list"><a href="/account">ACCOUNT</a></li>
-            <li class="nav-list last-right"><a href="/logout">LOGOUT</a></li>
+            <!-- make media querie  -->
+            <li><a href="/account">ACCOUNT</a></li>
+            <li><a href="/logout">LOGOUT</a></li>
           </div>
         </ul>
       </nav>
       <h1 class="header-title">Challenges</h1>
+      <!-- <h4 class="slogan">Meeting with coworkers while working from home.</h4> -->
     </header>
 
     <main class="_main">

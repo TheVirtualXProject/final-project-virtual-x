@@ -64,6 +64,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  width: 1500px;
   /* border: blue solid 3px;
   background-color: violet; */
   /* width: 1500px; */

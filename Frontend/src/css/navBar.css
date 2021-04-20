@@ -84,6 +84,7 @@ a.active,a:hover{
   #check:checked ~ ul{
     left: 0;
   }
+
 }
 section{
   background: url(bg1.jpg) no-repeat;

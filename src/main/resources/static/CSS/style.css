@@ -3,7 +3,7 @@
 font-family: 'Lato', sans-serif; */
 
 /* ----------header style--------- */
-/* .navBar {
+.navBar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -32,7 +32,10 @@ li a.active {
 }
 div.right {
   float: right;
-} */
+}
+.nav-items-list {
+  width: 100%;
+}
 .header-title {
   text-align: center;
   padding: 80px 0px 20px 0px;
