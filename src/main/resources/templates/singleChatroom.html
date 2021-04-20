@@ -25,13 +25,14 @@
                     </div>
                 </ul>
             </nav>
-            <h1 class="header-title">Sample Chatroom One</h1>
+            <h1 class="header-title" th:text="${channelName}">Sample Chatroom One</h1>
         </header>
 
         <main class="_main">
             <div class="_singleChatroomContainer">
                 <section class="_singleChatroomMain">
-                    <p>Chatroom</p>
+                    <iframe class="_chatroom" th:src="${src}">
+                        </iframe>
 
                 </section>
             </div>
@@ -40,5 +41,6 @@
         <footer class="_footer">&copy;2021 The Virtual X Team</footer>
     </div>
 </body>
+
 
 </html>

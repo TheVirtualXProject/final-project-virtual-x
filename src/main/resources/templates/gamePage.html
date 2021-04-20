@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8" />
@@ -33,38 +35,23 @@
         <div class="popular-games">
           <h2>Popular Games</h2>
           <ol class="popular-games-list">
-            <li><a href="singleGame.html">Chess Game</a></li>
-            <li>Pool Game</li>
-            <li>Dart Game</li>
-            <li>Popular Game four</li>
-            <li>Popular Game five</li>
-            <li>Popular Game six</li>
-            <li>Popular Game seven</li>
-            <li>Popular Game eight</li>
-            <li>Popular Game night</li>
-            <li>Popular Game ten</li>
+            
           </ol>
         </div>
         <div class="current-games">
           <img src="/images/game-view-main-image.jpg" alt="Game image">
           <h2>Current Games</h2>
           <ol class="current-games-list">
-            <li><a href="singleGame.html">Chess Game</a></li>
-            <li>Dart Game</li>
-            <li>Poker Game</li>
-            <li>Current Game four</li>
-            <li>Current Game five</li>
-            <li>Current Game six</li>
-            <li>Current Game seven</li>
-            <li>Current Game eight</li>
-            <li>Current Game night</li>
-            <li>Current Game ten</li>
+            <th:block th:each="game:${games}">
+              <a th:href="'/game/' + ${game.id} + '/create-game'" ><li th:text="${game.name}"></li></a>
+            </th:block>
           </ol>
         </div>
       </div>
     </main>
     <footer class="_footer">&copy;2021 The Virtual X Team</footer>
   </div>
+  <script src="/JS/gamePage.js"></script>
 </body>
 
 </html>

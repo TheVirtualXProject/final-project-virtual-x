@@ -13,5 +13,9 @@ public class ChatroomStorage {
         chatroomRepo.save(chatroomToAdd);
     }
     public Chatroom retrieveChatroomById(Long id) { return chatroomRepo.findById(id).get();}
+
+    public Iterable<Chatroom> retrieveAll(){
+        return chatroomRepo.findAll();
+    }
     public void deleteChatroomById(Long id) {chatroomRepo.deleteById(id);}
 }

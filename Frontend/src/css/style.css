@@ -42,6 +42,7 @@ div.right {
   font-size: 4em;
   color: var(--primary-color-lightBlue);
 }
+<<<<<<< HEAD
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
@@ -50,6 +51,14 @@ div.right {
 @media screen and (max-width: 600px) {
   
   ul.navBar li.right,
+=======
+/*get rid of all a tag default value----------*/
+a { color: inherit;
+  text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+  ul.navBar div.right,
+>>>>>>> origin/dev
   ul.navBar li {
     float: none;
   }
@@ -449,7 +458,7 @@ textarea {
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
 ._singleChallengeComment {
-  background-color: transparent;
+  /* background-color: red; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -459,10 +468,20 @@ textarea {
   height: auto;
 }
 ._singleChallengeCommentFormSection {
-  width: 40%;
+  width: 30%;
   margin-right: 30px;
 }
+<<<<<<< HEAD
 
+=======
+._commentsForSingleChallenge {
+  width: 70%;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+>>>>>>> origin/dev
 ._singleChallengeMain {
   margin-bottom: 5%;
 }

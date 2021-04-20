@@ -1,19 +1,19 @@
 package com.thevirtualx.mvcApp.Controller;
 
-import com.thevirtualx.mvcApp.Entity.Account;
-import com.thevirtualx.mvcApp.Entity.Challenge;
-import com.thevirtualx.mvcApp.Entity.Rated;
+import com.thevirtualx.mvcApp.Entity.*;
+import com.thevirtualx.mvcApp.Repo.StaticGameRepository;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
+import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
+import com.thevirtualx.mvcApp.Storage.GameStorage;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.rowset.serial.SerialBlob;
 import java.security.Principal;
-import java.sql.Blob;
-import java.sql.SQLException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,16 +24,24 @@ public class ControllerAPI {
 
     private ChallengeStorage challengeStorage;
     private AccountStorage accountStorage;
+    private ChatroomStorage chatroomStorage;
+    private GameStorage gameStorage;
+    private StaticGameRepository staticGameRepository;
 
-    public ControllerAPI(ChallengeStorage challengeStorage, AccountStorage accountStorage) {
+    public ControllerAPI(ChallengeStorage challengeStorage, AccountStorage accountStorage,
+                         ChatroomStorage chatroomStorage, GameStorage gameStorage,
+                         StaticGameRepository staticGameRepository) {
         this.challengeStorage = challengeStorage;
         this.accountStorage = accountStorage;
+        this.chatroomStorage = chatroomStorage;
+        this.gameStorage = gameStorage;
+        this.staticGameRepository = staticGameRepository;
     }
 
 
     @GetMapping("/api/challenges")
     public ArrayList<Challenge> getAllChallenges() {
-        return sortByRecent();
+        return sortChallengeByRecent();
     }
 
 
@@ -75,9 +83,68 @@ public class ControllerAPI {
 
     }
 
+    @GetMapping("/api/chatrooms")
+    public ArrayList<Chatroom> getAllChatrooms() {
+        Instant rightNow = Instant.now();
+        for (Chatroom chatroom:chatroomStorage.retrieveAll()) {
+            if ((Duration.between(chatroom.getCreation(), rightNow).getSeconds() / 60) >= 30) {
+                chatroomStorage.deleteChatroomById(chatroom.getId());
+            }
+        }
+        
+        return sortChatroomByRecent();
+    }
 
+    @GetMapping("/api/games/playerHash")
+    public GameHash getPlayerData(Principal principal) {
+        Account account = accountStorage.retrieveAccountByUsername(principal.getName());
+        GameHash gameHash = new GameHash(account.getId(), account.getUsername());
+        return gameHash;
+    }
 
-    public ArrayList<Challenge> sortByRecent() {
+    @GetMapping("/api/games/{id}")
+    public Game retrieveGameInfo(@PathVariable Long id) {
+        Game game = gameStorage.retrieveGameById(id);
+        return game;
+    }
+
+    @GetMapping("/api/games")
+    public ArrayList<Game> getAllGames() {
+        Instant rightNow = Instant.now();
+        for (Game game:gameStorage.getAllGames()) {
+            if ((Duration.between(game.getCreation(), rightNow).getSeconds() / 60) >= 10) {
+                gameStorage.deleteGameById(game.getId());
+            }
+        }
+        return sortGameByRecent();
+
+    }
+
+    @GetMapping("/api/chatrooms/{id}/url")
+    public String returnChatroomUrl(@PathVariable Long id) {
+        return "/chat/" + id;
+    }
+
+    @GetMapping("/api/games/{id}/url")
+    public String returnGameUrl(@PathVariable Long id) {
+        return "/game/" + id;
+    }
+
+    @GetMapping("/api/games/popular")
+    public ArrayList<StaticGame> getPopularGames() {
+        return sortGameByPopular();
+    }
+
+    public ArrayList<Game> sortGameByRecent() {
+        ArrayList<Game> temp = new ArrayList<>();
+        Iterable<Game> games = gameStorage.getAllGames();
+        for(Game game: games) {
+            temp.add(0, game);
+        }
+        return temp;
+    }
+
+    public ArrayList<Challenge> sortChallengeByRecent() {
         ArrayList<Challenge> temp = new ArrayList<>();
         Iterable<Challenge> challenges = challengeStorage.getAllChallenges();
         for(Challenge challenge: challenges) {
@@ -86,7 +153,16 @@ public class ControllerAPI {
         return temp;
     }
 
-    public ArrayList<Challenge> sortByPopular() {
+    public ArrayList<Chatroom> sortChatroomByRecent() {
+        ArrayList<Chatroom> temp = new ArrayList<>();
+        Iterable<Chatroom> chatrooms = chatroomStorage.retrieveAll();
+        for(Chatroom chatroom: chatrooms) {
+            temp.add(0, chatroom);
+        }
+        return temp;
+    }
+
+    public ArrayList<Challenge> sortChallengeByPopular() {
         ArrayList<Challenge> temp = new ArrayList<>();
         for(Challenge challenge: challengeStorage.getAllChallenges()) {
             temp.add(challenge);
@@ -94,6 +170,24 @@ public class ControllerAPI {
         Collections.sort(temp, new Comparator<Challenge>() {
             @Override
             public int compare(Challenge o1, Challenge o2) {
+                Integer int1 = o1.getRating();
+                Integer int2 = o2.getRating();
+                return int2.compareTo(int1);
+            }
+        });
+        return temp;
+    }
+
+
+
+    public ArrayList<StaticGame> sortGameByPopular() {
+        ArrayList<StaticGame> temp = new ArrayList<>();
+        for(StaticGame game: staticGameRepository.findAll()) {
+            temp.add(game);
+        }
+        Collections.sort(temp, new Comparator<StaticGame>() {
+            @Override
+            public int compare(StaticGame o1, StaticGame o2) {
                 Integer int1 = o1.getRating();
                 Integer int2 = o2.getRating();
                 return int2.compareTo(int1);
