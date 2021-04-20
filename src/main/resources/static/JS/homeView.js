@@ -292,29 +292,54 @@ function clearChildren(element) {
             element.removeChild(element.lastChild);
     }
 }
+
 async function sortAlgoForSortingTab() {
     const openChallenge = document.querySelector(".open-challenges");
+    let openChallengesStuff = await checkForChallenges();
     openChallenge.addEventListener("click", (event) => {
         event.preventDefault();
         let cards = document.querySelector(".cards");
         clearChildren(cards);
-        let openChallenges = await checkForChallenges();
-        openChallenges.forEach(element => {
+        pictureCounter = 0;
+        openChallengesStuff.forEach(element => {
             createChallengeCard(element);
 
         });
     });
 
     const openGames = document.querySelector(".open-games");
-    openChallenge.addEventListener("click", (event) => {
+    let openGamesStuff = await checkForGames();
+    openGames.addEventListener("click", (event) => {
         event.preventDefault();
         let cards = document.querySelector(".cards");
         clearChildren(cards);
-
-        let openGames = await checkForGames();
-        openGames.forEach(element => {
+        pictureCounter = 0;
+        openGamesStuff.forEach(element => {
             createGameCard(element);
         })
+    });
+
+    const openChatrooms = document.querySelector(".open-chatrooms");
+    let openChatroomsStuff = await checkForChatrooms();
+    openChatrooms.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+
+        openChatroomsStuff.forEach(chatroom => {
+            createChatroomCard(chatroom)
+        });
+
+    });
+
+    const allSort = document.querySelector(".all");
+    allSort.addEventListener("click", (event) => {
+        event.preventDefault();
+        pictureCounter = 0;
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        processJsonValues();
     });
     
 
@@ -326,5 +351,6 @@ function checkIndexToLength(arr, index) {
 }
 
 processJsonValues();
+sortAlgoForSortingTab();
 
 

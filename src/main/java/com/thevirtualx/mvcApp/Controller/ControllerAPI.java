@@ -112,7 +112,7 @@ public class ControllerAPI {
     public ArrayList<Game> getAllGames() {
         Instant rightNow = Instant.now();
         for (Game game:gameStorage.getAllGames()) {
-            if ((Duration.between(game.getCreation(), rightNow).getSeconds() / 60) >= 30) {
+            if ((Duration.between(game.getCreation(), rightNow).getSeconds() / 60) >= 10) {
                 gameStorage.deleteGameById(game.getId());
             }
         }
