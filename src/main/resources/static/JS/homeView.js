@@ -287,6 +287,40 @@ async function processJsonValues() {
 
 }
 
+function clearChildren(element) {
+    while(element.firstChild) {
+            element.removeChild(element.lastChild);
+    }
+}
+async function sortAlgoForSortingTab() {
+    const openChallenge = document.querySelector(".open-challenges");
+    openChallenge.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        let openChallenges = await checkForChallenges();
+        openChallenges.forEach(element => {
+            createChallengeCard(element);
+
+        });
+    });
+
+    const openGames = document.querySelector(".open-games");
+    openChallenge.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+
+        let openGames = await checkForGames();
+        openGames.forEach(element => {
+            createGameCard(element);
+        })
+    });
+    
+
+}
+
+
 function checkIndexToLength(arr, index) {
     return arr.length > index;
 }
