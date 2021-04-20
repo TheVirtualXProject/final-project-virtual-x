@@ -67,7 +67,6 @@ public class ChallengeController {
     public String addChallenge(String img, int capacity, String challengeName, String duration, String desc, Principal principal) throws IOException, URISyntaxException {
 
         boolean pub = capacity<=0;
-        System.out.println(desc);
         Account creator = accountStorage.retrieveAccountByUsername(principal.getName());
 
         Challenge challenge = new Challenge(challengeName,desc,img,
