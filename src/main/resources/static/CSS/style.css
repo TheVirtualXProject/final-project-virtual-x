@@ -35,14 +35,15 @@ div.right {
 }
 .header-title {
   text-align: center;
-  padding: 80px;
+  padding: 80px 0px 20px 0px;
   font-family: var(--header-font);
   font-weight: normal;
   font-size: 4em;
   color: var(--primary-color-lightBlue);
 }
 /*get rid of all a tag default value----------*/
-a { color: inherit;
+a {
+  color: inherit;
   text-decoration: none;
 }
 @media screen and (max-width: 600px) {
@@ -67,6 +68,7 @@ a { color: inherit;
   border: none;
   outline: none;
   color: white;
+  font-size: 1em;
   width: 10em;
   height: 2em;
   cursor: pointer;
@@ -113,9 +115,13 @@ a { color: inherit;
   font-family: var(--body-text-font);
 }
 .join-button {
-  margin-top: 15px;
-  width: 10em;
+ margin: 10px 0;
+  width: 8em;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
   align-self: center;
+  background-color: white;
 }
 .activity-card p {
   padding: 5px;
@@ -123,10 +129,69 @@ a { color: inherit;
 }
 
 /* challenges view style */
+.challenge-section{
+}
 .challenge-main {
+  width: 50%;
   display: flex;
   flex-direction: column;
+  
 }
+ol li {
+  list-style-type: none;
+}
+
+.popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  padding: 10px 35px;
+}
+.popular-challenges-list li,
+.current-challenges-list li {
+  padding: 10px;
+}
+.current-challenges-list p{
+  padding: 5px 10px;
+}
+.challenge-list-content{
+  background-color: rgba(156, 148, 148, 0.568);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.popular-challenges {
+  background-color: var(--primary-color-purple);
+  color: white;
+}
+.underlinebox{
+  background-color: white;
+  width: 67%;
+  height: 0.8%;
+  margin-left:50px;
+}
+.current-challenges {
+  /* background-color: var(--primary-color-lightBlue); */
+}
+.current-challenges img{
+  /* border:5px solid white;
+  border-radius: 5px; */
+  width:90%;
+  margin-top: 20px;
+  box-shadow: 2px 2px 8px 4px gray;
+}
+.popular-challenges h2,
+.current-challenges h2 {
+  /* padding: 20px; */
+  margin:40px 0px 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 /* style add button and modal box for challenge page and chatroom page--------------*/
 .add-challenge-section,
@@ -139,6 +204,7 @@ a { color: inherit;
 .add-chatroom-button {
   width: 10em;
   height: 2em;
+  font-size: 1em;
   cursor: pointer;
   background-color: var(--secondary-color-orange);
   border: none;
@@ -197,46 +263,21 @@ textarea {
   cursor: pointer;
 }
 
-.popular-challenges-list,
-.current-challenges-list {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  /* border: 2px solid red; */
-  padding: 0 0 50px 50px;
-}
-.popular-challenges-list li,
-.current-challenges-list li {
-  padding: 5px;
-  font-size: 1.1em;
-}
-.popular-challenges {
-  background-color: var(--primary-color-darkBlue);
-  opacity: 0.8;
-  color: white;
-}
-.popular-challenges h2 {
-  background-color: var(--primary-color-lightBlue);
-  height: 3em;
-  padding: 20px;
-}
-.current-challenges h2 {
-  padding: 20px;
-}
-.current-challenges-list a {
-  text-decoration: none;
-  color: black;
-}
 
-.popular-challenges-list a {
-  text-decoration: none;
-  color: white;
-}
 
 /* single challenge page style*/
+._singleChallengeMain{
+  background-color: var(--primary-color-yellow);
+  padding: 20px;
+}
+.single-challenge-img{
+  border:5px solid white;
+  border-radius: 5px;
+}
 .single-challenge-info {
   text-align: left;
   margin-left: 30px;
+  
 }
 ._singleChallengeComment h2 {
   margin-top: 50px;
@@ -385,11 +426,7 @@ textarea {
   height: 150px;
   padding: 10px;
 }
-.enlarged {
-  /* display: none;
-  width: 400px;
-  height: 300px; */
-}
+/* /* style account page----- */
 ._accountContainer {
   /* background-color: teal; */
   width: 100%;
@@ -443,7 +480,7 @@ textarea {
 }
 
 .single-challenge-img {
-  height:200px;
+  height: 200px;
   width: 200px;
 }
 

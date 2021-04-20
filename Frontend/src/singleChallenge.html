@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Virtual-X</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="../../src/main/resources/Static/CSS/style.css" />
+  <link rel="stylesheet" href="../../src/main/resources/Static/CSS/layout.css" />
   <link rel="stylesheet" href="./css/ratingStyle.css">
-  
+  <script src="https://kit.fontawesome.com/bc1222c043.js" crossorigin="anonymous"></script>
+  </head>
 
 <body>
   <div class="_container">
@@ -24,7 +25,10 @@
           </li>
           <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
           <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
-          <li class="right nav-list"><a href="accountPage.html">ACCOUNT</a></li>
+          <div class="right">
+            <li class="nav-list"><a href="accountPage.html">ACCOUNT</a></li>
+            <li class="nav-list last-right"><a href="#">LOGOUT</a></li>
+          </div>
         </ul>
       </nav>
       <h1 class="header-title">A Mile A Day</h1>
@@ -46,13 +50,13 @@
               readable content of a page when looking at its layout.
             </p>
           </div>
-          
         </section>
+        
         <hr />
         <section class="_singleChallengeComment">
           <div class="_singleChallengeCommentFormSection">
             <div class="_singleChallengeCommentForm">
-              <h4>Comments</h4>
+              <h3>Comments</h3>
               <form>
                 <!-- <br /> -->
                 <!-- <label for="addMedia">Upload Media</label> -->
@@ -72,7 +76,7 @@
           </div>
 
           <div class="_commentsForSingleChallenge">
-            <h4 class="_displayProfile">User name</h4>
+            <h3 class="_displayProfile">User name</h3>
             <div class="_displayActualComment">
               Great challenge, had a lot of fun doing it with my coworkers. Met some awesome people from other
               departments.
@@ -85,7 +89,7 @@
             <hr>
             <br>
             <div class="_displayProfile">
-              <h4>User name</h4>
+              <h3>User name</h3>
             </div>
             <div class="_displayActualComment">
               Great challenge, had a lot of fun doing it with my coworkers. Met some awesome people from other
