@@ -1,8 +1,13 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class StaticGame {
@@ -13,11 +18,17 @@ public class StaticGame {
     private String name;
     private String shortName;
     private int maxSize;
+    @OneToMany(mappedBy = "staticGame")
+    @JsonIgnore
+    private Collection<Game> games;
+    private int rating;
 
     public StaticGame(String name, String shortName, int maxSize) {
         this.name = name;
         this.shortName = shortName;
         this.maxSize = maxSize;
+        this.games = new ArrayList<>();
+        this.rating = 0;
     }
 
     public StaticGame() {
@@ -54,5 +65,17 @@ public class StaticGame {
 
     public String getShortName() {
         return shortName;
+    }
+
+    public Collection<Game> getGames() {
+        return games;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void addRatingPoint() {
+        this.rating++;
     }
 }

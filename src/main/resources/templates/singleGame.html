@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,16 +27,17 @@
             </div>
           </ul>
         </nav>
-        <h1 class="header-title">Chess Game</h1>
+        <h1 class="header-title" th:text="${game.title}">Chess Game</h1>
       </header>
         <main class="_main">
             <div class="_singleGameContainer">
-                <section class="_singleGameMain">
-                  <script src="//license.novelgames.com/games/game.js"></script>
-                  <ins class="novelgames_cloudgame"
-                  data-language ="en">
-
-                  </ins>
+              <ins class="novelgames_cloudgame"
+                data-game-short-name=""
+                data-language="en"
+                data-member-id=""
+                data-player-id=""
+                data-time-limit-scale = "0"
+              ></ins>
                 </section>
             </div>
         </main>

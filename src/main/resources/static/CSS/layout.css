@@ -29,6 +29,7 @@ body {
 ._container {
   background-color: var(--background);
   font-family: var(--body-text-font);
+  min-height: 100vh;
 }
 ._header {
   grid-row: 1 / 2;
@@ -47,6 +48,7 @@ body {
   background-color: var(--background);
   grid-row: 6 / 8;
   grid-column: 1 / 7;
+  
 }
 /*home main style----------*/
 .home-main {

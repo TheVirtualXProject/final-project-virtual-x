@@ -1,6 +1,7 @@
 package com.thevirtualx.mvcApp.Controller;
 
 import com.thevirtualx.mvcApp.Entity.*;
+import com.thevirtualx.mvcApp.Repo.StaticGameRepository;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
 import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
@@ -25,13 +26,16 @@ public class ControllerAPI {
     private AccountStorage accountStorage;
     private ChatroomStorage chatroomStorage;
     private GameStorage gameStorage;
+    private StaticGameRepository staticGameRepository;
 
     public ControllerAPI(ChallengeStorage challengeStorage, AccountStorage accountStorage,
-                         ChatroomStorage chatroomStorage, GameStorage gameStorage) {
+                         ChatroomStorage chatroomStorage, GameStorage gameStorage,
+                         StaticGameRepository staticGameRepository) {
         this.challengeStorage = challengeStorage;
         this.accountStorage = accountStorage;
         this.chatroomStorage = chatroomStorage;
         this.gameStorage = gameStorage;
+        this.staticGameRepository = staticGameRepository;
     }
 
 
@@ -104,13 +108,41 @@ public class ControllerAPI {
         return game;
     }
 
+    @GetMapping("/api/games")
+    public ArrayList<Game> getAllGames() {
+        Instant rightNow = Instant.now();
+        for (Game game:gameStorage.getAllGames()) {
+            if ((Duration.between(game.getCreation(), rightNow).getSeconds() / 60) >= 30) {
+                gameStorage.deleteGameById(game.getId());
+            }
+        }
+        return sortGameByRecent();
+
+    }
 
     @GetMapping("/api/chatrooms/{id}/url")
     public String returnChatroomUrl(@PathVariable Long id) {
         return "/chat/" + id;
     }
 
+    @GetMapping("/api/games/{id}/url")
+    public String returnGameUrl(@PathVariable Long id) {
+        return "/game/" + id;
+    }
 
+    @GetMapping("/api/games/popular")
+    public ArrayList<StaticGame> getPopularGames() {
+        return sortGameByPopular();
+    }
+
+    public ArrayList<Game> sortGameByRecent() {
+        ArrayList<Game> temp = new ArrayList<>();
+        Iterable<Game> games = gameStorage.getAllGames();
+        for(Game game: games) {
+            temp.add(0, game);
+        }
+        return temp;
+    }
 
     public ArrayList<Challenge> sortChallengeByRecent() {
         ArrayList<Challenge> temp = new ArrayList<>();
@@ -138,6 +170,24 @@ public class ControllerAPI {
         Collections.sort(temp, new Comparator<Challenge>() {
             @Override
             public int compare(Challenge o1, Challenge o2) {
+                Integer int1 = o1.getRating();
+                Integer int2 = o2.getRating();
+                return int2.compareTo(int1);
+            }
+        });
+        return temp;
+    }
+
+
+
+    public ArrayList<StaticGame> sortGameByPopular() {
+        ArrayList<StaticGame> temp = new ArrayList<>();
+        for(StaticGame game: staticGameRepository.findAll()) {
+            temp.add(game);
+        }
+        Collections.sort(temp, new Comparator<StaticGame>() {
+            @Override
+            public int compare(StaticGame o1, StaticGame o2) {
                 Integer int1 = o1.getRating();
                 Integer int2 = o2.getRating();
                 return int2.compareTo(int1);

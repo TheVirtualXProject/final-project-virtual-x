@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface StaticGameRepository extends CrudRepository<StaticGame, Long> {
 
+
 }

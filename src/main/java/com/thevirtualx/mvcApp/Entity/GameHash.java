@@ -1,5 +1,7 @@
 package com.thevirtualx.mvcApp.Entity;
 
+import org.springframework.util.DigestUtils;
+
 import javax.persistence.Embeddable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -58,18 +60,9 @@ public class GameHash {
 
     public String calculatePlayerHash() {
         byte[] temp = (playerId + playerName + secretKey).getBytes(StandardCharsets.UTF_8);
-        byte[] md5 = null;
 
-
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md5 = md.digest(temp);
-        } catch (NoSuchAlgorithmException e) {
-            System.out.println("rest in peace");
-        }
-
-        String string = new String(md5);
-        return string;
+        String hash = DigestUtils.md5DigestAsHex(temp);
+        return hash;
 
     }
 

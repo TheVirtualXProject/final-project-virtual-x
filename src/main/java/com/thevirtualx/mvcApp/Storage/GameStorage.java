@@ -12,4 +12,7 @@ public class GameStorage {
     public Game retrieveGameById(Long id) {return gameRepo.findById(id).get();}
     public void addGame(Game gameToAdd) {gameRepo.save(gameToAdd);}
     public void deleteGameById(Long id) {gameRepo.deleteById(id);}
+    public Iterable<Game> getAllGames() {
+        return gameRepo.findAll();
+    }
 }
