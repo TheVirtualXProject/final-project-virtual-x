@@ -122,6 +122,47 @@ function createChatroomCard(chatroom) {
 
 }
 
+function createGameCard(game) {
+    if(game.joinedPlayers >= game.maxPlayers) {
+        return;
+    }
+    let gameDiv = document.createElement("div");
+    gameDiv.classList.add("activity-card");
+    gameDiv = chooseCardColor(gameDiv);
+    let title = document.createElement("h2");
+    title.classList.add("title");
+    title.innerText = game.title;
+    let host = document.createElement("h3");
+    host.classList.add("host");
+    host.innerText = `Host: ${game.creatorName}`;
+    let size = document.createElement("h4");
+    size.classList.add("size");
+    size.innerText = "Size: " + game.joinedPlayers + "/" + game.maxPlayers;
+    let gameDesc = document.createElement("p");
+    gameDesc.classList.add("description");
+    gameDesc.innerText = "Come play this fun game!";
+    let join = document.createElement("button");
+    join.classList.add("join-button");
+    join.innerText = "Join";
+
+
+    gameDiv.appendChild(title);
+    gameDiv.appendChild(host)
+    gameDiv.appendChild(size);
+    gameDiv.appendChild(gameDesc)
+    gameDiv.appendChild(join);
+    main.appendChild(gameDiv);
+
+    checkForPictureAdd();
+
+    join.addEventListener("click", () => {
+        fetch("/game/" + game.id + "/join-game", {
+            method:"POST",
+        }).then(response => response.text())
+        .then(url => window.location.href = url);
+    });
+}
+
 async function checkForJoinDisable(join, challenge){
     let isAccountThere = await fetch("/api/challenges/" + challenge.id + "/check-users", {
         method: "GET"
@@ -217,12 +258,20 @@ async function checkForChatrooms() {
     return chatroomJson;
 }
 
+async function checkForGames() {
+    let gameJson = await fetch("/api/games", {
+        method:"GET",
+    }).then(response => response.json());
+    return gameJson;
+}
+
 async function processJsonValues() {
     let challengeJson =  await checkForChallenges();
     let chatroomJson = await checkForChatrooms();
+    let gameJson = await checkForGames();
     //code for games and chat rooms goes here
     let index = 0;
-    while(checkIndexToLength(challengeJson, index) || checkIndexToLength(chatroomJson, index)) {
+    while(checkIndexToLength(challengeJson, index) || checkIndexToLength(chatroomJson, index) || checkIndexToLength(gameJson, index)) {
     // add the others here so that the generation spreads them out on the page by 3
         if(checkIndexToLength(challengeJson, index)) {
             createChallengeCard(challengeJson[index]);
@@ -230,15 +279,78 @@ async function processJsonValues() {
         if(checkIndexToLength(chatroomJson, index)) {
             createChatroomCard(chatroomJson[index]);
         }
+        if(checkIndexToLength(gameJson, index)) {
+            createGameCard(gameJson[index]);
+        }
         index++;
     }
 
 }
+
+function clearChildren(element) {
+    while(element.firstChild) {
+            element.removeChild(element.lastChild);
+    }
+}
+
+async function sortAlgoForSortingTab() {
+    const openChallenge = document.querySelector(".open-challenges");
+    let openChallengesStuff = await checkForChallenges();
+    openChallenge.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+        openChallengesStuff.forEach(element => {
+            createChallengeCard(element);
+
+        });
+    });
+
+    const openGames = document.querySelector(".open-games");
+    let openGamesStuff = await checkForGames();
+    openGames.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+        openGamesStuff.forEach(element => {
+            createGameCard(element);
+        })
+    });
+
+    const openChatrooms = document.querySelector(".open-chatrooms");
+    let openChatroomsStuff = await checkForChatrooms();
+    openChatrooms.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+
+        openChatroomsStuff.forEach(chatroom => {
+            createChatroomCard(chatroom)
+        });
+
+    });
+
+    const allSort = document.querySelector(".all");
+    allSort.addEventListener("click", (event) => {
+        event.preventDefault();
+        pictureCounter = 0;
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        processJsonValues();
+    });
+    
+
+}
+
 
 function checkIndexToLength(arr, index) {
     return arr.length > index;
 }
 
 processJsonValues();
+sortAlgoForSortingTab();
 
 

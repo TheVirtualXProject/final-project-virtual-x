@@ -48,7 +48,13 @@ f.addEventListener("submit", (event) => {
     formData.append(textarea.name, textarea.value);
 
 
-    reader.readAsDataURL(currentFile);
+    if(currentFile) { 
+        reader.readAsDataURL(currentFile);
+    }
+    else {
+        blob = "";
+    }
+    
     
 
 

@@ -1,6 +1,6 @@
 package com.thevirtualx.mvcApp.Entity;
 
-import net.minidev.json.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,6 +18,7 @@ public class Account {
     @ElementCollection
     private Collection<String> friends;
     @ManyToMany(mappedBy = "accounts")
+    @JsonIgnore
     private Collection<Challenge> joinedChallenges;
     @ManyToMany(mappedBy = "accounts")
     private Collection<Chatroom> joinedChatrooms;
@@ -77,6 +78,11 @@ public class Account {
 
     public String getProfilePicture() {
         return profilePicture;
+    }
+
+
+    public Collection<Challenge> getJoinedChallenges() {
+        return joinedChallenges;
     }
 
     public boolean isStatusServerSide() {

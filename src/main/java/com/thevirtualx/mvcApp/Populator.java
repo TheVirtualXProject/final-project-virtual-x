@@ -1,9 +1,7 @@
 package com.thevirtualx.mvcApp;
 
-import com.thevirtualx.mvcApp.Entity.Account;
-import com.thevirtualx.mvcApp.Entity.Challenge;
-import com.thevirtualx.mvcApp.Entity.Chatroom;
-import com.thevirtualx.mvcApp.Entity.Comment;
+import com.thevirtualx.mvcApp.Entity.*;
+import com.thevirtualx.mvcApp.Repo.StaticGameRepository;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
 import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
@@ -18,13 +16,15 @@ public class Populator implements CommandLineRunner {
     private ChallengeStorage challengeStorage;
     private ChatroomStorage chatroomStorage;
     private GameStorage gameStorage;
+    private StaticGameRepository staticGameRepository;
 
     public Populator(AccountStorage accountStorage, ChallengeStorage challengeStorage,
-                     ChatroomStorage chatroomStorage,  GameStorage gameStorage) {
+                     ChatroomStorage chatroomStorage,  GameStorage gameStorage, StaticGameRepository staticGameRepository) {
         this.accountStorage = accountStorage;
         this.challengeStorage = challengeStorage;
         this.chatroomStorage = chatroomStorage;
         this.gameStorage = gameStorage;
+        this.staticGameRepository = staticGameRepository;
     }
 
     @Override
@@ -96,7 +96,49 @@ public class Populator implements CommandLineRunner {
 
         Chatroom chadsOnly = new Chatroom("forTheChads", connor.getRealName());
         chatroomStorage.addChatroom(chadsOnly);
-        System.out.println(chadsOnly.getId());
+
+        StaticGame sixteenMusashi = new StaticGame("Sixteen Musashi", "sixteenmusashi", 2);
+        StaticGame parchis = new StaticGame("Multiplayer Parchis", "mpparchis", 4);
+        StaticGame irishSnap = new StaticGame("Irish Snap", "irishsnap", 4);
+        StaticGame shutTheBox = new StaticGame("Shut The Box", "mpshutbox", 4);
+        StaticGame pebbles = new StaticGame("Pebbles", "mppebbles", 2);
+        StaticGame guessWhat = new StaticGame("Guess What", "guesswhat", 4);
+        StaticGame dominoes = new StaticGame("Dominoes", "mpdominoes", 2);
+        StaticGame reversi = new StaticGame("Reversi", "mpreversi", 2);
+        StaticGame honlok = new StaticGame("Honlok", "honlok", 2);
+        StaticGame darts = new StaticGame("Darts", "mpdarts", 4);
+        StaticGame snakesAndLadders = new StaticGame("Snakes and Ladders", "snakesladders", 8);
+        StaticGame chess = new StaticGame("Chess", "chess", 2);
+        StaticGame eightBall = new StaticGame("8 Ball Pool", "eightball", 2);
+        StaticGame mancala = new StaticGame("Mancala", "mpmancala", 2);
+        StaticGame warShip = new StaticGame("Battle Ship", "mpbattleship", 2);
+        StaticGame mineSweepingRace = new StaticGame("Mine Sweeping Race", "minesweeping", 8);
+        StaticGame ticTacToe = new StaticGame("Tic Tac Toe", "mptictactoe", 2);
+
+        staticGameRepository.save(sixteenMusashi);
+        staticGameRepository.save(parchis);
+        staticGameRepository.save(irishSnap);
+        staticGameRepository.save(shutTheBox);
+        staticGameRepository.save(pebbles);
+        staticGameRepository.save(guessWhat);
+        staticGameRepository.save(dominoes);
+        staticGameRepository.save(reversi);
+        staticGameRepository.save(honlok);
+        staticGameRepository.save(darts);
+        staticGameRepository.save(snakesAndLadders);
+        staticGameRepository.save(chess);
+        staticGameRepository.save(eightBall);
+        staticGameRepository.save(mancala);
+        staticGameRepository.save(warShip);
+        staticGameRepository.save(mineSweepingRace);
+        staticGameRepository.save(ticTacToe);
+
+
+        Game testGame = new Game(ticTacToe.getName(), ticTacToe.getShortName(), ticTacToe.getMaxSize(),"Branden Webb", ticTacToe);
+        gameStorage.addGame(testGame);
+
+
+
     }
 
 }

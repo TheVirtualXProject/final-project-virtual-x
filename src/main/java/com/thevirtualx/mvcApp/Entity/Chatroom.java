@@ -39,7 +39,7 @@ public class Chatroom {
         this.maxSize = maxSize;
         this.author = author;
         this.description = description;
-        this.currentSize = 1;
+        this.currentSize = 0;
         this.creation = Instant.now();
         this.accounts = new ArrayList<>();
     }
