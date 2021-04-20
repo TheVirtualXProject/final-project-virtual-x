@@ -19,7 +19,6 @@ async function showPopularGames() {
         anchor.innerText = popularGames[i].name;
         listItem.appendChild(anchor);
         popularGamesList.appendChild(listItem);
-        console.log(popularGames[i])
     }
 }
 

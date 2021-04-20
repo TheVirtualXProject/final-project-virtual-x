@@ -287,10 +287,70 @@ async function processJsonValues() {
 
 }
 
+function clearChildren(element) {
+    while(element.firstChild) {
+            element.removeChild(element.lastChild);
+    }
+}
+
+async function sortAlgoForSortingTab() {
+    const openChallenge = document.querySelector(".open-challenges");
+    let openChallengesStuff = await checkForChallenges();
+    openChallenge.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+        openChallengesStuff.forEach(element => {
+            createChallengeCard(element);
+
+        });
+    });
+
+    const openGames = document.querySelector(".open-games");
+    let openGamesStuff = await checkForGames();
+    openGames.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+        openGamesStuff.forEach(element => {
+            createGameCard(element);
+        })
+    });
+
+    const openChatrooms = document.querySelector(".open-chatrooms");
+    let openChatroomsStuff = await checkForChatrooms();
+    openChatrooms.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        pictureCounter = 0;
+
+        openChatroomsStuff.forEach(chatroom => {
+            createChatroomCard(chatroom)
+        });
+
+    });
+
+    const allSort = document.querySelector(".all");
+    allSort.addEventListener("click", (event) => {
+        event.preventDefault();
+        pictureCounter = 0;
+        let cards = document.querySelector(".cards");
+        clearChildren(cards);
+        processJsonValues();
+    });
+    
+
+}
+
+
 function checkIndexToLength(arr, index) {
     return arr.length > index;
 }
 
 processJsonValues();
+sortAlgoForSortingTab();
 
 
