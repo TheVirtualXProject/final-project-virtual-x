@@ -357,7 +357,6 @@ textarea {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .popular-challenges-list,
 .current-challenges-list {
   display: flex;
@@ -396,8 +395,6 @@ textarea {
   text-decoration: none;
   color: black;
 }
-=======
->>>>>>> origin/dev
 
 
 /* single challenge page style*/

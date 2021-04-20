@@ -42,25 +42,14 @@ div.right {
   font-size: 4em;
   color: var(--primary-color-lightBlue);
 }
-<<<<<<< HEAD
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-}
-@media screen and (max-width: 600px) {
-  
-  ul.navBar li.right,
-=======
 /*get rid of all a tag default value----------*/
 a { color: inherit;
   text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   ul.navBar div.right,
->>>>>>> origin/dev
   ul.navBar li {
-    float: none;
+    float: right;
   }
 }
 ._footer {
@@ -471,9 +460,6 @@ textarea {
   width: 30%;
   margin-right: 30px;
 }
-<<<<<<< HEAD
-
-=======
 ._commentsForSingleChallenge {
   width: 70%;
   border-radius: 10px;
@@ -481,7 +467,6 @@ textarea {
   display: flex;
   justify-content: space-evenly;
 }
->>>>>>> origin/dev
 ._singleChallengeMain {
   margin-bottom: 5%;
 }
