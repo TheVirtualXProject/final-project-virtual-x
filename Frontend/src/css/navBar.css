@@ -16,15 +16,7 @@ nav{
   height: 80px;
   width: 100%;
 }
-/* label.logo{
-  font-family: Gugi;
-  color:rgb(30, 213, 202);
- text-shadow: 1px #2c3e50; 
-  font-size: 35px;
-  line-height: 80px;
-  padding: 0 100px;
-  font-weight: bold;
-} */
+
 nav ul{
   float: left;
   margin-right: 20px;
@@ -59,10 +51,7 @@ a.active,a:hover{
   display: none;
 }
 @media (max-width: 952px){
-  /* label.logo{
-    font-size: 30px;
-    padding-left: 50px;
-  } */
+  
   nav ul li a{
     font-size: 16px;
   }
@@ -91,7 +80,6 @@ a.active,a:hover{
   }
   a:hover,a.active{
     background: none;
-    /* color: #0082e6; */
   }
   #check:checked ~ ul{
     left: 0;
@@ -102,3 +90,4 @@ section{
   background-size: cover;
   height: calc(100vh - 80px);
 }
+
