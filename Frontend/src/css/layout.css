@@ -63,7 +63,14 @@ body {
   justify-content: center;
   /* border: blue solid 3px;
   background-color: violet; */
-  width: 1500px;
+  /* width: 1500px; */
+  
+}
+@media only screen and (max-width: 600px) {
+  .cards {
+    max-width: 300px;
+    height: 300px;
+  }
 }
 .light-blue,
 .dark-blue,
@@ -88,8 +95,14 @@ body {
   height: 300px;
 }
 .img-deco-rectangle {
-  width: 650px;
-  height: 300px;
+  max-width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 600pix) {
+  .img-deco-rectangle {
+  max-width: 300px;
+   height: 300;
+ }
 }
 .red {
   background-color: var(--primary-color-red);
