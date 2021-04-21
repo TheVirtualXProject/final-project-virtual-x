@@ -34,39 +34,15 @@
             </span>
           </ul>
         </nav>
-        <h1 class="header-title">Current Challenges</h1>
+        <h1 class="header-title">Chatrooms</h1>
       </header>
 
     <main class="_main">
       <div class="chatroom-main">
-
-        <section class="add-chatroom-section">
-          <!-- Trigger/Open The Modal -->
-          <button class="add-chatroom-button">Add New Chatroom</button>
-          <!-- The Modal -->
-          <div class="modal-add-chatroom">
-            <!-- Modal content -->
-            <div class="modal-chatroom-content">
-              <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Add New Chatroom</h2>
-              </div>
-              <form class="add-chatroom-form" action="">
-                <div class="form">
-                  <input type="text" placeholder="Chatroom Name" required>
-                  <input type="text" placeholder="Chatroom Capacity" required>
-                  <textarea placeholder="Chatroom Description" rows="4" cols="50" required></textarea>
-                  <button class="submit-button" type="submit">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-
         <section class="chatroom-section">
           <div class="current-chatrooms">
-            <img src="./img/chat-view-main-image2.jpg" alt="Chat image">
-            <h2>Current Chatroom</h2>
+            <!-- <img src="./img/chat-view-main-image2.jpg" alt="Chat image"> -->
+            <h2>Open Chatrooms</h2>
             <ol class="current-chatrooms-list">
               <li><a href="singleChatroom.html">Sample Chatroom One</a></li>
               <li>Sample Chatroom two</li>
@@ -79,7 +55,30 @@
               <li>Sample Chatroom night</li>
               <li>Sample Chatroom ten</li>
             </ol>
+            <section class="add-chatroom-section">
+              <!-- Trigger/Open The Modal -->
+              <button class="add-chatroom-button">Add New Chatroom</button>
+              <!-- The Modal -->
+              <div class="modal-add-chatroom">
+                <!-- Modal content -->
+                <div class="modal-chatroom-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Add New Chatroom</h2>
+                  </div>
+                  <form class="add-chatroom-form" action="">
+                    <div class="form">
+                      <input type="text" placeholder="Chatroom Name" required>
+                      <input type="text" placeholder="Chatroom Capacity" required>
+                      <textarea placeholder="Chatroom Description" rows="4" cols="50" required></textarea>
+                      <button class="submit-button" type="submit">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
           </div>
+          
         </section>
       </div>
     </main>
