@@ -21,6 +21,9 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://repo.spring.io/libs-milestone'
+	}
 }
 
 String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'lynxbob'
@@ -48,8 +51,10 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.projectlombok:lombok:1.18.16'
+	implementation 'org.springframework.mobile:spring-mobile-device:2.0.0.M3'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
+
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
