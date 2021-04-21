@@ -139,10 +139,7 @@ body {
 
 /*style game page------------------------*/
 .game-main {
-  /* border: 2px solid black; */
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 50px;
+  /* width: 70%; */
 }
 
 /*style single game page--------------------*/
@@ -153,8 +150,8 @@ body {
 }
 
 /*style chatroom page------------------*/
-.game-section {
-  border: 2px solid black;
+.chatroom-section {
+  /* border: 2px solid black; */
 }
 /*style single chatroom page-------------------*/
 ._singleChatroomMain {
