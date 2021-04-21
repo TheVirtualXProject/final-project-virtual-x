@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+@import url(./layout.css);
 /* font-family: 'Gugi', cursive;
 font-family: 'Lato', sans-serif; */
 
@@ -240,18 +241,19 @@ ol li {
   list-style-type: none;
 }
 
-.popular-challenges-list,
+/* .popular-challenges-list,
 .current-challenges-list {
   display: flex;
   flex-direction: column;
   text-align: left;
   /* border: 2px solid red; */
-  padding: 10px 35px;
-}
-.popular-challenges-list li,
+  /* padding: 10px 35px; */
+/* } */ 
+/* .popular-challenges-list li,
 .current-challenges-list li {
   padding: 10px;
-}
+} */
+
 .current-challenges-list p{
   padding: 5px 10px;
 }
@@ -370,13 +372,7 @@ textarea {
   /* border: 2px solid red; */
   padding: 0 0 50px 50px;
 }
-@media(max-width: 600px){
-  ol .popular-challenges-list{
-    display: flex;
-    flex-wrap: wrap;
 
-  }
-}
 
 .popular-challenges-list li,
 .current-challenges-list li {
@@ -692,3 +688,8 @@ textarea {
     
   }
 }
+@media screen and (max-width:600px){
+.popular-challenges{
+  display: none;
+}
+  }
