@@ -224,11 +224,11 @@ a:hover {
 /* challenges view style */
 .challenge-main {
   width: 70%;
-  height: auto;
-  background-image: url(../images/pablo-862.png);
-  background-size: 40%;
+  height: 145vh;
+  background-image: url(../images/pablo-872.png), url(../images/pablo-857.png);
+  background-size: 50%, 55%;
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: left top, right bottom;
 }
 .challenge-section {
   display: flex;
@@ -236,28 +236,39 @@ a:hover {
   justify-content: center;
   margin-right: 200px;
 }
-.current-challenges {
-  width: 50%;
+.popular-challenges {
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color:var(--primary-color-yellow);
+  border-radius: 10px;
+  display: table;
+  align-self:flex-end;
+  margin-right: 180px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-challenges {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
   /* text-align: left; */
   background-color: var(--primary-color-lightBlue);
   border-radius: 10px;
+  /* margin-left: 80px; */
+  margin-top: 200px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
-.current-challenges h2 {
+.current-challenges h2,
+.popular-challenges h2 {
   color: white;
   padding: 20px 10px;
   font-family: var(--body-header-font);
   font-weight: normal;
   font-size: 2em;
 }
-.popular-challenges {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -266,21 +277,13 @@ ol li {
   list-style-type: none;
 }
 
-.popular-challenges-list,
-.current-challenges-list {
-  display: flex;
-  flex-direction: column;
-  /* text-align: right;*/
-  border: 2px solid red;
-}
-
 .current-challenges-list p {
-  padding: 5px 5px;
+  padding: 5px;
 }
 .challenge-list-content {
-  background-color: rgba(156, 148, 148, 0.568);
+  background-color: rgba(223, 217, 217, 0.61);
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .underlinebox {
   background-color: white;
@@ -294,22 +297,26 @@ ol li {
   margin-top: 20px;
   box-shadow: 2px 2px 8px 4px gray;
 } */
-.popular-challenges h2,
-.current-challenges h2 {
-  padding: 20px;
-  /* margin:40px 0px 10px 0; */
-}
+
 .popular-challenges-list li,
 .current-challenges-list li {
   padding: 8px;
   font-size: 1.1em;
 }
-
+.popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  padding: 0px 40px;
+  margin-bottom: 10px;
+}
 /* style add button and modal box for challenge page and chatroom page--------------*/
 .add-challenge-section,
 .add-chatroom-section {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 24.5px;
 }
 .add-challenge-button,
@@ -377,14 +384,7 @@ textarea {
   cursor: pointer;
 }
 
-.popular-challenges-list,
-.current-challenges-list {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  /* border: 2px solid red; */
-  padding: 0 0 50px 50px;
-}
+
 @media (max-width: 600px) {
   ol .popular-challenges-list {
     display: flex;
@@ -513,6 +513,7 @@ textarea {
   /* border: 2px solid red; */
   background-color: var(--primary-color-lightBlue);
   border-radius: 10px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
 .current-chatrooms h2 {
   color: white;
@@ -532,9 +533,16 @@ textarea {
 }
 
 /* single chatroom style*/
-._singleChatroomMain {
-  /* border: black solid 2px; */
+._singleChatroomContainer {
+  width: 70%;
+  height: 70vh;
   background-image: url(../images/pablo-delete-confirmation.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+._singleChatroomMain {
+  border: black solid 2px;
+  display: table;
 }
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
