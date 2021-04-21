@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+@import url(./layout.css);
 /* font-family: 'Gugi', cursive;
 font-family: 'Lato', sans-serif; */
 
 /* ----------header style--------- */
+
+
 .navBar {
   list-style-type: none;
   margin: 0;
@@ -238,18 +241,19 @@ ol li {
   list-style-type: none;
 }
 
-.popular-challenges-list,
+/* .popular-challenges-list,
 .current-challenges-list {
   display: flex;
   flex-direction: column;
   text-align: left;
   /* border: 2px solid red; */
-  padding: 10px 35px;
-}
-.popular-challenges-list li,
+  /* padding: 10px 35px; */
+/* } */ 
+/* .popular-challenges-list li,
 .current-challenges-list li {
   padding: 10px;
-}
+} */
+
 .current-challenges-list p{
   padding: 5px 10px;
 }
@@ -368,13 +372,7 @@ textarea {
   /* border: 2px solid red; */
   padding: 0 0 50px 50px;
 }
-@media(max-width: 600px){
-  ol .popular-challenges-list{
-    display: flex;
-    flex-wrap: wrap;
 
-  }
-}
 
 .popular-challenges-list li,
 .current-challenges-list li {
@@ -430,6 +428,28 @@ textarea {
   text-align: left;
   padding: 0 0 50px 50px;
 }
+/* @media screen and (max-width:600px){
+  .game-main > .popular-games,img {
+    display:none;
+    
+    text-align: center;
+  }
+ ol,.current-games-list,h2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-template-columns: auto;
+    padding: 0;
+  }
+  ._main > .game-main{
+    grid-template-columns: auto;
+  }
+  .current-games-list>li{
+    background-color: blue;
+    padding: 100px;
+  }
+} */
+
 .popular-games-list li,
 .current-games-list li {
   padding: 5px;
@@ -457,6 +477,7 @@ textarea {
   text-decoration: none;
   color: white;
 }
+
 /* single game page style----------------------------*/
 ._singleGameMain {
   border: black solid 2px;
@@ -640,3 +661,35 @@ textarea {
 .commentImg[src=""] {
   display: none;
 }
+
+@media screen and (max-width:600px){
+  .game-main > .popular-games,img {
+    display:none;
+    
+    text-align: center;
+  }
+ ol,.current-games-list,h2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-template-columns: auto;
+    padding: 0;
+  }
+  ._main > .game-main{
+    grid-template-columns: auto;
+  }
+  .current-games-list>li{
+    background-color: gray;
+    /* padding: 15px; */
+    margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+    /* height: 50px; */
+    
+  }
+}
+@media screen and (max-width:600px){
+.popular-challenges{
+  display: none;
+}
+  }
