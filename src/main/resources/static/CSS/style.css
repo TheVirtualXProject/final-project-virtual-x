@@ -387,16 +387,29 @@ textarea {
 
 /* single challenge page style*/
 ._singleChallengeMain {
-  background-color: var(--primary-color-red);
+  background-image: url(../images/pablo-862.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right top;
   padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  height: 50vh;
 }
 .single-challenge-img {
-  border: 5px solid white;
+  border: 5px solid coral;
   border-radius: 5px;
 }
 .single-challenge-info {
+  width: 40%;
   text-align: left;
   margin-left: 30px;
+}
+/* ._singleChallengeComment{
+  border: 2px solid red;
+} */
+._singleChallengeContainer{
+  width: 100%;
 }
 ._singleChallengeComment h2 {
   margin-top: 50px;
@@ -404,6 +417,34 @@ textarea {
 }
 textarea {
   resize: none;
+}
+._singleChallengeCommentFormSection {
+  
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+._singleChallengeCommentForm {
+  background-color: coral;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+
+._singleChallengeButton {
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 60px;
+}
+._singleChallengeButton:hover {
+  background-color: var(--primary-color-lightBlue);
 }
 
 /*game page style*/
@@ -489,33 +530,8 @@ margin-left: 20px;
   margin-top: 50px;
   margin-bottom: 20px;
 }
-._singleChallengeCommentFormSection {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-._singleChallengeCommentForm {
-  background-color: coral;
-  height: 100%;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 10px;
-}
 
-._singleChallengeButton {
-  cursor: pointer;
-  border: none;
-  height: 25px;
-  width: 60px;
-}
-._singleChallengeButton:hover {
-  background-color: cadetblue;
-}
+
 
 /* chatroom page style-----------------------*/
 
@@ -602,9 +618,7 @@ margin-left: 20px;
   display: flex;
   justify-content: space-evenly;
 }
-._singleChallengeMain {
-  margin-bottom: 5%;
-}
+
 ._singleChallengeFormInputs {
   width: 100%;
 }
