@@ -45,7 +45,6 @@ xmlns:th="http://www.thymeleaf.org"
 
         <section class="add-challenge-section">
           <!-- Trigger/Open The Modal -->
-          <button class="add-challenge-button">Add New Challenge</button>
           <!-- The Modal -->
           <div class="modal-add-challenge">
             <!-- Modal content -->
@@ -101,13 +100,14 @@ xmlns:th="http://www.thymeleaf.org"
                 <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
               </th:block>
             </ol>
+            <button class="add-challenge-button">Add New Challenge</button>
           </div>
           <div class="current-challenges">
-            <img src="/images/challenge-view-main-image2.jpg" alt="Ride bikes">
             <h2>Current Challenges</h2>
             <ol class="current-challenges-list">
               <th:block th:each="challenge:${challengesRecent}">
-                <li><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></li>
+                <li><h4><a th:text="${challenge.title}" th:href="'/challenge/' + ${challenge.id}"></a></h4></li>
+                <p th:text="${challenge.description}"></p>
               </th:block>
             </ol>
           </div>
