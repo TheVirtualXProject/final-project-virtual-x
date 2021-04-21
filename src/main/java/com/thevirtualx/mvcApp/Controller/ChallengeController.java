@@ -51,13 +51,13 @@ public class ChallengeController {
         }
 
 
-        String username = principal.getName();
+        Account account = accountStorage.retrieveAccountByUsername(principal.getName());
+        String username = account.getRealName();
         Challenge challenge = challengeStorage.retrieveChallengeById(id);
         Comment commentToAdd = new Comment(comment, username, addMedia, id);
         challenge.addComment(commentToAdd);
         challengeStorage.addChallenge(challenge);
 
-        Account account = accountStorage.retrieveAccountByUsername(username);
         account.addComment(commentToAdd);
         accountStorage.addAccount(account);
         return "redirect:/challenge/" + id;
