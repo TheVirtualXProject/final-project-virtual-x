@@ -36,7 +36,7 @@ public class ChallengeController {
         model.addAttribute("challengesRecent", sortByRecent());
         model.addAttribute("challengesPopular", sortByPopular());
         if(device.isMobile()) {
-
+            return "challengePageMobile";
         }
         return "challengePage";
     }
