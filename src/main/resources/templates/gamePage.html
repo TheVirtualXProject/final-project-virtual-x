@@ -52,7 +52,7 @@ xmlns:th="http://www.thymeleaf.org">
           <h2>Current Games</h2>
           <ol class="current-games-list">
             <th:block th:each="game:${games}">
-              <a th:href="'/game/' + ${game.id} + '/create-game'" ><li th:text="${game.name}"></li></a>
+              <li ><a th:href="'/game/' + ${game.id} + '/create-game'" th:text="${game.name}"></a></li>
             </th:block>
           </ol>
         </div>

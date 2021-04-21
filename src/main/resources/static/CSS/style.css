@@ -663,7 +663,7 @@ textarea {
 }
 
 @media screen and (max-width:600px){
-  .game-main > .popular-games,img {
+  .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
     display:none;
     
     text-align: center;
@@ -686,6 +686,11 @@ textarea {
     line-height: 50px;
     /* height: 50px; */
     
+
+    
+  }
+  .current-games img {
+    display:none;
   }
 }
 @media screen and (max-width:600px){
@@ -693,3 +698,19 @@ textarea {
   display: none;
 }
   }
+
+  
+@media only screen and (max-width: 600px) {
+  .cards {
+    max-width: 350px;
+    height: auto;
+  }
+  .activity-card {
+    width: 350px;
+  }
+  .dropdown {
+    float: none;
+    align-self: center;
+    margin-left: 0;
+  }
+}
