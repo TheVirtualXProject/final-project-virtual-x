@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
 @import url(./layout.css);
 /* font-family: 'Gugi', cursive;
-font-family: 'Lato', sans-serif; */
+font-family: 'Lato', sans-serif; 
+font-family: 'Titan One', cursive;*/
 
 /* ----------header style--------- */
 
@@ -41,7 +43,7 @@ div.right {
 }
 .header-title {
   text-align: center;
-  padding: 80px 0px 20px 0px;
+  padding: 80px 0px 80px 0px;
   font-family: var(--header-font);
   font-weight: normal;
   font-size: 4em;
@@ -64,35 +66,32 @@ a {
 }
 /* ----------Nav Bar Code--------- */
 
-
-
-
-*{
+* {
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
 }
-body{
+body {
   font-family: montserrat;
 }
-nav{
-  background:coral;
+nav {
+  background: coral;
   height: 80px;
   width: 100%;
 }
 
-nav ul{
+nav ul {
   float: left;
   margin-right: 20px;
 }
-nav ul li{
+nav ul li {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
 }
-nav ul li a{
+nav ul li a {
   color: white;
   font-size: 17px;
   padding: 7px 13px;
@@ -100,11 +99,12 @@ nav ul li a{
   text-transform: uppercase;
 }
 
-a.active,a:hover{
+a.active,
+a:hover {
   background: var(--primary-color-lightBlue);
-  transition: .5s;
+  transition: 0.5s;
 }
-.checkbtn{
+.checkbtn {
   font-size: 30px;
   color: white;
   float: right;
@@ -113,49 +113,45 @@ a.active,a:hover{
   cursor: pointer;
   display: none;
 }
-#check{
+#check {
   display: none;
 }
-@media (max-width: 952px){
-  
-  nav ul li a{
+@media (max-width: 952px) {
+  nav ul li a {
     font-size: 16px;
   }
 }
-@media (max-width: 858px){
-  .checkbtn{
+@media (max-width: 858px) {
+  .checkbtn {
     display: block;
   }
-  ul{
+  ul {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background:coral;
+    background: coral;
     top: 80px;
     left: 100%;
     text-align: center;
-    transition: all .5s;
+    transition: all 0.5s;
   }
-  nav ul li{
+  nav ul li {
     display: block;
     margin: 50px 0;
     line-height: 30px;
   }
-  nav ul li a{
+  nav ul li a {
     font-size: 20px;
   }
-  a:hover,a.active{
+  a:hover,
+  a.active {
     background: none;
   }
-  #check:checked ~ ul{
+  #check:checked ~ ul {
     left: 0;
   }
 }
-/* section{
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
-} */
+
 /* ----------home view style--------- */
 /* The dropdown container */
 .dropdown {
@@ -215,7 +211,7 @@ a.active,a:hover{
   font-family: var(--body-text-font);
 }
 .join-button {
- margin: 10px 0;
+  margin: 10px 0;
   width: 8em;
   border-radius: 10px;
   border: none;
@@ -229,17 +225,59 @@ a.active,a:hover{
 }
 
 /* challenges view style */
-.challenge-section{
-}
 .challenge-main {
+  width: 70%;
+  height: 145vh;
+  background-image: url(../images/pablo-872.png), url(../images/pablo-857.png);
+  background-size: 50%, 55%;
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+}
+.challenge-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 200px;
+}
+.popular-challenges {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:var(--primary-color-yellow);
+  border-radius: 10px;
+  display: table;
+  align-self:flex-end;
+  margin-right: 180px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-challenges {
   width: 50%;
   display: flex;
   flex-direction: column;
-  
+  /* text-align: left; */
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  /* margin-left: 80px; */
+  margin-top: 200px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-challenges h2,
+.popular-challenges h2 {
+  color: white;
+  padding: 20px 10px;
+  font-family: var(--body-header-font);
+  font-weight: normal;
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 ol li {
   list-style-type: none;
-}
 
 /* .popular-challenges-list,
 .current-challenges-list {
@@ -253,52 +291,43 @@ ol li {
 .current-challenges-list li {
   padding: 10px;
 } */
-
+}
 .current-challenges-list p{
   padding: 5px 10px;
 }
-.challenge-list-content{
-  background-color: rgba(156, 148, 148, 0.568);
-  border-radius: 5px;
+
+.current-challenges-list p {
+  padding: 5px;
+}
+.challenge-list-content {
+  background-color: rgba(223, 217, 217, 0.61);
+  border-radius: 10px;
   margin-bottom: 5px;
 }
-.popular-challenges {
-  background-color: var(--primary-color-purple);
-  color: white;
-}
-.underlinebox{
+.underlinebox {
   background-color: white;
   width: 67%;
   height: 0.8%;
-  margin-left:50px;
+  margin-left: 50px;
 }
-.current-challenges {
-  /* background-color: var(--primary-color-lightBlue); */
-}
-.current-challenges img{
-  /* border:5px solid white;
-  border-radius: 5px; */
+
+/* .current-challenges img{
   width:90%;
   margin-top: 20px;
   box-shadow: 2px 2px 8px 4px gray;
-}
-.popular-challenges h2,
-.current-challenges h2 {
-  /* padding: 20px; */
-  margin:40px 0px 10px 0;
-}
+} */
 
-a {
-  text-decoration: none;
-  color: inherit;
+.popular-challenges-list li,
+.current-challenges-list li {
+  padding: 8px;
+  font-size: 1.1em;
 }
-
 
 /* style add button and modal box for challenge page and chatroom page--------------*/
 .add-challenge-section,
 .add-chatroom-section {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 24.5px;
 }
 .add-challenge-button,
@@ -307,9 +336,11 @@ a {
   height: 2em;
   font-size: 1em;
   cursor: pointer;
-  background-color: var(--secondary-color-orange);
+  background-color: var(--primary-color-darkBlue);
   border: none;
+  border-radius: 10px;
   color: white;
+  margin-top: 20px;
 }
 /* The Modal (background) */
 .modal-add-challenge,
@@ -364,53 +395,35 @@ textarea {
   cursor: pointer;
 }
 
+
+@media (max-width: 600px) {
+  ol .popular-challenges-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 .popular-challenges-list,
 .current-challenges-list {
   display: flex;
   flex-direction: column;
   text-align: left;
   /* border: 2px solid red; */
-  padding: 0 0 50px 50px;
-}
-
-
-.popular-challenges-list li,
-.current-challenges-list li {
-  padding: 5px;
-  font-size: 1.1em;
-}
-.popular-challenges {
-  background-color: var(--primary-color-darkBlue);
-  opacity: 0.8;
-  color: white;
-}
-.popular-challenges h2 {
-  background-color: var(--primary-color-lightBlue);
-  height: 3em;
-  padding: 20px;
-}
-.current-challenges h2 {
-  padding: 20px;
-}
-.current-challenges-list a {
-  text-decoration: none;
-  color: black;
+  padding: 0px 50px 50px 50px;
 }
 
 
 /* single challenge page style*/
-._singleChallengeMain{
-  background-color: var(--primary-color-yellow);
+._singleChallengeMain {
+  background-color: var(--primary-color-red);
   padding: 20px;
 }
-.single-challenge-img{
-  border:5px solid white;
+.single-challenge-img {
+  border: 5px solid white;
   border-radius: 5px;
 }
 .single-challenge-info {
   text-align: left;
   margin-left: 30px;
-  
 }
 ._singleChallengeComment h2 {
   margin-top: 50px;
@@ -516,27 +529,63 @@ textarea {
 }
 
 /* chatroom page style-----------------------*/
-.current-chatrooms-list {
+
+.chatroom-main {
+  width: 70%;
+  height: 70vh;
+  /* border: solid 2px black; */
+  /* background-color: aliceblue; */
+  background-image: url(../images/pablo-isolated-chatting-from-balconies.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.chatroom-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 200px;
+}
+.current-chatrooms {
+  width: 35%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: left;
-  padding: 0 0 50px 50px;
+  padding: 20px 0px;
+  /* border: 2px solid red; */
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-chatrooms h2 {
+  color: white;
+  padding: 20px 10px;
+  font-family: var(--body-header-font);
+  font-weight: normal;
+  font-size: 2em;
 }
 .current-chatrooms-list li {
   padding: 5px;
   font-size: 1.1em;
 }
-.current-chatrooms h2 {
-  padding: 20px;
-}
+
 .current-chatrooms-list a {
   text-decoration: none;
   color: black;
 }
 
 /* single chatroom style*/
+._singleChatroomContainer {
+  width: 70%;
+  height: 70vh;
+  background-image: url(../images/pablo-delete-confirmation.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 ._singleChatroomMain {
   border: black solid 2px;
+  display: table;
 }
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
@@ -582,53 +631,44 @@ textarea {
   height: 150px;
   padding: 10px;
 }
-/* /* style account page----- */
+/* style account page----- */
 ._accountContainer {
-  /* background-color: teal; */
+  background-image: url(../images/pablo-306.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 30%;
+
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+}
+.personal-info {
+  margin-bottom: 20px;
 }
 .profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin: auto;
 }
-.account-main-left {
-  background-color: var(--primary-color-red);
-  margin: 25px;
-  width: 18%;
+.account-content {
+  width: 40%;
+  align-self: center;
 }
-.friends-list {
-  background-color: rgba(255, 255, 255, 0.562);
-  border-radius: 20px;
-  margin: 20px;
-  align-self: flex-start;
-}
-.friends-list h2,
 .posted-challenges h2,
 .posted-comments h2 {
   padding: 10px;
 }
-.friends-list img {
-  width: 50px;
-  border-radius: 50%;
-}
-.account-main-right {
-  margin: 25px;
-  width: 40%;
-}
+
 .posted-challenges {
   padding: 10px;
-  background-color: rgb(223, 217, 217);
-  border-radius: 20px;
+  background-color: rgba(223, 217, 217, 0.61);
+  border-radius: 10px;
 }
 .posted-comments {
   margin-top: 50px;
   padding: 10px;
-  background-color: rgb(223, 217, 217);
-  border-radius: 20px;
+  background-color: rgba(223, 217, 217, 0.61);
+  border-radius: 10px;
 }
 .commentImg {
   height: 200px;

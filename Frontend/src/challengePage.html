@@ -39,50 +39,7 @@ xmlns="http://www.w3.org/1999/xhtml"
 
       <main class="_main">
         <div class="challenge-main">
-          <section class="add-challenge-section">
-            <!-- Trigger/Open The Modal -->
-            <button class="add-challenge-button">Add New Challenge</button>
-            <!-- The Modal -->
-            <div class="modal-add-challenge">
-              <!-- Modal content -->
-              <div class="modal-challenge-content">
-                <div class="modal-header">
-                  <span class="close">&times;</span>
-                  <h2>Add New Challenge</h2>
-                </div>
-                <form class="add-challenge-form" action="">
-                  <div class="form">
-                    <input
-                      placeholder="Challenge ImageUrl"
-                      type="file"
-                      id="img"
-                      name="img"
-                      accept="image/*"
-                    />
-                    <input type="text" placeholder="Challenge Name" required />
-                    <input type="text" placeholder="Host Name" required />
-                    <input
-                      type="text"
-                      placeholder="Challenge Capacity"
-                      required
-                    />
-                    <input
-                      type="text"
-                      placeholder="Challenge Duration"
-                      required
-                    />
-                    <textarea
-                      placeholder="Challenge Description"
-                      rows="5"
-                      cols="50"
-                      required
-                    ></textarea>
-                    <button class="submit-button" type="submit">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </section>
+          
 
           <section class="challenge-section">
             <div class="popular-challenges">
@@ -100,12 +57,56 @@ xmlns="http://www.w3.org/1999/xhtml"
                 <li>Popular Challenge night</li>
                 <li>Popular Challenge ten</li>
               </ol>
+              <section class="add-challenge-section">
+                <!-- Trigger/Open The Modal -->
+                <button class="add-challenge-button">Add New Challenge</button>
+                <!-- The Modal -->
+                <div class="modal-add-challenge">
+                  <!-- Modal content -->
+                  <div class="modal-challenge-content">
+                    <div class="modal-header">
+                      <span class="close">&times;</span>
+                      <h2>Add New Challenge</h2>
+                    </div>
+                    <form class="add-challenge-form" action="">
+                      <div class="form">
+                        <input
+                          placeholder="Challenge ImageUrl"
+                          type="file"
+                          id="img"
+                          name="img"
+                          accept="image/*"
+                        />
+                        <input type="text" placeholder="Challenge Name" required />
+                        <input type="text" placeholder="Host Name" required />
+                        <input
+                          type="text"
+                          placeholder="Challenge Capacity"
+                          required
+                        />
+                        <input
+                          type="text"
+                          placeholder="Challenge Duration"
+                          required
+                        />
+                        <textarea
+                          placeholder="Challenge Description"
+                          rows="5"
+                          cols="50"
+                          required
+                        ></textarea>
+                        <button class="submit-button" type="submit">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
             </div>
             <div class="current-challenges">
-              <img
+              <!-- <img
                 src="./img/challenge-view-main-image2.jpg"
                 alt="Ride bikes"
-              />
+              /> -->
               <h2>Current Challenges</h2>
               <ol class="current-challenges-list">
                 <div class="challenge-list-content">
@@ -122,17 +123,10 @@ xmlns="http://www.w3.org/1999/xhtml"
                 <li><h4>Eat A Whole Pizza</h4></li>
                 <p>Join me for a new daily challenge - A Mile A DAY. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
               </div>
-              
-                <li><h4>Current Challenge four</h4></li>
-                <li><h4>Current Challenge five</h4></li>
-                <li><h4>Current Challenge six</h4></li>
-                <li><h4>Current Challenge seven</h4></li>
-                <li><h4>Current Challenge eight</h4></li>
-                <li><h4>Current Challenge night</h4></li>
-                <li><h4>Current Challenge ten</h4></li>
               </ol>
+              
             </div>
-            
+
           </section>
         </div>
       </main>
