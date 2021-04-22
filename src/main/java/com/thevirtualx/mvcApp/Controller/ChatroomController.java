@@ -43,7 +43,7 @@ public class ChatroomController {
     }
 
     @GetMapping("/chat/{chatId}")
-    public String displaySingleChatroom(@PathVariable Long chatId, Model model, Principal principal) {
+    public String displaySingleChatroom(@PathVariable Long chatId, Model model, Principal principal, Device device) {
         String kiwiIRC = "https://kiwiirc.com/client/irc.kiwiirc.com/?nick=";
         Chatroom chatroom = chatroomStorage.retrieveChatroomById(chatId);
         kiwiIRC += principal.getName() + "?#";
@@ -51,7 +51,9 @@ public class ChatroomController {
 
         model.addAttribute("src", kiwiIRC);
         model.addAttribute("channelName", chatroom.getChannelName());
-
+        if (!device.isNormal()) {
+            return "singleChatroomMobile";
+        }
         return "singleChatroom";
     }
 

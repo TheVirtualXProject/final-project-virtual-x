@@ -41,7 +41,7 @@ public class GameController {
 
 
     @GetMapping("/game/{id}")
-    public String displayGameRoom(@PathVariable Long id, Principal principal, Model model) {
+    public String displayGameRoom(@PathVariable Long id, Principal principal, Model model, Device device) {
         Account account = accountStorage.retrieveAccountByUsername(principal.getName());
         Game game = gameStorage.retrieveGameById(id);
         GameHash gameHash = new GameHash(account.getId(), account.getUsername());
@@ -52,6 +52,9 @@ public class GameController {
         }
 
         model.addAttribute("game", game);
+        if(!device.isNormal()) {
+            return "singleGameMobile";
+        }
         return "singleGame";
     }
 
