@@ -669,10 +669,10 @@ textarea {
 
 /* --------------Global Nav for Mobile------------- */
 
-@media screen and (max-width:600px){}
+@media screen and (max-width:800px){}
 
 /* --------Game Mobile Section------------- */
-@media screen and (max-width:600px){
+@media screen and (max-width:800px){
   .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
     display:none;
     
@@ -704,15 +704,17 @@ textarea {
   }
 }
 /* ------------------Single Game Mobile ------------------------ */
-@media screen and (max-width:600px){
+@media screen and (max-width:800px){
   ._singleGameContainer{
+    height: 90vh;
     width: 100vw;
   }
+  
 }
 
 
 /* ------------------Chalenges Mobile Section----------------- */
-@media screen and (max-width:600px){
+@media screen and (max-width:800px){
 .popular-challenges, .current-challenges img{
   display: none;
 }
@@ -738,6 +740,7 @@ textarea {
 }
 .add-challenge-button{
   
+    margin-top: 1.5rem;
  border-radius: 10px;
   width: 206.85px;
   height: 60px;
@@ -745,11 +748,12 @@ textarea {
 
 }
 /* ----------------Chatroom Mobile Section---------------- */
-@media screen and (max-width:600px){
+@media screen and (max-width:800px){
   .chatroom-section img{
     display:none;
   }
   .add-chatroom-button{
+    margin-top: 1.5rem;
     border-radius: 10px;
     width: 206.85;
     height: 60px;
@@ -864,12 +868,26 @@ textarea {
 }
 /* -----------Single Chatroom Mobile------------------- */
 @media screen and (max-width: 600px){
-  .nav-items-list{
-    text-align: center;
+ ._chatroom{
+  width: 100%;
+  height: 100%;
+ }
+ ._singleChatroomMain{
+   width: 100%;
+   height: 100%;
+ }
+ ._singleChatroomContainer{
+   width: 100vw;
+   height: 85vh;
+ }
+ 
   }
   
+@media screen and (max-width:800px){
+  .nav-items-list{ 
+    overflow-y:scroll ;
 }
-
+}
 
 
   
