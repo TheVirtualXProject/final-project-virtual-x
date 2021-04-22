@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual-X</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/layout.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/CSS/ratingStyle.css">
+    <link rel="stylesheet" href="/CSS/navBar.css">
+  </head>
+
+  <body>
+    <div class="_container">
+      <header class="_header">
+        <nav>
+           <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <!-- <label class="logo">Virtual X</label> -->
+          <ul class="nav-items-list">
+            <li class="active"><a href="/">HOME</a></li>
+            <li><a href="/challenge">CHALLENGES</a></li>
+            <li><a href="/game">GAMES</a></li>
+            <li><a href="/chat">CHATS</a></li>
+            <div class="right">
+              <!-- make media querie  -->
+              <li><a href="/account">ACCOUNT</a></li>
+              <li><a href="/logout">LOGOUT</a></li>
+            </div>
+          </ul>
+        </nav>
+        <h1 class="header-title">Virtual X</h1>
+        <!-- <h4 class="slogan">Meeting with coworkers while working from home.</h4> -->
+      </header>
+
+      <main class="_main">
+        <div class="_singleChallengeContainer">
+          
+
+          <section class="_singleChallengeMain">
+            <img class="single-challenge-img" src="/images/single-challenge-page-img2.jpg" alt="Walking" />
+            <div class="single-challenge-info">
+              <h2 th:text="${challenge.title}">A Mile A Day</h2>
+              <div class = "star-container">
+                <div class="star-widget">
+                  <input type="radio" name="rate" id="rate-5" value="5">
+                  <label for="rate-5" class="fas fa-star" ></label>
+                  <input type="radio" name="rate" id="rate-4" value="4">
+                  <label for="rate-4" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-3" value="3">
+                  <label for="rate-3" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-2" value="2">
+                  <label for="rate-2" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-1" value="1">
+                  <label for="rate-1" class="fas fa-star"></label>
+                </div>
+              </div>
+              <h3 th:text="'Host: ' + ${challenge.getCreatorName()}" class="host">Host:Jon</h3>
+              <h4 class="size">Size:4 (max:6)</h4>
+              <h4 th:text="'Duration: ' + ${challenge.duration}"class="duration">Duration:7</h4>
+              <button class="join-button">JOIN</button>
+              <p th:text="${challenge.description}" class="description">
+                Join me for a new daily challenge - A Mile A DAY. It is a long
+                established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.
+              </p>
+            </div>
+          </section>
+          <hr />
+          <section class="_singleChallengeComment">
+            <div class="_singleChallengeCommentFormSection">
+              <div class="_singleChallengeCommentForm">
+                <h4>Comments</h4>
+                <form class="add-comment-form" method="POST" action="/">
+                  <!-- <br /> -->
+                  <!-- <label for="addMedia">Upload Media</label> -->
+                  <input class="_singleChallengeFormInputs fileInput" type="file" id="img" name="addMedia" accept="image/*" />
+                  <br />
+                  <!-- <br /> -->
+                  <textarea class="_singleChallengeFormInputs commentTextArea" type="text" placeholder="your comments" name="comment"
+                    rows="3" cols="30" required></textarea>
+          
+                  <br />
+                  <!-- <br /> -->
+                  <button class="_singleChallengeButton" type="submit" name="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+  
+            <div class="_commentsForSingleChallenge">
+              <th:block th:each="comment:${challenge.getComments()}">
+                <div class="_displayProfile">
+                  <h4 th:text="${comment.getUsername()}">User name</h4>
+                </div>
+                <div class="_displayActualComment" th:text="${comment.getText()}">
+                  Great challenge, had a lot of fun doing it with my coworkers. Met some awesome people from other
+                  departments.
+                </div>
+                <div class="_displayCommentImg">
+                  <img th:src="${comment.importMedia}" class="commentImg" alt="Comment Pic">
+                </div>
+                <hr>
+                <br>
+
+              </th:block>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="_footer">&copy;2021 The Virtual X Team</footer>
+    </div>
+  </body>
+  <script src="/JS/singleChallengePage.js"></script>
+</html>
