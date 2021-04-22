@@ -7,10 +7,10 @@ let smallPictures = ["/images/home-image-square-artist-vector.png",
 "/images/home-image-square-online-party-vector.png",
 "/images/home-image-square-soccer-vector.png"];
 let largePictures = ["/images/home-image-rectangle-chat-vector.png",
-"/images/home-image-rectangle-coffee-break-vector.png",
-"/images/home-image-rectangle-connect-vector.png",
-"/images/home-image-rectangle-music-band.png",
-"/images/home-image-rectangle-walk-dog-vector.png"];
+"/images/homeview-rectangle-coffee-break-vector.png",
+"/images/homeview-rectangle-connect-vector.png",
+"/images/homeview-rectangle-music-band.png",
+"/images/homeview-rectangle-walk-dog-vector.png"];
 let lastSmallPicture = "";
 let lastLargePicture = "";
 let colorCounter = 0;
