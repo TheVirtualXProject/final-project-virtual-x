@@ -4,6 +4,7 @@ import com.thevirtualx.mvcApp.Entity.Account;
 import com.thevirtualx.mvcApp.Entity.Chatroom;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChatroomStorage;
+import org.springframework.mobile.device.Device;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,10 @@ public class ChatroomController {
 
 
     @GetMapping("/chat")
-    public String displayChatroomPage() {
+    public String displayChatroomPage(Device device) {
+        if(!device.isNormal()) {
+            return "chatRoomMobile";
+        }
         return  "chatRoom";
     }
 

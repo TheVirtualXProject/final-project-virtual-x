@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual-X</title>
+  <link rel="stylesheet" href="/CSS/mobileStyle.css" />
+  <link rel="stylesheet" href="/CSS/mobileLayout.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="/CSS/navBar.css">
+</head>
+
+<body>
+  <div class="_container">
+    <header class="_header">
+      <nav>
+         <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!-- <label class="logo">Virtual X</label> -->
+        <ul class="nav-items-list">
+          <li class="active"><a href="/">HOME</a></li>
+          <li><a href="/challenge">CHALLENGES</a></li>
+          <li><a href="/game">GAMES</a></li>
+          <li><a href="/chat">CHATS</a></li>
+          <div class="right">
+            <!-- make media querie  -->
+            <li><a href="/account">ACCOUNT</a></li>
+            <li><a href="/logout">LOGOUT</a></li>
+          </div>
+        </ul>
+      </nav>
+      <h1 class="header-title">Chatrooms</h1>
+      <!-- <h4 class="slogan">Meeting with coworkers while working from home.</h4> -->
+    </header>
+
+    <main class="_main">
+      <div class="chatroom-main">
+
+        <section class="add-chatroom-section">
+          <!-- Trigger/Open The Modal -->
+          <button class="add-chatroom-button">Add New Chatroom</button>
+          <!-- The Modal -->
+          <div class="modal-add-chatroom">
+            <!-- Modal content -->
+            <div class="modal-chatroom-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Add New Chatroom</h2>
+              </div>
+              <form method="POST" class="add-chatroom-form" action="/chat/addChat">
+                <div class="form">
+                  <input type="text" placeholder="Chatroom Name" required name="chatName">
+                  <input type="text" placeholder="Chatroom Capacity" required name="maxSize">
+                  <textarea placeholder="Chatroom Description" rows="4" cols="50" required name="desc"></textarea>
+                  <button class="submit-button" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="chatroom-section">
+          <div class="current-chatrooms">
+            <img src="/images/chat-view-main-image2.jpg" alt="Chat image">
+            <h2>Current Chatrooms</h2>
+            <ol class="current-chatrooms-list">
+              
+              
+            </ol>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="_footer">&copy;2021 The Virtual X Team</footer>
+  </div>
+</body>
+<script src="/JS/chatRoom.js"></script>
+
+</html>

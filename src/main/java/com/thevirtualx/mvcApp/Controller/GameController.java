@@ -7,6 +7,7 @@ import com.thevirtualx.mvcApp.Entity.StaticGame;
 import com.thevirtualx.mvcApp.Repo.StaticGameRepository;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.GameStorage;
+import org.springframework.mobile.device.Device;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,8 +31,11 @@ public class GameController {
     }
 
     @GetMapping("/game")
-    public String displayGamePage(Model model) {
+    public String displayGamePage(Model model, Device device) {
         model.addAttribute("games", staticGameRepository.findAll());
+        if(device.isNormal()) {
+            return "gamePageMobile";
+        }
         return "gamePage";
     }
 
