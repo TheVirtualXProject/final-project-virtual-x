@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url(./layout.css);
 /* font-family: 'Gugi', cursive;
-font-family: 'Lato', sans-serif; */
+font-family: 'Lato', sans-serif; 
+font-family: 'Titan One', cursive;*/
 
 /* ----------header style--------- */
+
 .navBar {
   list-style-type: none;
   margin: 0;
@@ -27,22 +31,26 @@ li.nav-list a {
 .navBar li a:hover:not(.active) {
   background-color: var(--primary-color-darkBlue);
 }
-li a.active {
+/* li a.active {
   background-color: var(--primary-color-lightBlue);
-}
+} */
 div.right {
   float: right;
 }
+.nav-items-list {
+  width: 100%;
+}
 .header-title {
   text-align: center;
-  padding: 80px;
+  padding: 80px 0px 80px 0px;
   font-family: var(--header-font);
   font-weight: normal;
   font-size: 4em;
   color: var(--primary-color-lightBlue);
 }
 /*get rid of all a tag default value----------*/
-a { color: inherit;
+a {
+  color: inherit;
   text-decoration: none;
 }
 @media screen and (max-width: 600px) {
@@ -55,6 +63,90 @@ a { color: inherit;
   text-align: center;
   padding: 30px;
 }
+/* ----------Nav Bar Code--------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: montserrat;
+}
+nav {
+  background: coral;
+  height: 80px;
+  width: 100%;
+}
+
+nav ul {
+  float: left;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 952px) {
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: coral;
+    top: 80px;
+    left: 100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
 /* ----------home view style--------- */
 /* The dropdown container */
 .dropdown {
@@ -67,6 +159,7 @@ a { color: inherit;
   border: none;
   outline: none;
   color: white;
+  font-size: 1em;
   width: 10em;
   height: 2em;
   cursor: pointer;
@@ -102,6 +195,11 @@ a { color: inherit;
   display: flex;
   flex-direction: column;
   margin: 24.5px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+  border-radius: 10px;
+}
+.activity-card img {
+  border-radius: 10px;
 }
 .light-blue,
 .dark-blue,
@@ -113,9 +211,14 @@ a { color: inherit;
   font-family: var(--body-text-font);
 }
 .join-button {
-  margin-top: 15px;
-  width: 10em;
+  margin: 10px 0;
+  width: 8em;
+  height: 1.5em;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
   align-self: center;
+  background-color: white;
 }
 .activity-card p {
   padding: 5px;
@@ -124,25 +227,115 @@ a { color: inherit;
 
 /* challenges view style */
 .challenge-main {
+  width: 70%;
+  min-height: 145vh;
+  background-image: url(../images/pablo-872.png), url(../images/pablo-857.png);
+  background-size: 50%, 55%;
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+}
+.challenge-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-right: 200px;
+}
+.popular-challenges {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color-yellow);
+  border-radius: 10px;
+  display: table;
+  align-self: flex-end;
+  margin-right: 180px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-challenges {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* text-align: left; */
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  /* margin-left: 80px; */
+  margin-top: 200px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-challenges h2,
+.popular-challenges h2 {
+  color: white;
+  padding: 20px 10px;
+  font-family: var(--body-header-font);
+  font-weight: normal;
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ol li {
+  list-style-type: none;
+
+  /* .popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  /* padding: 10px 35px; */
+  /* } */
+  /* .popular-challenges-list li,
+.current-challenges-list li {
+  padding: 10px;
+} */
+}
+.current-challenges-list p {
+  padding: 5px 10px;
+}
+
+.current-challenges-list p {
+  padding: 5px;
+}
+.challenge-list-content {
+  background-color: rgba(223, 217, 217, 0.61);
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+/* .underlinebox {
+  background-color: white;
+  width: 67%;
+  height: 0.8%;
+  margin-left: 50px;
+} */
+
+.popular-challenges-list li,
+.current-challenges-list li {
+  padding: 8px;
+  font-size: 1.1em;
 }
 
 /* style add button and modal box for challenge page and chatroom page--------------*/
 .add-challenge-section,
 .add-chatroom-section {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 24.5px;
 }
 .add-challenge-button,
 .add-chatroom-button {
   width: 10em;
   height: 2em;
+  font-size: 1em;
   cursor: pointer;
-  background-color: var(--secondary-color-orange);
+  background-color: var(--primary-color-darkBlue);
   border: none;
+  border-radius: 10px;
   color: white;
+  margin-top: 20px;
 }
 /* The Modal (background) */
 .modal-add-challenge,
@@ -197,46 +390,52 @@ textarea {
   cursor: pointer;
 }
 
+
+@media (max-width: 850px) {
+  ol .popular-challenges-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+}
 .popular-challenges-list,
 .current-challenges-list {
   display: flex;
   flex-direction: column;
   text-align: left;
   /* border: 2px solid red; */
-  padding: 0 0 50px 50px;
-}
-.popular-challenges-list li,
-.current-challenges-list li {
-  padding: 5px;
-  font-size: 1.1em;
-}
-.popular-challenges {
-  background-color: var(--primary-color-darkBlue);
-  opacity: 0.8;
-  color: white;
-}
-.popular-challenges h2 {
-  background-color: var(--primary-color-lightBlue);
-  height: 3em;
-  padding: 20px;
-}
-.current-challenges h2 {
-  padding: 20px;
-}
-.current-challenges-list a {
-  text-decoration: none;
-  color: black;
-}
+  padding: 0px 50px 50px 50px;
 
-.popular-challenges-list a {
-  text-decoration: none;
-  color: white;
 }
 
 /* single challenge page style*/
+._singleChallengeMain {
+  background-image: url(../images/pablo-862.png);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: right top;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  height: 30vh;
+  background-color: var(--primary-color-lightBlue);
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.single-challenge-img {
+  border: 5px solid white;
+  border-radius: 5px;
+}
 .single-challenge-info {
+  width: 40%;
+  height: 50%;
   text-align: left;
   margin-left: 30px;
+}
+/* ._singleChallengeComment{
+  border: 2px solid red;
+} */
+._singleChallengeContainer {
+  width: 100%;
 }
 ._singleChallengeComment h2 {
   margin-top: 50px;
@@ -254,6 +453,28 @@ textarea {
   text-align: left;
   padding: 0 0 50px 50px;
 }
+/* @media screen and (max-width:600px){
+  .game-main > .popular-games,img {
+    display:none;
+    
+    text-align: center;
+  }
+ ol,.current-games-list,h2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-template-columns: auto;
+    padding: 0;
+  }
+  ._main > .game-main{
+    grid-template-columns: auto;
+  }
+  .current-games-list>li{
+    background-color: blue;
+    padding: 100px;
+  }
+} */
+
 .popular-games-list li,
 .current-games-list li {
   padding: 5px;
@@ -265,7 +486,6 @@ textarea {
   color: white;
 }
 .popular-games h2 {
-  background-color: var(--primary-color-yellow);
   height: 3em;
   padding: 20px;
 }
@@ -281,6 +501,7 @@ textarea {
   text-decoration: none;
   color: white;
 }
+
 /* single game page style----------------------------*/
 ._singleGameMain {
   border: black solid 2px;
@@ -298,7 +519,8 @@ textarea {
   align-items: center;
 }
 ._singleChallengeCommentForm {
-  background-color: coral;
+  background-color:var(--secondary-color-orange);
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
   height: 100%;
   width: 300px;
   display: flex;
@@ -315,29 +537,150 @@ textarea {
   width: 60px;
 }
 ._singleChallengeButton:hover {
-  background-color: cadetblue;
+  background-color: var(--primary-color-lightBlue);
 }
 
-/* chatroom page style-----------------------*/
-.current-chatrooms-list {
+/*game page style*/
+.game-main {
+  /* border: 2px solid black; */
+  width: 70%;
+  height: 130vh;
+  background-image: url(../images/pablo-blogging.png),
+    url(../images/pablo-basketball-game.png);
+  background-size: 50%, 60%;
+  background-repeat: no-repeat;
+  background-position: right top, left bottom;
+}
+.popular-games {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color-red);
+  border-radius: 10px;
+  margin-left: 200px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-games {
+  width: 30%;
+  /* border: solid 2px blue; */
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  display: table;
+  align-self: flex-end;
+  float: right;
+  margin-right: 50px;
+  margin-top: 25px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.popular-games h2,
+.current-games h2 {
+  color: white;
+  padding: 20px 10px;
+  font-family: var(--body-header-font);
+  font-weight: normal;
+  font-size: 2em;
+}
+
+.popular-games-list li,
+.current-games-list li {
+  padding: 8px;
+  font-size: 1.1em;
+}
+.popular-games-list,
+.current-games-list {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 0 0 50px 50px;
+  /* border: 2px solid red; */
+  padding: 0px 40px;
+  margin-bottom: 10px;
+}
+
+/* single game page style----------------------------*/
+._singleGameContainer {
+  background-image: url(../images/pablo-car-rental.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+._singleGameMain {
+  border: black solid 2px;
+}
+._singleGameMain p {
+  font-size: 3em;
+  margin-left: 20px;
+}
+
+._singleGameComment h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* chatroom page style-----------------------*/
+
+.chatroom-main {
+  width: 70%;
+  height: 70vh;
+  /* border: solid 2px black; */
+  /* background-color: aliceblue; */
+  background-image: url(../images/pablo-isolated-chatting-from-balconies.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.chatroom-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 200px;
+}
+.current-chatrooms {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 20px 0px;
+  /* border: 2px solid red; */
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-chatrooms h2 {
+  color: white;
+  padding: 20px 10px;
+  font-family: var(--body-header-font);
+  font-weight: normal;
+  font-size: 2em;
 }
 .current-chatrooms-list li {
   padding: 5px;
   font-size: 1.1em;
 }
-.current-chatrooms h2 {
-  padding: 20px;
-}
+
 .current-chatrooms-list a {
   text-decoration: none;
   color: black;
 }
 
 /* single chatroom style*/
+._singleChatroomContainer {
+  width: 100%;
+  height: 75vh;
+  background-image: url(../images/pablo-1046.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 40%;
+  display: flex;
+  justify-content: center;
+}
 ._singleChatroomMain {
   border: black solid 2px;
 }
@@ -365,9 +708,7 @@ textarea {
   display: flex;
   justify-content: space-evenly;
 }
-._singleChallengeMain {
-  margin-bottom: 5%;
-}
+
 ._singleChallengeFormInputs {
   width: 100%;
 }
@@ -385,57 +726,44 @@ textarea {
   height: 150px;
   padding: 10px;
 }
-.enlarged {
-  /* display: none;
-  width: 400px;
-  height: 300px; */
-}
+/* style account page----- */
 ._accountContainer {
-  /* background-color: teal; */
+  background-image: url(../images/pablo-306.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 30%;
+
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+}
+.personal-info {
+  margin-bottom: 20px;
 }
 .profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin: auto;
 }
-.account-main-left {
-  background-color: var(--primary-color-red);
-  margin: 25px;
-  width: 18%;
+.account-content {
+  width: 40%;
+  align-self: center;
 }
-.friends-list {
-  background-color: rgba(255, 255, 255, 0.562);
-  border-radius: 20px;
-  margin: 20px;
-  align-self: flex-start;
-}
-.friends-list h2,
 .posted-challenges h2,
 .posted-comments h2 {
   padding: 10px;
 }
-.friends-list img {
-  width: 50px;
-  border-radius: 50%;
-}
-.account-main-right {
-  margin: 25px;
-  width: 40%;
-}
+
 .posted-challenges {
   padding: 10px;
-  background-color: rgb(223, 217, 217);
-  border-radius: 20px;
+  background-color: rgba(223, 217, 217, 0.61);
+  border-radius: 10px;
 }
 .posted-comments {
   margin-top: 50px;
   padding: 10px;
-  background-color: rgb(223, 217, 217);
-  border-radius: 20px;
+  background-color: rgba(223, 217, 217, 0.61);
+  border-radius: 10px;
 }
 .commentImg {
   height: 200px;
@@ -443,7 +771,7 @@ textarea {
 }
 
 .single-challenge-img {
-  height:200px;
+  height: 200px;
   width: 200px;
 }
 
@@ -467,4 +795,72 @@ textarea {
 
 .commentImg[src=""] {
   display: none;
+}
+
+@media screen and (max-width:850px){
+  .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
+    display:none;
+    
+    text-align: center;
+  }
+  ol,
+  .current-games-list,
+  h2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-template-columns: auto;
+    padding: 0;
+  }
+  ._main > .game-main {
+    grid-template-columns: auto;
+  }
+  .current-games-list > li {
+    background-color: gray;
+    /* padding: 15px; */
+    margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+    /* height: 50px; */
+  }
+  .current-games img {
+    display: none;
+  }
+}
+@media screen and (max-width:850px){
+.popular-challenges{
+  display: none;
+}
+  
+}
+
+  
+@media only screen and (max-width: 850px) {
+  .cards {
+    max-width: 350px;
+    height: auto;
+  }
+  .activity-card {
+    width: 350px;
+  }
+  .dropdown {
+    float: none;
+    align-self: center;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width:850px){
+  .nav-items-list{
+    overflow-y:scroll ;
+
+  }
+  .nav-items-list li:last-child {
+    margin-bottom: 7.5rem;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .nav-items-list li:last-child {
+    margin-bottom: 0rem;
+  }
 }

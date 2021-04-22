@@ -1,0 +1,917 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+@import url(./layout.css);
+/* font-family: 'Gugi', cursive;
+font-family: 'Lato', sans-serif; */
+
+/* ----------header style--------- */
+
+
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--secondary-color-orange);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.nav-list {
+  float: left;
+  margin: 0;
+}
+li.nav-list a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navBar li a:hover:not(.active) {
+  background-color: var(--primary-color-darkBlue);
+}
+li a.active {
+  background-color: var(--primary-color-lightBlue);
+}
+div.right {
+  float: right;
+}
+.nav-items-list {
+  width: 100%;
+}
+.header-title {
+  text-align: center;
+  padding: 80px 0px 20px 0px;
+  font-family: var(--header-font);
+  font-weight: normal;
+  font-size: 4em;
+  color: var(--primary-color-lightBlue);
+}
+/*get rid of all a tag default value----------*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+@media screen and (max-width: 850px) {
+  ul.navBar div.right,
+  ul.navBar li {
+    float: none;
+  }
+}
+._footer {
+  text-align: center;
+  padding: 30px;
+}
+/* ----------Nav Bar Code--------- */
+
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+nav{
+  background:coral;
+  height: 80px;
+  width: 100%;
+}
+
+nav ul{
+  float: left;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: var(--primary-color-lightBlue);
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background:coral;
+    top: 80px;
+    left: 100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+/* section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+} */
+/* ----------home view style--------- */
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  align-self: flex-start;
+  margin-left: 75px;
+}
+.dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  width: 10em;
+  height: 2em;
+  cursor: pointer;
+  background-color: var(--secondary-color-orange);
+  margin: 0;
+}
+.dropdown:hover .dropbtn {
+  background-color: var(--primary-color-red);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  margin: 24.5px;
+}
+.light-blue,
+.dark-blue,
+.yellow,
+.red,
+.purple {
+  padding: 25px;
+  text-align: center;
+  font-family: var(--body-text-font);
+}
+.join-button {
+ margin: 10px 0;
+  width: 8em;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  align-self: center;
+  background-color: white;
+}
+.activity-card p {
+  padding: 5px;
+  text-align: left;
+}
+
+/* challenges view style */
+.challenge-section{
+}
+.challenge-main {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+ol li {
+  list-style-type: none;
+}
+
+/* .popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  /* padding: 10px 35px; */
+/* } */ 
+/* .popular-challenges-list li,
+.current-challenges-list li {
+  padding: 10px;
+} */
+
+.current-challenges-list p{
+  padding: 5px 10px;
+}
+.challenge-list-content{
+  background-color: rgba(156, 148, 148, 0.568);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.popular-challenges {
+  background-color: var(--primary-color-purple);
+  color: white;
+}
+.underlinebox{
+  background-color: white;
+  width: 67%;
+  height: 0.8%;
+  margin-left:50px;
+}
+.current-challenges {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--primary-color-lightBlue); */
+}
+.current-challenges img{
+  /* border:5px solid white;
+  border-radius: 5px; */
+  width:90%;
+  margin-top: 20px;
+  box-shadow: 2px 2px 8px 4px gray;
+}
+.popular-challenges h2,
+.current-challenges h2 {
+  /* padding: 20px; */
+  margin:40px 0px 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* style add button and modal box for challenge page and chatroom page--------------*/
+.add-challenge-section,
+.add-chatroom-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24.5px;
+}
+.add-challenge-button,
+.add-chatroom-button {
+  width: 10em;
+  height: 2em;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--secondary-color-orange);
+  border: none;
+  color: white;
+}
+/* The Modal (background) */
+.modal-add-challenge,
+.modal-add-chatroom {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-challenge-content,
+.modal-chatroom-content {
+  background-color: var(--primary-color-purple);
+  opacity: 0.94;
+  margin: 15% auto;
+  padding: 20px;
+  width: 25%;
+  color: white;
+  padding: 50px;
+}
+.modal-header h2 {
+  margin: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 2px;
+  margin: 2px;
+}
+
+/* The Close Button */
+.close {
+  color: var(--primary-color-lightBlue);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--primary-color-darkBlue);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popular-challenges-list,
+.current-challenges-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  padding: 0 0 50px 50px;
+}
+
+
+.popular-challenges-list li,
+.current-challenges-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.popular-challenges {
+  background-color: var(--primary-color-darkBlue);
+  opacity: 0.8;
+  color: white;
+}
+.popular-challenges h2 {
+  background-color: var(--primary-color-lightBlue);
+  height: 3em;
+  padding: 20px;
+}
+.current-challenges h2 {
+  padding: 20px;
+}
+.current-challenges-list a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* single challenge page style*/
+._singleChallengeMain{
+  background-color: var(--primary-color-lightBlue);
+  padding: 20px;
+}
+.single-challenge-img{
+  border:5px solid white;
+  border-radius: 5px;
+}
+.single-challenge-info {
+  text-align: left;
+  margin-left: 30px;
+  
+}
+._singleChallengeComment h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+textarea {
+  resize: none;
+}
+
+/*game page style*/
+.popular-games-list,
+.current-games-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 50px 50px;
+}
+/* @media screen and (max-width:600px){
+  .game-main > .popular-games,img {
+    display:none;
+    
+    text-align: center;
+  }
+ ol,.current-games-list,h2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-template-columns: auto;
+    padding: 0;
+  }
+  ._main > .game-main{
+    grid-template-columns: auto;
+  }
+  .current-games-list>li{
+    background-color: blue;
+    padding: 100px;
+  }
+} */
+
+.popular-games-list li,
+.current-games-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.popular-games {
+  background-color: var(--primary-color-red);
+  opacity: 0.8;
+  color: white;
+}
+.popular-games h2 {
+  background-color: var(--primary-color-yellow);
+  height: 3em;
+  padding: 20px;
+}
+.current-games h2 {
+  padding: 20px;
+}
+
+.current-games-list a {
+  text-decoration: none;
+  color: black;
+}
+.popular-games-list a {
+  text-decoration: none;
+  color: white;
+}
+
+/* single game page style----------------------------*/
+._singleGameMain {
+  border: black solid 2px;
+}
+
+._singleGameComment h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+._singleChallengeCommentFormSection {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+._singleChallengeCommentForm {
+  background-color: coral;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+
+._singleChallengeButton {
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 60px;
+}
+._singleChallengeButton:hover {
+  background-color: cadetblue;
+}
+
+/* chatroom page style-----------------------*/
+.current-chatrooms-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 0 50px 50px;
+}
+.current-chatrooms-list li {
+  padding: 5px;
+  font-size: 1.1em;
+}
+.current-chatrooms h2 {
+  padding: 20px;
+}
+.current-chatrooms-list a {
+  text-decoration: none;
+  color: black;
+}
+
+/* single chatroom style*/
+._singleChatroomMain {
+  border: black solid 2px;
+}
+/* ------------SingleChallengeCommentSection------------- */
+/* ------------SingleChallengeCommentSection------------- */
+/* ------------SingleChallengeCommentSection------------- */
+._singleChallengeComment {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: auto;
+}
+._singleChallengeCommentFormSection {
+  width: 30%;
+  margin-right: 30px;
+}
+._commentsForSingleChallenge {
+  width: 70%;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+._singleChallengeMain {
+  margin-bottom: 5%;
+}
+._singleChallengeFormInputs {
+  width: 100%;
+}
+._singleChallengeContainer {
+  height: auto;
+}
+._commentsForSingleChallenge {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 0 20px;
+}
+.comment-pic {
+  width: 200px;
+  height: 150px;
+  padding: 10px;
+}
+/* /* style account page----- */
+._accountContainer {
+  /* background-color: teal; */
+  width: 100%;
+  height: 100%;
+}
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.account-main-left {
+  background-color: var(--primary-color-red);
+  margin: 25px;
+  width: 18%;
+}
+.friends-list {
+  background-color: rgba(255, 255, 255, 0.562);
+  border-radius: 20px;
+  margin: 20px;
+  align-self: flex-start;
+}
+.friends-list h2,
+.posted-challenges h2,
+.posted-comments h2 {
+  padding: 10px;
+}
+.friends-list img {
+  width: 50px;
+  border-radius: 50%;
+}
+.account-main-right {
+  margin: 25px;
+  width: 40%;
+}
+.posted-challenges {
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+.posted-comments {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: rgb(223, 217, 217);
+  border-radius: 20px;
+}
+.commentImg {
+  height: 200px;
+  max-width: 400px;
+}
+
+.single-challenge-img {
+  height: 200px;
+  width: 200px;
+}
+
+.ulSingleChallenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ulSingleChallenge li {
+  list-style-type: none;
+  background-color: rgb(101, 210, 214);
+  width: 48%;
+  border-radius: 5px;
+}
+
+textarea {
+  /* resize:inherit; */
+}
+
+.commentImg[src=""] {
+  display: none;
+}
+
+/* --------------Global Nav for Mobile------------- */
+
+@media screen and (max-width:850px){}
+
+/* --------Game Mobile Section------------- */
+@media screen and (max-width:850px){
+  .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
+    display:none;
+    
+    text-align: center;
+  }
+ ol,.current-games-list,h2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-template-columns: auto;
+    padding: 0;
+  }
+  ._main > .game-main{
+    grid-template-columns: auto;
+  }
+  .current-games-list>li{
+    background-color: gray;
+    /* padding: 15px; */
+    margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+    /* height: 50px; */
+    
+
+    
+  }
+  .current-games img {
+    display:none;
+  }
+}
+/* ------------------Single Game Mobile ------------------------ */
+@media screen and (max-width:850px){
+  ._singleGameContainer{
+    height: 90vh;
+    width: 100vw;
+  }
+  
+}
+
+
+/* ------------------Chalenges Mobile Section----------------- */
+@media screen and (max-width:850px){
+.popular-challenges, .current-challenges img{
+  display: none;
+}
+.current-challenges li{
+  text-align: center;
+}
+.current-challenges ol, .current-challenges h2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.current-challenges-list{
+  padding: 0 0 0 0 ;
+}
+.current-challenges-list li{
+  padding: 0 0 0 0 ;
+  background-color: gray;
+  margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+  width: 206.85px;
+  height: 60px;
+}
+.add-challenge-button{
+  
+    margin-top: 1.5rem;
+ border-radius: 10px;
+  width: 206.85px;
+  height: 60px;
+}
+
+}
+/* ----------------Chatroom Mobile Section---------------- */
+@media screen and (max-width:850px){
+  .chatroom-section img{
+    display:none;
+  }
+  .add-chatroom-button{
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    width: 206.85;
+    height: 60px;
+}
+.add-chatroom-section{
+ display: flex;
+  justify-content: center;
+}
+.current-chatrooms-list{
+  padding: 0 0 0 0;
+  text-align: center;
+}
+.current-chatrooms-list li{
+  background-color: gray;
+  margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+  width: 206.85px;
+  height: 60px;
+}
+.chatroom-link{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  align-self: center;
+}
+}
+/* ---------------Challenge Modal Mobile View---------------- */
+@media screen and (max-width: 850px){
+  .modal-header{
+    float: top;
+     
+    }
+  .modal-challenge-content{
+    margin: 0 0 0 0 ;
+    width:auto;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+  }
+}
+/* ------------------Single Challenge Mobile------------------- */
+@media screen and (max-width:850px){
+  .single-challenge-img{
+    display: none;
+  }
+  ._singleChallengeMain{
+  
+    border-radius: 10px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0 ;
+    min-height: 200px ;
+    /* width: 300px; */
+    text-align: center;
+  }
+  ._singleChallengeCommentForm {
+  margin-left: 30px;
+  }
+  ._displayActualComment{
+    word-wrap: break-word;
+  }
+  ._singleChallengeComment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  ._commentsForSingleChallenge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .single-challenge-info{
+    margin: 0 0 0 0 ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  ._singleChallengeContainer{
+    width: 300px;
+  }
+  .commentImg{
+    border-radius: 10px;
+  }
+  
+}
+
+
+
+/* ------------Chatroom Modal Mobile-------------------------- */
+@media screen and (max-width: 850px){
+  .modal-header{
+    float: top;
+     
+    }
+  .modal-chatroom-content{
+    margin: 0 0 0 0 ;
+    width:auto;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+  }
+}
+/* -----------Single Chatroom Mobile------------------- */
+@media screen and (max-width: 850px){
+ ._chatroom{
+  width: 100%;
+  height: 100%;
+ }
+ ._singleChatroomMain{
+   width: 100%;
+   height: 100%;
+ }
+ ._singleChatroomContainer{
+   width: 100vw;
+   height: 85vh;
+ }
+ 
+  }
+  
+@media screen and (max-width:850px){
+  .nav-items-list{ 
+    overflow-y:scroll ;
+
+}
+  .nav-items-list li:last-child {
+    margin-bottom: 7.5rem;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .nav-items-list li:last-child {
+    margin-bottom: 0rem;
+  }
+}
+
+  
+@media screen and (max-width: 850px) {
+  .cards {
+    max-width: 350px;
+    height: auto;
+  }
+  .activity-card {
+    width: 350px;
+  }
+  .dropdown {
+    float: none;
+    align-self: center;
+    margin-left: 0;
+  }
+}
+

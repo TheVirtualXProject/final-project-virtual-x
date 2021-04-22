@@ -5,6 +5,7 @@ import com.thevirtualx.mvcApp.Entity.Challenge;
 import com.thevirtualx.mvcApp.Entity.Comment;
 import com.thevirtualx.mvcApp.Storage.AccountStorage;
 import com.thevirtualx.mvcApp.Storage.ChallengeStorage;
+import org.springframework.mobile.device.Device;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,16 +31,22 @@ public class ChallengeController {
     }
 
     @GetMapping("/challenge")
-    public String displayAllChallenges(Model model){
+    public String displayAllChallenges(Model model, Device device){
         model.addAttribute("challengesRecent", sortByRecent());
         model.addAttribute("challengesPopular", sortByPopular());
+        if(!device.isNormal()) {
+            return "challengePageMobile";
+        }
         return "challengePage";
     }
 
 
     @GetMapping("/challenge/{id}")
-    public String displaySingleChallenge(@PathVariable Long id, Model model){
+    public String displaySingleChallenge(@PathVariable Long id, Model model, Device device){
         model.addAttribute("challenge", challengeStorage.retrieveChallengeById(id));
+        if(!device.isNormal()) {
+            return "singleChallengePageMobile";
+        }
         return "singleChallengePage";
     }
 
@@ -110,6 +117,9 @@ public class ChallengeController {
                 return int2.compareTo(int1);
             }
         });
+        while(temp.size() > 10) {
+            temp.remove(temp.size()-1);
+        }
         return temp;
     }
 

@@ -5,30 +5,33 @@ xmlns="http://www.w3.org/1999/xhtml"
   xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual-X</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="../../src/main/resources/Static/CSS/style.css" />
+    <link rel="stylesheet" href="../../src/main/resources/Static/CSS/layout.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/ratingStyle.css">
+    <script src="https://kit.fontawesome.com/bc1222c043.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div class="_container">
       <header class="_header">
         <nav>
-          <ul class="navBar">
-            <li class="active nav-list">
-              <a href="homeViewPrototype.html">HOME</a>
-            </li>
-            <li class="nav-list">
-              <a href="challengePage.html">CHALLENGES</a>
-            </li>
-            <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
-            <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
-            <div class="right">
-              <li class="nav-list"><a href="accountPage.html">ACCOUNT</a></li>
-              <li class="nav-list last-right"><a href="#">LOGOUT</a></li>
-            </div>
+           <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <!-- <label class="logo">Virtual X</label> -->
+          <ul>
+            <li class="active"><a href="homeViewPrototype.html">HOME</a></li>
+            <li><a href="challengePage.html">CHALLENGES</a></li>
+            <li><a href="gamePage.html">GAMES</a></li>
+            <li><a href="chatRoom.html">CHATS</a></li>
+            <span class="right">
+              <!-- make media querie  -->
+              <li><a href="accountPage.html">ACCOUNT</a></li>
+              <li><a href="#">LOGOUT</a></li>
+            </span>
           </ul>
         </nav>
         <h1 class="header-title">Challenges</h1>
@@ -36,54 +39,12 @@ xmlns="http://www.w3.org/1999/xhtml"
 
       <main class="_main">
         <div class="challenge-main">
-          <section class="add-challenge-section">
-            <!-- Trigger/Open The Modal -->
-            <button class="add-challenge-button">Add New Challenge</button>
-            <!-- The Modal -->
-            <div class="modal-add-challenge">
-              <!-- Modal content -->
-              <div class="modal-challenge-content">
-                <div class="modal-header">
-                  <span class="close">&times;</span>
-                  <h2>Add New Challenge</h2>
-                </div>
-                <form class="add-challenge-form" action="">
-                  <div class="form">
-                    <input
-                      placeholder="Challenge ImageUrl"
-                      type="file"
-                      id="img"
-                      name="img"
-                      accept="image/*"
-                    />
-                    <input type="text" placeholder="Challenge Name" required />
-                    <input type="text" placeholder="Host Name" required />
-                    <input
-                      type="text"
-                      placeholder="Challenge Capacity"
-                      required
-                    />
-                    <input
-                      type="text"
-                      placeholder="Challenge Duration"
-                      required
-                    />
-                    <textarea
-                      placeholder="Challenge Description"
-                      rows="5"
-                      cols="50"
-                      required
-                    ></textarea>
-                    <button class="submit-button" type="submit">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </section>
+          
 
           <section class="challenge-section">
             <div class="popular-challenges">
               <h2>Popular Challenges</h2>
+              <div class="underlinebox"></div>
               <ol class="popular-challenges-list">
                 <li><a href="singleChallenge.html">A Mile A Day</a></li>
                 <li>Make Salad For Lunch</li>
@@ -96,26 +57,76 @@ xmlns="http://www.w3.org/1999/xhtml"
                 <li>Popular Challenge night</li>
                 <li>Popular Challenge ten</li>
               </ol>
+              <section class="add-challenge-section">
+                <!-- Trigger/Open The Modal -->
+                <button class="add-challenge-button">Add New Challenge</button>
+                <!-- The Modal -->
+                <div class="modal-add-challenge">
+                  <!-- Modal content -->
+                  <div class="modal-challenge-content">
+                    <div class="modal-header">
+                      <span class="close">&times;</span>
+                      <h2>Add New Challenge</h2>
+                    </div>
+                    <form class="add-challenge-form" action="">
+                      <div class="form">
+                        <input
+                          placeholder="Challenge ImageUrl"
+                          type="file"
+                          id="img"
+                          name="img"
+                          accept="image/*"
+                        />
+                        <input type="text" placeholder="Challenge Name" required />
+                        <input type="text" placeholder="Host Name" required />
+                        <input
+                          type="text"
+                          placeholder="Challenge Capacity"
+                          required
+                        />
+                        <input
+                          type="text"
+                          placeholder="Challenge Duration"
+                          required
+                        />
+                        <textarea
+                          placeholder="Challenge Description"
+                          rows="5"
+                          cols="50"
+                          required
+                        ></textarea>
+                        <button class="submit-button" type="submit">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
             </div>
             <div class="current-challenges">
-              <img
+              <!-- <img
                 src="./img/challenge-view-main-image2.jpg"
                 alt="Ride bikes"
-              />
+              /> -->
               <h2>Current Challenges</h2>
               <ol class="current-challenges-list">
-                <li><a href="singleChallenge.html">A Mile A Day</a></li>
-                <li>One Minute Push-Up</li>
-                <li>Eat A Whole Pizza</li>
-                <li>Current Challenge four</li>
-                <li>Current Challenge five</li>
-                <li>Current Challenge six</li>
-                <li>Current Challenge seven</li>
-                <li>Current Challenge eight</li>
-                <li>Current Challenge night</li>
-                <li>Current Challenge ten</li>
+                <div class="challenge-list-content">
+                <li><h4><a href="singleChallenge.html">A Mile A Day</a></h4></li>
+                <p>Join me for a new daily challenge - A Mile A DAY. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+              </div>
+
+              <div class="challenge-list-content">
+                <li><h4>One Minute Push-Up</h4></li>
+                <p>Join me for a new daily challenge - A Mile A DAY. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+              </div>
+
+              <div class="challenge-list-content">
+                <li><h4>Eat A Whole Pizza</h4></li>
+                <p>Join me for a new daily challenge - A Mile A DAY. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+              </div>
               </ol>
+              
             </div>
+
           </section>
         </div>
       </main>

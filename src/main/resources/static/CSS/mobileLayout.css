@@ -1,0 +1,182 @@
+/* ----------------Site layout ------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
+/* font-family: 'Gugi', cursive;
+ */
+
+:root {
+  --primary-color-lightBlue: rgb(30, 213, 202);
+  --primary-color-darkBlue: rgb(1, 24, 128);
+  --primary-color-yellow: rgb(255, 201, 75);
+  --primary-color-red: rgb(242, 48, 48);
+  --primary-color-purple: rgb(87, 37, 203);
+  --secondary-color-orange: #ff6e35e5;
+  --background: #fcf5ef;
+  --header-font: "Gugi", cursive;
+  --body-text-font: "Lato", sans-serif;
+  --line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+._container {
+  background-color: url(../images/background1.png);
+  font-family: var(--body-text-font);
+  min-height: 100vh;
+}
+._header {
+  grid-row: 1 / 2;
+  background-color: var(--background);
+  grid-column: 1 / 7;
+}
+._main {
+  /* display: table;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: var(--background); */
+}
+/* @media screen and (max-width: 600px){
+  ._main{
+  flex-direction: column;
+  font-size: smaller;
+  }
+} */
+._footer {
+  background-color: var(--background);
+  grid-row: 6 / 8;
+  grid-column: 1 / 7;
+  
+}
+/*home main style----------*/
+.home-main {
+  display: flex;
+  flex-direction: column;
+  /* background-color: powderblue; */
+}
+.dropdown {
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1500px;
+  /* border: blue solid 3px;
+  background-color: violet; */
+  /* width: 1500px; */
+}
+
+.light-blue,
+.dark-blue,
+.yellow,
+.red,
+.purple {
+  height: 300px;
+  width: 300px;
+}
+.light-blue {
+  background-color: var(--primary-color-lightBlue);
+}
+.dark-blue {
+  background-color: var(--primary-color-darkBlue);
+  color: white;
+}
+.yellow {
+  background-color: var(--primary-color-yellow);
+}
+.img-deco-square {
+  
+  width: 300px;
+  height: 300px;
+}
+.img-deco-rectangle {
+  max-height: 100%;
+  width: auto;
+}
+@media only screen and (max-width: 850px) {
+   .img-deco-rectangle {
+   max-width: 300px;
+    height: 300px;
+  }
+}
+.red {
+  background-color: var(--primary-color-red);
+}
+.purple {
+  background-color: var(--primary-color-purple);
+  color: white;
+}
+
+/* style challenge page -------------------*/
+.challenge-section {
+  /* border: 2px solid black; */
+  /* display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 50px; */
+}
+
+/*single challenge page ---------------*/
+/* ._singleChallengeContainer{
+  width: 50%;
+} */
+/* ._singleChallengeMain {
+  width:100%;
+  display: flex;
+} */
+
+/*style game page------------------------*/
+.game-main {
+  /* border: 2px solid black; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 50px;
+}
+
+/*style single game page--------------------*/
+._singleGameMain {
+  width: 800px;
+  height: 400px;
+  display: flex;
+}
+
+/*style chatroom page------------------*/
+.game-section {
+  border: 2px solid black;
+}
+/*style single chatroom page-------------------*/
+/* ._singleChatroomMain {
+  width: 800px;
+  height: 400px;
+  display: flex;
+} */
+/*style account page ------------------*/
+
+._accountContainer {
+  /* width: 50%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+._chatroom{
+  width: 100%;
+  height: 100%;
+}
+
+/* @media screen and (max-width){
+  .challenge-section{
+    grid-template-columns: auto;
+    padding: 0 0;
+    margin: 0 0;
+  }
+} */

@@ -6,58 +6,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Virtual-X</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="../../src/main/resources/Static/CSS/style.css" />
+  <link rel="stylesheet" href="../../src/main/resources/Static/CSS/layout.css" />
+  <link rel="stylesheet" href="./css/ratingStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/bc1222c043.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="_container">
-    <header class="_header">
-      <nav>
-        <ul class="navBar">
-          <li class="active nav-list"><a href="homeViewPrototype.html">HOME</a></li>
-          <li class="nav-list"><a href="challengePage.html">CHALLENGES</a></li>
-          <li class="nav-list"><a href="gamePage.html">GAMES</a></li>
-          <li class="nav-list"><a href="chatRoom.html">CHATS</a></li>
-          <div class="right">
-            <li class="nav-list"><a href="accountPage.html">ACCOUNT</a></li>
-            <li class="nav-list last-right"><a href="#">LOGOUT</a></li>
-          </div>
-        </ul>
-      </nav>
-      <h1 class="header-title">Chatrooms</h1>
-    </header>
+     <header class="_header">
+        <nav>
+           <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <!-- <label class="logo">Virtual X</label> -->
+          <ul>
+            <li class="active"><a href="homeViewPrototype.html">HOME</a></li>
+            <li><a href="challengePage.html">CHALLENGES</a></li>
+            <li><a href="gamePage.html">GAMES</a></li>
+            <li><a href="chatRoom.html">CHATS</a></li>
+            <span class="right">
+              <!-- make media querie  -->
+              <li><a href="accountPage.html">ACCOUNT</a></li>
+              <li><a href="#">LOGOUT</a></li>
+            </span>
+          </ul>
+        </nav>
+        <h1 class="header-title">Chatrooms</h1>
+      </header>
 
     <main class="_main">
       <div class="chatroom-main">
-
-        <section class="add-chatroom-section">
-          <!-- Trigger/Open The Modal -->
-          <button class="add-chatroom-button">Add New Chatroom</button>
-          <!-- The Modal -->
-          <div class="modal-add-chatroom">
-            <!-- Modal content -->
-            <div class="modal-chatroom-content">
-              <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Add New Chatroom</h2>
-              </div>
-              <form class="add-chatroom-form" action="">
-                <div class="form">
-                  <input type="text" placeholder="Chatroom Name" required>
-                  <input type="text" placeholder="Chatroom Capacity" required>
-                  <textarea placeholder="Chatroom Description" rows="4" cols="50" required></textarea>
-                  <button class="submit-button" type="submit">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-
         <section class="chatroom-section">
           <div class="current-chatrooms">
-            <img src="./img/chat-view-main-image2.jpg" alt="Chat image">
-            <h2>Current Chatroom</h2>
+            <!-- <img src="./img/chat-view-main-image2.jpg" alt="Chat image"> -->
+            <h2>Open Chatrooms</h2>
             <ol class="current-chatrooms-list">
               <li><a href="singleChatroom.html">Sample Chatroom One</a></li>
               <li>Sample Chatroom two</li>
@@ -70,7 +55,30 @@
               <li>Sample Chatroom night</li>
               <li>Sample Chatroom ten</li>
             </ol>
+            <section class="add-chatroom-section">
+              <!-- Trigger/Open The Modal -->
+              <button class="add-chatroom-button">Add New Chatroom</button>
+              <!-- The Modal -->
+              <div class="modal-add-chatroom">
+                <!-- Modal content -->
+                <div class="modal-chatroom-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Add New Chatroom</h2>
+                  </div>
+                  <form class="add-chatroom-form" action="">
+                    <div class="form">
+                      <input type="text" placeholder="Chatroom Name" required>
+                      <input type="text" placeholder="Chatroom Capacity" required>
+                      <textarea placeholder="Chatroom Description" rows="4" cols="50" required></textarea>
+                      <button class="submit-button" type="submit">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
           </div>
+          
         </section>
       </div>
     </main>
