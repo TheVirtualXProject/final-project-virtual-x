@@ -565,8 +565,8 @@ textarea {
   display: table;
   align-self: flex-end;
   float: right;
-  margin-right: 100px;
-  margin-top:200px;
+  margin-right: 50px;
+  margin-top:25px;
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
 .popular-games h2,
@@ -592,6 +592,8 @@ textarea {
   padding: 0px 40px;
   margin-bottom: 10px;
 }
+
+
 
 
 /* single game page style----------------------------*/
