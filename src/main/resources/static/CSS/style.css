@@ -228,7 +228,7 @@ nav ul li a {
 /* challenges view style */
 .challenge-main {
   width: 70%;
-  height: 145vh;
+  min-height: 145vh;
   background-image: url(../images/pablo-872.png), url(../images/pablo-857.png);
   background-size: 50%, 55%;
   background-repeat: no-repeat;
