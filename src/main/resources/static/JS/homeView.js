@@ -1,16 +1,16 @@
 let main = document.querySelector(".cards");
 let colorClasses = ["light-blue", "dark-blue", "yellow" , "red", "purple"];
-let smallPictures = ["/images/home-image-square-chat.jpg", 
-"/images/home-image-square-darts.jpg",
-"/images/home-image-square-pool.jpg",
-"/images/home-image-square-walkDog.jpg",
-"/images/home-image-square-wordGame.jpg"];
-let largePictures = ["/images/home-image-rectangle-chess.jpg",
-"/images/home-image-rectangle-drink.jpg",
-"/images/home-image-rectangle-eatSign.jpg",
-"/images/home-image-rectangle-hello.jpg",
-"/images/home-image-rectangle-pushUp.jpg",
-"/images/home-image-rectangle-salad.jpg"];
+let smallPictures = ["/images/home-image-square-artist-vector.png", 
+"/images/home-image-square-basketball-players-vector.png",
+"/images/home-image-square-dance-vector.png",
+"/images/home-image-square-musician-vector.png",
+"/images/home-image-square-online-party-vector.png",
+"/images/home-image-square-soccer-vector.png"];
+let largePictures = ["/images/home-image-rectangle-chat-vector.png",
+"/images/home-image-rectangle-coffee-break-vector.png",
+"/images/home-image-rectangle-connect-vector.png",
+"/images/home-image-rectangle-music-band.png",
+"/images/home-image-rectangle-walk-dog-vector.png"];
 let lastSmallPicture = "";
 let lastLargePicture = "";
 let colorCounter = 0;
