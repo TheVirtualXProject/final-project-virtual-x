@@ -117,6 +117,9 @@ public class ChallengeController {
                 return int2.compareTo(int1);
             }
         });
+        while(temp.size() > 10) {
+            temp.remove(temp.size()-1);
+        }
         return temp;
     }
 

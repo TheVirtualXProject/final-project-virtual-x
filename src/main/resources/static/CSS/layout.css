@@ -46,6 +46,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
   /* background: var(--background); */
 }
 /* @media screen and (max-width: 600px){
@@ -131,7 +132,7 @@ body {
 
 /*single challenge page ---------------*/
 ._singleChallengeContainer{
-  width: 50%;
+  width: 60%;
 }
 ._singleChallengeMain {
   width:100%;
@@ -140,10 +141,7 @@ body {
 
 /*style game page------------------------*/
 .game-main {
-  /* border: 2px solid black; */
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 50px;
+  /* width: 70%; */
 }
 
 /*style single game page--------------------*/
@@ -154,8 +152,8 @@ body {
 }
 
 /*style chatroom page------------------*/
-.game-section {
-  border: 2px solid black;
+.chatroom-section {
+  /* border: 2px solid black; */
 }
 /*style single chatroom page-------------------*/
 ._singleChatroomMain {

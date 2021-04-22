@@ -2,45 +2,46 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Gugi&family=Lato&display=swap");
 
-
-*{
+* {
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
 }
-body{
+body {
   font-family: montserrat;
 }
-nav{
-  background:coral;
-  height: 80px;
+nav {
+  background: coral;
+  height: 50px;
   width: 100%;
 }
 
-nav ul{
+nav ul {
+  height: 100%;
   float: left;
   margin-right: 20px;
 }
-nav ul li{
+nav ul li {
   display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
+  line-height: 50px;
+ 
 }
-nav ul li a{
+nav ul li a {
+ display: block;
   color: white;
   font-size: 17px;
-  padding: 7px 13px;
-  border-radius: 3px;
+  padding: 0px 10px;
   text-transform: uppercase;
 }
 
-a.active,a:hover{
-  background: var(--primary-color-lightBlue);
-  transition: .5s;
+nav a.active,
+nav a:hover {
+  background: var(--primary-color-darkBlue);
+  transition: 0.1s;
 }
-.checkbtn{
+.checkbtn {
   font-size: 30px;
   color: white;
   float: right;
@@ -49,45 +50,47 @@ a.active,a:hover{
   cursor: pointer;
   display: none;
 }
-#check{
+#check {
   display: none;
 }
-@media (max-width: 952px){
-  
-  nav ul li a{
+@media (max-width: 952px) {
+  nav ul li a {
     font-size: 16px;
   }
 }
-@media (max-width: 858px){
-  .checkbtn{
+@media (max-width: 858px) {
+  nav{
+    height: 80px;
+  }
+  .checkbtn {
     display: block;
   }
-  ul{
+  ul {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background:coral;
+    background: coral;
     top: 80px;
     left: 100%;
     text-align: center;
-    transition: all .5s;
+    transition: all 0.5s;
   }
-  nav ul li{
+  nav ul li {
     display: block;
     margin: 50px 0;
     line-height: 30px;
   }
-  nav ul li a{
+  nav ul li a {
     font-size: 20px;
   }
-  a:hover,a.active{
+  a:hover,
+  a.active {
     background: none;
   }
-  #check:checked ~ ul{
+  #check:checked ~ ul {
     left: 0;
   }
   div.right {
     float: none;
   }
 }
-
