@@ -661,6 +661,11 @@ textarea {
 .commentImg[src=""] {
   display: none;
 }
+
+/* --------------Global Nav for Mobile------------- */
+
+@media screen and (max-width:600px){}
+
 /* --------Game Mobile Section------------- */
 @media screen and (max-width:600px){
   .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
@@ -693,6 +698,14 @@ textarea {
     display:none;
   }
 }
+/* ------------------Single Game Mobile ------------------------ */
+@media screen and (max-width:600px){
+  ._singleGameContainer{
+    width: 100vw;
+  }
+}
+
+
 /* ------------------Chalenges Mobile Section----------------- */
 @media screen and (max-width:600px){
 .popular-challenges, .current-challenges img{
@@ -843,6 +856,13 @@ textarea {
     justify-content: space-evenly;
     
   }
+}
+/* -----------Single Chatroom Mobile------------------- */
+@media screen and (max-width: 600px){
+  .nav-items-list{
+    text-align: center;
+  }
+  
 }
 
 

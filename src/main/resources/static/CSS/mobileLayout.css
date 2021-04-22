@@ -172,6 +172,12 @@ body {
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 600px){
+  ._singleChatroomMain , #kiwi{
+    max-width: 600px;
+    height: 600px;
+   }
+}
 /* @media screen and (max-width){
   .challenge-section{
     grid-template-columns: auto;
