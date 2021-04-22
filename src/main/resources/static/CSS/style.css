@@ -245,10 +245,10 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:var(--primary-color-yellow);
+  background-color: var(--primary-color-yellow);
   border-radius: 10px;
   display: table;
-  align-self:flex-end;
+  align-self: flex-end;
   margin-right: 180px;
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
@@ -304,17 +304,11 @@ ol li {
   border-radius: 10px;
   margin-bottom: 5px;
 }
-.underlinebox {
+/* .underlinebox {
   background-color: white;
   width: 67%;
   height: 0.8%;
   margin-left: 50px;
-}
-
-/* .current-challenges img{
-  width:90%;
-  margin-top: 20px;
-  box-shadow: 2px 2px 8px 4px gray;
 } */
 
 .popular-challenges-list li,
@@ -395,7 +389,6 @@ textarea {
   cursor: pointer;
 }
 
-
 @media (max-width: 600px) {
   ol .popular-challenges-list {
     display: flex;
@@ -414,16 +407,29 @@ textarea {
 
 /* single challenge page style*/
 ._singleChallengeMain {
-  background-color: var(--primary-color-red);
+  background-image: url(../images/pablo-862.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right top;
   padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  height: 50vh;
 }
 .single-challenge-img {
-  border: 5px solid white;
+  border: 5px solid coral;
   border-radius: 5px;
 }
 .single-challenge-info {
+  width: 40%;
   text-align: left;
   margin-left: 30px;
+}
+/* ._singleChallengeComment{
+  border: 2px solid red;
+} */
+._singleChallengeContainer{
+  width: 100%;
 }
 ._singleChallengeComment h2 {
   margin-top: 50px;
@@ -501,6 +507,7 @@ textarea {
   margin-bottom: 20px;
 }
 ._singleChallengeCommentFormSection {
+  
   height: 200px;
   display: flex;
   justify-content: center;
@@ -525,8 +532,96 @@ textarea {
   width: 60px;
 }
 ._singleChallengeButton:hover {
-  background-color: cadetblue;
+  background-color: var(--primary-color-lightBlue);
 }
+
+/*game page style*/
+.game-main {
+  /* border: 2px solid black; */
+  width: 70%;
+  height: 130vh;
+  background-image: url(../images/pablo-blogging.png),
+    url(../images/pablo-basketball-game.png);
+  background-size: 50%, 60%;
+  background-repeat: no-repeat;
+  background-position: right top, left bottom;
+}
+.popular-games {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color-red);
+  border-radius: 10px;
+  margin-left:200px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.current-games {
+  width: 30%;
+  /* border: solid 2px blue; */
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  display: table;
+  align-self: flex-end;
+  float: right;
+  margin-right: 50px;
+  margin-top:25px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.popular-games h2,
+.current-games h2 {
+  color: white;
+  padding: 20px 10px;
+  font-family: var(--body-header-font);
+  font-weight: normal;
+  font-size: 2em;
+}
+
+.popular-games-list li,
+.current-games-list li {
+  padding: 8px;
+  font-size: 1.1em;
+}
+.popular-games-list,
+.current-games-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* border: 2px solid red; */
+  padding: 0px 40px;
+  margin-bottom: 10px;
+}
+
+
+
+
+/* single game page style----------------------------*/
+._singleGameContainer{
+  background-image: url(../images/pablo-car-rental.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+._singleGameMain {
+  border: black solid 2px;
+}
+._singleGameMain p{
+font-size: 3em;
+margin-left: 20px;
+}
+
+._singleGameComment h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+
 
 /* chatroom page style-----------------------*/
 
@@ -577,15 +672,17 @@ textarea {
 
 /* single chatroom style*/
 ._singleChatroomContainer {
-  width: 70%;
-  height: 70vh;
-  background-image: url(../images/pablo-delete-confirmation.png);
+  width: 100%;
+  height:75vh;
+  background-image: url(../images/pablo-1046.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-position: left bottom;
+  background-size: 40%;
+  display: flex;
+  justify-content: center;
 }
 ._singleChatroomMain {
   border: black solid 2px;
-  display: table;
 }
 /* ------------SingleChallengeCommentSection------------- */
 /* ------------SingleChallengeCommentSection------------- */
@@ -611,9 +708,7 @@ textarea {
   display: flex;
   justify-content: space-evenly;
 }
-._singleChallengeMain {
-  margin-bottom: 5%;
-}
+
 ._singleChallengeFormInputs {
   width: 100%;
 }
