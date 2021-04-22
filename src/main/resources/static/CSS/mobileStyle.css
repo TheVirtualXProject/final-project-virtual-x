@@ -52,7 +52,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   ul.navBar div.right,
   ul.navBar li {
     float: none;
@@ -669,10 +669,10 @@ textarea {
 
 /* --------------Global Nav for Mobile------------- */
 
-@media screen and (max-width:800px){}
+@media screen and (max-width:850px){}
 
 /* --------Game Mobile Section------------- */
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
   .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
     display:none;
     
@@ -704,7 +704,7 @@ textarea {
   }
 }
 /* ------------------Single Game Mobile ------------------------ */
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
   ._singleGameContainer{
     height: 90vh;
     width: 100vw;
@@ -714,7 +714,7 @@ textarea {
 
 
 /* ------------------Chalenges Mobile Section----------------- */
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
 .popular-challenges, .current-challenges img{
   display: none;
 }
@@ -748,7 +748,7 @@ textarea {
 
 }
 /* ----------------Chatroom Mobile Section---------------- */
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
   .chatroom-section img{
     display:none;
   }
@@ -781,7 +781,7 @@ textarea {
 }
 }
 /* ---------------Challenge Modal Mobile View---------------- */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 850px){
   .modal-header{
     float: top;
      
@@ -798,7 +798,7 @@ textarea {
   }
 }
 /* ------------------Single Challenge Mobile------------------- */
-@media screen and (max-width:600px){
+@media screen and (max-width:850px){
   .single-challenge-img{
     display: none;
   }
@@ -850,7 +850,7 @@ textarea {
 
 
 /* ------------Chatroom Modal Mobile-------------------------- */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 850px){
   .modal-header{
     float: top;
      
@@ -867,7 +867,7 @@ textarea {
   }
 }
 /* -----------Single Chatroom Mobile------------------- */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 850px){
  ._chatroom{
   width: 100%;
   height: 100%;
@@ -883,15 +883,24 @@ textarea {
  
   }
   
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
   .nav-items-list{ 
     overflow-y:scroll ;
+
 }
+  .nav-items-list li:last-child {
+    margin-bottom: 7.5rem;
+  }
 }
 
+@media screen and (max-width:600px) {
+  .nav-items-list li:last-child {
+    margin-bottom: 0rem;
+  }
+}
 
   
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   .cards {
     max-width: 350px;
     height: auto;

@@ -391,7 +391,7 @@ textarea {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   ol .popular-challenges-list {
     display: flex;
     flex-wrap: wrap;
@@ -797,7 +797,7 @@ textarea {
   display: none;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
   .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
     display:none;
     
@@ -827,7 +827,7 @@ textarea {
     display: none;
   }
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
 .popular-challenges{
   display: none;
 }
@@ -835,7 +835,7 @@ textarea {
 }
 
   
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   .cards {
     max-width: 350px;
     height: auto;
@@ -849,8 +849,18 @@ textarea {
     margin-left: 0;
   }
 }
-@media screen and (max-width:800px){
-  .nav-items-list{ 
+@media screen and (max-width:850px){
+  .nav-items-list{
     overflow-y:scroll ;
+
+  }
+  .nav-items-list li:last-child {
+    margin-bottom: 7.5rem;
+  }
 }
+
+@media screen and (max-width:600px) {
+  .nav-items-list li:last-child {
+    margin-bottom: 0rem;
+  }
 }
