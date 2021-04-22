@@ -42,8 +42,11 @@ public class ChallengeController {
 
 
     @GetMapping("/challenge/{id}")
-    public String displaySingleChallenge(@PathVariable Long id, Model model){
+    public String displaySingleChallenge(@PathVariable Long id, Model model, Device device){
         model.addAttribute("challenge", challengeStorage.retrieveChallengeById(id));
+        if(!device.isNormal()) {
+            return "singleChallengePageMobile";
+        }
         return "singleChallengePage";
     }
 

@@ -185,3 +185,13 @@ h4 {
   text-align: center;
   align-self: center;
 }
+/* @media screen and (max-width:600px){
+  ._mainContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+} */
