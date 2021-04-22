@@ -29,9 +29,9 @@ a {
 .container {
   /* background: linear-gradient(to top right, white, gray, white); */
   background: url(../images/pablo-819.png), url(../images/pablo-7541.png);
-  background-position: 5% 10%, 85% 10%;
+  background-position: 5% 70%, 85% 70%;
   background-repeat: no-repeat;
-  background-size: 35%, 30%;
+  background-size: 30%, 20%;
   height: 100%;
   width: 100%;
   display: flex;
