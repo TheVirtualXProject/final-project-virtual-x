@@ -400,7 +400,7 @@ textarea {
 
 /* single challenge page style*/
 ._singleChallengeMain{
-  background-color: var(--primary-color-yellow);
+  background-color: var(--primary-color-lightBlue);
   padding: 20px;
 }
 .single-challenge-img{
@@ -655,13 +655,13 @@ textarea {
 }
 
 textarea {
-  resize: none;
+  /* resize:inherit; */
 }
 
 .commentImg[src=""] {
   display: none;
 }
-
+/* --------Game Mobile Section------------- */
 @media screen and (max-width:600px){
   .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
     display:none;
@@ -693,14 +693,162 @@ textarea {
     display:none;
   }
 }
+/* ------------------Chalenges Mobile Section----------------- */
 @media screen and (max-width:600px){
-.popular-challenges{
+.popular-challenges, .current-challenges img{
   display: none;
 }
+.current-challenges li{
+  text-align: center;
+}
+.current-challenges ol, .current-challenges h2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.current-challenges-list{
+  padding: 0 0 0 0 ;
+}
+.current-challenges-list li{
+  padding: 0 0 0 0 ;
+  background-color: gray;
+  margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+  width: 206.85px;
+  height: 60px;
+}
+.add-challenge-button{
+  
+ border-radius: 10px;
+  width: 206.85px;
+  height: 60px;
+}
+
+}
+/* ----------------Chatroom Mobile Section---------------- */
+@media screen and (max-width:600px){
+  .chatroom-section img{
+    display:none;
   }
+  .add-chatroom-button{
+    border-radius: 10px;
+    width: 206.85;
+    height: 60px;
+}
+.add-chatroom-section{
+ display: flex;
+  justify-content: center;
+}
+.current-chatrooms-list{
+  padding: 0 0 0 0;
+  text-align: center;
+}
+.current-chatrooms-list li{
+  background-color: gray;
+  margin-top: 10px;
+    border-radius: 10px;
+    line-height: 50px;
+  width: 206.85px;
+  height: 60px;
+}
+.chatroom-link{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  align-self: center;
+}
+}
+/* ---------------Challenge Modal Mobile View---------------- */
+@media screen and (max-width: 600px){
+  .modal-header{
+    float: top;
+     
+    }
+  .modal-challenge-content{
+    margin: 0 0 0 0 ;
+    width:auto;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+  }
+}
+/* ------------------Single Challenge Mobile------------------- */
+@media screen and (max-width:600px){
+  .single-challenge-img{
+    display: none;
+  }
+  ._singleChallengeMain{
+  
+    border-radius: 10px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0 ;
+    min-height: 200px ;
+    /* width: 300px; */
+    text-align: center;
+  }
+  ._singleChallengeCommentForm {
+  margin-left: 30px;
+  }
+  ._displayActualComment{
+    word-wrap: break-word;
+  }
+  ._singleChallengeComment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  ._commentsForSingleChallenge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .single-challenge-info{
+    margin: 0 0 0 0 ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  ._singleChallengeContainer{
+    width: 300px;
+  }
+  .commentImg{
+    border-radius: 10px;
+  }
+  
+}
+
+
+
+/* ------------Chatroom Modal Mobile-------------------------- */
+@media screen and (max-width: 600px){
+  .modal-header{
+    float: top;
+     
+    }
+  .modal-chatroom-content{
+    margin: 0 0 0 0 ;
+    width:auto;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    
+  }
+}
+
+
 
   
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .cards {
     max-width: 350px;
     height: auto;
@@ -714,3 +862,4 @@ textarea {
     margin-left: 0;
   }
 }
+

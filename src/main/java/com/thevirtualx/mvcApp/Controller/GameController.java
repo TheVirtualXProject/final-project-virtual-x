@@ -33,7 +33,7 @@ public class GameController {
     @GetMapping("/game")
     public String displayGamePage(Model model, Device device) {
         model.addAttribute("games", staticGameRepository.findAll());
-        if(device.isNormal()) {
+        if(!device.isNormal()) {
             return "gamePageMobile";
         }
         return "gamePage";
