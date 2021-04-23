@@ -17,7 +17,6 @@ nav {
   height: 50px;
   width: 100%;
 }
-
 nav ul {
   height: 100%;
   float: left;
@@ -26,7 +25,6 @@ nav ul {
 nav ul li {
   display: inline-block;
   line-height: 50px;
- 
 }
 nav ul li a {
  display: block;
@@ -35,7 +33,6 @@ nav ul li a {
   padding: 0px 10px;
   text-transform: uppercase;
 }
-
 nav a.active,
 nav a:hover {
   background: var(--primary-color-darkBlue);

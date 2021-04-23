@@ -2,11 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
 @import url(./layout.css);
 /* font-family: 'Gugi', cursive;
-font-family: 'Lato', sans-serif; 
+font-family: 'Lato', sans-serif;
 font-family: 'Titan One', cursive;*/
 
 /* ----------header style--------- */
-
 .navBar {
   list-style-type: none;
   margin: 0;
@@ -31,9 +30,6 @@ li.nav-list a {
 .navBar li a:hover:not(.active) {
   background-color: var(--primary-color-darkBlue);
 }
-/* li a.active {
-  background-color: var(--primary-color-lightBlue);
-} */
 div.right {
   float: right;
 }
@@ -64,7 +60,6 @@ a {
   padding: 30px;
 }
 /* ----------Nav Bar Code--------- */
-
 * {
   padding: 0;
   margin: 0;
@@ -80,7 +75,6 @@ nav {
   height: 80px;
   width: 100%;
 }
-
 nav ul {
   float: left;
   margin-right: 20px;
@@ -97,8 +91,6 @@ nav ul li a {
   border-radius: 3px;
   text-transform: uppercase;
 }
-
-
 .checkbtn {
   font-size: 30px;
   color: white;
@@ -257,10 +249,8 @@ nav ul li a {
   width: 50%;
   display: flex;
   flex-direction: column;
-  /* text-align: left; */
   background-color: var(--primary-color-lightBlue);
   border-radius: 10px;
-  /* margin-left: 80px; */
   margin-top: 200px;
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
@@ -279,24 +269,10 @@ a {
 }
 ol li {
   list-style-type: none;
-
-  /* .popular-challenges-list,
-.current-challenges-list {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  /* border: 2px solid red; */
-  /* padding: 10px 35px; */
-  /* } */
-  /* .popular-challenges-list li,
-.current-challenges-list li {
-  padding: 10px;
-} */
 }
 .current-challenges-list p {
   padding: 5px 10px;
 }
-
 .current-challenges-list p {
   padding: 5px;
 }
@@ -305,13 +281,6 @@ ol li {
   border-radius: 10px;
   margin-bottom: 5px;
 }
-/* .underlinebox {
-  background-color: white;
-  width: 67%;
-  height: 0.8%;
-  margin-left: 50px;
-} */
-
 .popular-challenges-list li,
 .current-challenges-list li {
   padding: 8px;
@@ -340,8 +309,7 @@ ol li {
 /* The Modal (background) */
 .modal-add-challenge,
 .modal-add-chatroom {
-  display: none;
-  /* Hidden by default */
+  display: none;/* Hidden by default */
   position: fixed;
   z-index: 1;
   left: 0;
@@ -367,7 +335,6 @@ ol li {
 .modal-header h2 {
   margin: 10px;
 }
-
 input,
 textarea {
   width: 100%;
@@ -382,14 +349,12 @@ textarea {
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: var(--primary-color-darkBlue);
   text-decoration: none;
   cursor: pointer;
 }
-
 @media (max-width: 600px) {
   ol .popular-challenges-list {
     display: flex;
@@ -401,7 +366,6 @@ textarea {
   display: flex;
   flex-direction: column;
   text-align: left;
-  /* border: 2px solid red; */
   padding: 0px 50px 50px 50px;
 }
 
@@ -428,9 +392,6 @@ textarea {
   text-align: left;
   margin-left: 30px;
 }
-/* ._singleChallengeComment{
-  border: 2px solid red;
-} */
 ._singleChallengeContainer {
   width: 100%;
 }
@@ -450,28 +411,6 @@ textarea {
   text-align: left;
   padding: 0 0 50px 50px;
 }
-/* @media screen and (max-width:600px){
-  .game-main > .popular-games,img {
-    display:none;
-    
-    text-align: center;
-  }
- ol,.current-games-list,h2{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    grid-template-columns: auto;
-    padding: 0;
-  }
-  ._main > .game-main{
-    grid-template-columns: auto;
-  }
-  .current-games-list>li{
-    background-color: blue;
-    padding: 100px;
-  }
-} */
-
 .popular-games-list li,
 .current-games-list li {
   padding: 5px;
@@ -489,7 +428,6 @@ textarea {
 .current-games h2 {
   padding: 20px;
 }
-
 .current-games-list a {
   text-decoration: none;
   color: black;
@@ -503,7 +441,6 @@ textarea {
 ._singleGameMain {
   border: black solid 2px;
 }
-
 ._singleGameComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -539,7 +476,6 @@ textarea {
 
 /*game page style*/
 .game-main {
-  /* border: 2px solid black; */
   width: 70%;
   height: 130vh;
   background-image: url(../images/pablo-blogging.png),
@@ -561,7 +497,6 @@ textarea {
 }
 .current-games {
   width: 30%;
-  /* border: solid 2px blue; */
   background-color: var(--primary-color-lightBlue);
   border-radius: 10px;
   display: table;
@@ -579,7 +514,6 @@ textarea {
   font-weight: normal;
   font-size: 2em;
 }
-
 .popular-games-list li,
 .current-games-list li {
   padding: 8px;
@@ -590,7 +524,6 @@ textarea {
   display: flex;
   flex-direction: column;
   text-align: left;
-  /* border: 2px solid red; */
   padding: 0px 40px;
   margin-bottom: 10px;
 }
@@ -614,19 +547,15 @@ textarea {
   font-size: 3em;
   margin-left: 20px;
 }
-
 ._singleGameComment h2 {
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
 /* chatroom page style-----------------------*/
-
 .chatroom-main {
   width: 70%;
   height: 70vh;
-  /* border: solid 2px black; */
-  /* background-color: aliceblue; */
   background-image: url(../images/pablo-isolated-chatting-from-balconies.png);
   background-size: 50%;
   background-repeat: no-repeat;
@@ -645,7 +574,6 @@ textarea {
   align-items: center;
   text-align: left;
   padding: 20px 0px;
-  /* border: 2px solid red; */
   background-color: var(--primary-color-lightBlue);
   border-radius: 10px;
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
@@ -661,7 +589,6 @@ textarea {
   padding: 5px;
   font-size: 1.1em;
 }
-
 .current-chatrooms-list a {
   text-decoration: none;
   color: black;
@@ -682,10 +609,7 @@ textarea {
   border: black solid 2px;
 }
 /* ------------SingleChallengeCommentSection------------- */
-/* ------------SingleChallengeCommentSection------------- */
-/* ------------SingleChallengeCommentSection------------- */
 ._singleChallengeComment {
-  /* background-color: red; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -705,7 +629,6 @@ textarea {
   display: flex;
   justify-content: space-evenly;
 }
-
 ._singleChallengeFormInputs {
   width: 100%;
 }
@@ -729,7 +652,6 @@ textarea {
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 30%;
-
   width: 100%;
   min-height: 100vh;
 }
@@ -750,7 +672,6 @@ textarea {
 .posted-comments h2 {
   padding: 10px;
 }
-
 .posted-challenges {
   padding: 10px;
   background-color: rgba(223, 217, 217, 0.61);
@@ -766,12 +687,10 @@ textarea {
   height: 200px;
   max-width: 400px;
 }
-
 .single-challenge-img {
   height: 200px;
   width: 200px;
 }
-
 .ulSingleChallenge {
   width: 100%;
   display: flex;
@@ -785,11 +704,9 @@ textarea {
   width: 48%;
   border-radius: 5px;
 }
-
 textarea {
   resize: none;
 }
-
 .commentImg[src=""] {
   display: none;
 }
@@ -799,7 +716,6 @@ textarea {
   .img-deco-square,
   .img-deco-rectangle {
     display: none;
-
     text-align: center;
   }
   ol,
@@ -816,11 +732,9 @@ textarea {
   }
   .current-games-list > li {
     background-color: gray;
-    /* padding: 15px; */
     margin-top: 10px;
     border-radius: 10px;
     line-height: 50px;
-    /* height: 50px; */
   }
   .current-games img {
     display: none;
@@ -831,7 +745,6 @@ textarea {
     display: none;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .cards {
     max-width: 350px;

@@ -4,8 +4,6 @@
 font-family: 'Lato', sans-serif; */
 
 /* ----------header style--------- */
-
-
 .navBar {
   list-style-type: none;
   margin: 0;
@@ -63,10 +61,6 @@ a {
   padding: 30px;
 }
 /* ----------Nav Bar Code--------- */
-
-
-
-
 *{
   padding: 0;
   margin: 0;
@@ -82,7 +76,6 @@ nav{
   height: 80px;
   width: 100%;
 }
-
 nav ul{
   float: left;
   margin-right: 20px;
@@ -99,7 +92,6 @@ nav ul li a{
   border-radius: 3px;
   text-transform: uppercase;
 }
-
 a.active,a:hover{
   background: var(--primary-color-lightBlue);
   transition: .5s;
@@ -117,7 +109,6 @@ a.active,a:hover{
   display: none;
 }
 @media (max-width: 952px){
-  
   nav ul li a{
     font-size: 16px;
   }
@@ -236,7 +227,6 @@ a.active,a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 ol li {
   list-style-type: none;
@@ -249,7 +239,7 @@ ol li {
   text-align: left;
   /* border: 2px solid red; */
   /* padding: 10px 35px; */
-/* } */ 
+/* } */
 /* .popular-challenges-list li,
 .current-challenges-list li {
   padding: 10px;
@@ -292,12 +282,10 @@ ol li {
   /* padding: 20px; */
   margin:40px 0px 10px 0;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 
 /* style add button and modal box for challenge page and chatroom page--------------*/
 .add-challenge-section,
@@ -378,7 +366,6 @@ textarea {
   padding: 0 0 50px 50px;
 }
 
-
 .popular-challenges-list li,
 .current-challenges-list li {
   padding: 5px;
@@ -415,7 +402,6 @@ textarea {
 .single-challenge-info {
   text-align: left;
   margin-left: 30px;
-  
 }
 ._singleChallengeComment h2 {
   margin-top: 50px;
@@ -436,10 +422,9 @@ textarea {
 /* @media screen and (max-width:600px){
   .game-main > .popular-games,img {
     display:none;
-    
     text-align: center;
   }
- ol,.current-games-list,h2{
+ol,.current-games-list,h2{
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -675,10 +660,9 @@ textarea {
 @media screen and (max-width:600px){
   .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
     display:none;
-    
     text-align: center;
   }
- ol,.current-games-list,h2{
+ol,.current-games-list,h2{
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -695,9 +679,6 @@ textarea {
     border-radius: 10px;
     line-height: 50px;
     /* height: 50px; */
-    
-
-    
   }
   .current-games img {
     display:none;
@@ -737,7 +718,6 @@ textarea {
   height: 60px;
 }
 .add-challenge-button{
-  
  border-radius: 10px;
   width: 206.85px;
   height: 60px;
@@ -780,7 +760,6 @@ textarea {
 @media screen and (max-width: 600px){
   .modal-header{
     float: top;
-     
     }
   .modal-challenge-content{
     margin: 0 0 0 0 ;
@@ -790,7 +769,6 @@ textarea {
     flex-direction: column;
     justify-content: center;
     justify-content: space-evenly;
-    
   }
 }
 /* ------------------Single Challenge Mobile------------------- */
@@ -799,7 +777,6 @@ textarea {
     display: none;
   }
   ._singleChallengeMain{
-  
     border-radius: 10px;
     padding: 0 0 0 0;
     margin: 0 0 0 0 ;
@@ -840,7 +817,6 @@ textarea {
   .commentImg{
     border-radius: 10px;
   }
-  
 }
 
 
@@ -849,7 +825,6 @@ textarea {
 @media screen and (max-width: 600px){
   .modal-header{
     float: top;
-     
     }
   .modal-chatroom-content{
     margin: 0 0 0 0 ;
@@ -859,7 +834,6 @@ textarea {
     flex-direction: column;
     justify-content: center;
     justify-content: space-evenly;
-    
   }
 }
 /* -----------Single Chatroom Mobile------------------- */
@@ -867,12 +841,8 @@ textarea {
   .nav-items-list{
     text-align: center;
   }
-  
 }
 
-
-
-  
 @media screen and (max-width: 600px) {
   .cards {
     max-width: 350px;

@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-
 .star-container {
   width: auto;
   background: transparent;
-  
   display: flex;
-
   justify-content: flex-start;
   flex-direction: row;
 }
-
-
 .star-container .star-widget input{
   display: none;
 }
@@ -29,8 +24,6 @@ input:not(:checked) ~ label:hover ~ label{
 input:checked ~ label{
   color: #fd4;
 }
-
-
 .star-widget {
   display: flex;
   flex-direction: row-reverse;
