@@ -33,7 +33,7 @@ public class Populator implements CommandLineRunner {
                 "https://static.wikia.nocookie.net/dragonball/images/5/58/GokuSuperSaiyanTransformedAtLast.png/revision/latest/scale-to-width-down/200?cb=20191103030051", true, "USER");
         accountStorage.addAccount(lani);
 
-        Account connor = new Account("Ronnoc", "GoWeiwei", "Connor Chambers", 0,
+        Account connor = new Account("Ronnoc", "GoWeiwei", "Connor Chambers", 1,
                 "https://4.bp.blogspot.com/-puG6A6cjmI8/VeDXT2if2bI/AAAAAAAAgnE/EIC6fuiO2NY/s1600/Blue%2BJay%252C%2B8-12-2015-3896-3.jpg", true, "USER");
         accountStorage.addAccount(connor);
 
@@ -90,9 +90,22 @@ public class Populator implements CommandLineRunner {
         Challenge floorIsLava = new Challenge("The Floor is Lava!",
                 "Lava has breached the main floor! Jump from desk to desk to stay alive!",
                 "https://i.ytimg.com/vi/OB2yQLOLVck/maxresdefault.jpg", 4, 10,
-                "Floor is lava, Jumping", "30 min", 2,6, true, bishnu.getRealName());
-        floorIsLava.addAccount(bishnu);
+                "Floor is lava, Jumping", "30 min", 2,6, true, lani.getRealName());
+        floorIsLava.addAccount(lani);
         challengeStorage.addChallenge(floorIsLava);
+
+        Challenge pushUp = new Challenge("60 Second Pushup Challenge", "See how many pushups you can do in 1 minute!",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Liegestuetz02_ani_fcm.gif/220px-Liegestuetz02_ani_fcm.gif",
+                4, 10, "Try to get more than 10 pushups!", "1 min", 1, 10,
+                true, jon.getRealName());
+        pushUp.addAccount(jon);
+        challengeStorage.addChallenge(pushUp);
+
+        Challenge kindergatenCode = new Challenge("Complete Code.org", "See how fast you can finish the first 'hour' of Code.org",
+                "https://code.org/images/logo.svg", 4, 10, "Are you smarter than a 5th grader?",
+                "1 week", 1, 10, true,branden.getRealName());
+        kindergatenCode.addAccount(branden);
+        challengeStorage.addChallenge(kindergatenCode);
 
         Chatroom chadsOnly = new Chatroom("forTheChads", connor.getRealName());
         chatroomStorage.addChatroom(chadsOnly);
