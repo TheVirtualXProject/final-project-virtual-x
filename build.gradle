@@ -9,6 +9,7 @@ plugins {
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 jar {
 	enabled=true;
 	manifest {
