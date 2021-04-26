@@ -51,6 +51,7 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.projectlombok:lombok:1.18.16'
+	compile 'com.github.jsimone:webapp-runner:8.5.11.3' //WARDEPLOY
 	implementation 'org.springframework.mobile:spring-mobile-device:2.0.0.M3'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
@@ -62,4 +63,16 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+war {
+	enabled=true //WARDEPLOY
+}
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+	into "$buildDir/libs"
+	from(configurations.compile)
 }
