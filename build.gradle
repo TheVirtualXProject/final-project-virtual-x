@@ -52,6 +52,7 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.projectlombok:lombok:1.18.16'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	compile 'com.github.jsimone:webapp-runner:8.5.11.3' //WARDEPLOY
 	implementation 'org.springframework.mobile:spring-mobile-device:2.0.0.M3'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
