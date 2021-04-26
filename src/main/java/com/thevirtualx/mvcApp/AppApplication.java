@@ -7,13 +7,14 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class AppApplication extends SpringBootServletInitializer {
+public class AppApplication extends SpringBootServletInitializer { //extend this class
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppApplication.class, args);
 	}
 
 
+	//WARDEPLOY
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(AppApplication.class);

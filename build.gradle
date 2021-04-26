@@ -9,7 +9,7 @@ plugins {
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
+apply plugin: 'war' //WARDEPLOY
 jar {
 	enabled=true;
 	manifest {
@@ -66,7 +66,7 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
+//add all these lines below
 war {
 	enabled=true //WARDEPLOY
 }
