@@ -107,7 +107,7 @@ public class Populator implements CommandLineRunner {
         kindergatenCode.addAccount(branden);
         challengeStorage.addChallenge(kindergatenCode);
 
-        Chatroom chadsOnly = new Chatroom("forTheChads", connor.getRealName());
+        Chatroom chadsOnly = new Chatroom("Lunch Time Chat!", connor.getRealName());
         chatroomStorage.addChatroom(chadsOnly);
 
         StaticGame sixteenMusashi = new StaticGame("Sixteen Musashi", "sixteenmusashi", 2);
