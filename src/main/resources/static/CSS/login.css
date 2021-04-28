@@ -195,6 +195,7 @@ h4 {
   .container {
     background: none;
     height: 90%;
+    margin-top: 100px;
   }
   .main {
     height: 95vh;
