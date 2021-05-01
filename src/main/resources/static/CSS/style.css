@@ -98,7 +98,6 @@ nav ul li a {
   text-transform: uppercase;
 }
 
-
 .checkbtn {
   font-size: 30px;
   color: white;
@@ -390,13 +389,11 @@ textarea {
   cursor: pointer;
 }
 
-
 @media (max-width: 850px) {
   ol .popular-challenges-list {
     display: flex;
     flex-wrap: wrap;
   }
-  
 }
 .popular-challenges-list,
 .current-challenges-list {
@@ -405,7 +402,6 @@ textarea {
   text-align: left;
   /* border: 2px solid red; */
   padding: 0px 50px 50px 50px;
-
 }
 
 /* single challenge page style*/
@@ -519,7 +515,7 @@ textarea {
   align-items: center;
 }
 ._singleChallengeCommentForm {
-  background-color:var(--secondary-color-orange);
+  background-color: var(--secondary-color-orange);
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
   height: 100%;
   width: 300px;
@@ -797,10 +793,12 @@ textarea {
   display: none;
 }
 
-@media screen and (max-width:850px){
-  .game-main > .popular-games,.img-deco-square, .img-deco-rectangle {
-    display:none;
-    
+@media screen and (max-width: 850px) {
+  .game-main > .popular-games,
+  .img-deco-square,
+  .img-deco-rectangle {
+    display: none;
+
     text-align: center;
   }
   ol,
@@ -827,14 +825,12 @@ textarea {
     display: none;
   }
 }
-@media screen and (max-width:850px){
-.popular-challenges{
-  display: none;
-}
-  
+@media screen and (max-width: 850px) {
+  .popular-challenges {
+    display: none;
+  }
 }
 
-  
 @media only screen and (max-width: 850px) {
   .cards {
     max-width: 350px;
@@ -849,18 +845,69 @@ textarea {
     margin-left: 0;
   }
 }
-@media screen and (max-width:850px){
-  .nav-items-list{
-    overflow-y:scroll ;
-
+@media screen and (max-width: 850px) {
+  .nav-items-list {
+    overflow-y: scroll;
   }
   .nav-items-list li:last-child {
     margin-bottom: 7.5rem;
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .nav-items-list li:last-child {
     margin-bottom: 0rem;
   }
+}
+
+/* style team page-------*/
+.team-img {
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+}
+.team-story {
+  text-align: left;
+  padding-bottom: 50px;
+  width: 50%;
+  margin-left: 25%;
+}
+._teamContainer {
+  background-image: url(../images/pablo-812.png), url(../images/pablo-611.png),
+    url(../images/pablo-magic-vs-covid-19-1.png),
+    url(../images/pablo-magic-vs-covid-19-1.png);
+  background-repeat: no-repeat;
+  background-position: right center, 12% 35%, right bottom, left bottom;
+  background-size: 30%, 10%, 45%, 45%;
+}
+.dev-info {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: var(--primary-color-lightBlue);
+  border-radius: 10px;
+  padding: 20px 40px;
+  box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
+}
+.dev-info h2 {
+  margin-bottom: 10px;
+}
+.dev-info .left {
+  text-align: left;
+  margin-right: 20px;
+}
+.dev-info .right {
+  text-align: left;
+  margin-left: 20px;
+}
+.dev-img {
+  width: 200px;
+  border-radius: 10px;
+}
+.dev-info button {
+  margin-top: 10px;
+  border-radius: 5px;
 }
