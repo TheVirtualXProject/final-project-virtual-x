@@ -906,8 +906,33 @@ textarea {
 .dev-img {
   width: 200px;
   border-radius: 10px;
+  margin: auto;
 }
 .dev-info button {
   margin-top: 10px;
   border-radius: 5px;
+}
+
+
+@media screen and (max-width:800px){
+  .team-img{
+    display: none;
+  }
+  .dev-intro{
+    display: none;
+  }
+  ._teamContainer {
+    background-image: none;
+}
+  .dev-info{
+    width:350px;
+    height: 320px;
+    box-shadow: none;
+  }
+  .team-story{
+    display: none;
+  }
+  .dev-img{
+    margin:10px;
+  }
 }
