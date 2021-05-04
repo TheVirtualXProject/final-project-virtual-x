@@ -413,7 +413,7 @@ textarea {
   padding: 20px;
   border-radius: 10px;
   width: 50%;
-  height: 30vh;
+  min-height: 30vh;
   background-color: var(--primary-color-lightBlue);
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
@@ -889,7 +889,7 @@ textarea {
   margin-bottom: 20px;
   background-color: var(--primary-color-lightBlue);
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 20px 20px;
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
 }
 .dev-info h2 {
@@ -906,6 +906,7 @@ textarea {
 .dev-img {
   width: 200px;
   border-radius: 10px;
+  margin: auto;
 }
 .dev-info button {
   margin-top: 10px;
