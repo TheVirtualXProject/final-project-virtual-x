@@ -6,13 +6,13 @@ font-family: 'Titan One', cursive;
  */
 
 :root {
-  --primary-color-lightBlue: rgb(30, 213, 202);
-  --primary-color-darkBlue: rgb(1, 24, 128);
-  --primary-color-yellow: rgb(255, 201, 75);
-  --primary-color-red: rgb(242, 48, 48);
+  --primary-color-lightBlue: rgb(219, 36, 105);
+  --primary-color-darkBlue: rgb(93, 187, 70);
+  --primary-color-yellow: rgb(66, 159, 215);
+  --primary-color-red: rgb(242, 103, 34);
   --primary-color-purple: rgb(87, 37, 203);
-  --secondary-color-orange: #ff6e35e5;
-  --background: #fcf5ef;
+  --secondary-color-orange: rgb(66, 159, 215);
+  --background: white
   --header-font: "Gugi", cursive;
   --body-text-font: "Lato", sans-serif;
   --body-header-font:"Titan One", cursive;

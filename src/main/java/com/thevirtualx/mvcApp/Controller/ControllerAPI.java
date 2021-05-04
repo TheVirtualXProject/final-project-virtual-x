@@ -55,7 +55,7 @@ public class ControllerAPI {
 
 
     @GetMapping("/api/challenges/{id}")
-    public Challenge retrieveChallengeInfo(@PathVariable Long id) {
+     public Challenge retrieveChallengeInfo(@PathVariable Long id) {
         Challenge challenge = challengeStorage.retrieveChallengeById(id);
         return challenge;
     }
