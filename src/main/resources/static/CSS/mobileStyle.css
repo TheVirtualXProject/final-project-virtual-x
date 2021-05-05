@@ -803,7 +803,8 @@ textarea {
     display: none;
   }
   ._singleChallengeMain{
-  
+
+    justify-content: center;
     border-radius: 10px;
     padding: 0 0 0 0;
     margin: 0 0 0 0 ;
