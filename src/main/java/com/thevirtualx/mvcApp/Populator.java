@@ -94,7 +94,7 @@ public class Populator implements CommandLineRunner {
         floorIsLava.addAccount(lani);
         challengeStorage.addChallenge(floorIsLava);
 
-        Challenge pushUp = new Challenge("60 Second Pushup Challenge", "See how many pushups you can do in 1 minute!",
+        Challenge pushUp = new Challenge("60 Second Pushup", "See how many pushups you can do in 1 minute!",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Liegestuetz02_ani_fcm.gif/220px-Liegestuetz02_ani_fcm.gif",
                 4, 10, "Try to get more than 10 pushups!", "1 min", 1, 10,
                 true, jon.getRealName());

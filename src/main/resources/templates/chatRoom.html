@@ -53,7 +53,7 @@
               </div>
               <form method="POST" class="add-chatroom-form" action="/chat/addChat">
                 <div class="form">
-                  <input type="text" placeholder="Chatroom Name" required name="chatName">
+                  <input type="text" placeholder="Chatroom Name" required name="chatName" maxlength="25">
                   <input type="text" placeholder="Chatroom Capacity" required name="maxSize">
                   <textarea placeholder="Chatroom Description" rows="4" cols="50" required name="desc"></textarea>
                   <button class="submit-button" type="submit">Submit</button>
