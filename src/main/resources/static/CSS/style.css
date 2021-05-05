@@ -197,6 +197,13 @@ nav ul li a {
   margin: 24.5px;
   box-shadow: 8px 8px 2px 1px rgba(44, 44, 44, 0.2);
   border-radius: 10px;
+  transform: scale(1);
+  transition: 0.4s;
+}
+
+.activity-card:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 .activity-card img {
   border-radius: 10px;
@@ -446,13 +453,7 @@ textarea {
 }
 
 /*game page style*/
-.popular-games-list,
-.current-games-list {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 0 0 50px 50px;
-}
+
 /* @media screen and (max-width:600px){
   .game-main > .popular-games,img {
     display:none;
@@ -486,7 +487,6 @@ textarea {
   color: white;
 }
 .popular-games h2 {
-  height: 3em;
   padding: 20px;
 }
 .current-games h2 {
@@ -556,7 +556,6 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: var(--primary-color-red);
   border-radius: 10px;
   margin-left: 200px;
