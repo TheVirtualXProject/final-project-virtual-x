@@ -12,4 +12,9 @@ public class HomeViewController {
 
         return "homeView";
     }
+
+    @GetMapping("/team")
+    public String displayTeamView() {
+        return "teamPage";
+    }
 }
